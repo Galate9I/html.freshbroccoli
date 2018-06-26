@@ -1,0 +1,44 @@
+// @import '../../node_modules/bootstrap/scss/_functions'
+// @import '../../node_modules/bootstrap/scss/_variables'
+// @import '../../node_modules/bootstrap/scss/_mixins'
+// @import 'configs/_custom'
+// @import 'mixins/_color'
+
+.breadcrumbs
+	background: inherit
+	text-align: center
+	margin: 0 0 8px
+
+	@media (max-width: 600px)
+		text-align: left
+
+	&-link
+		font-family: $lato-base
+		font-size: 12px
+		font-weight: 300
+		color: $gray-600
+		letter-spacing: .24px
+		padding: 0 8px
+
+		@media (max-width: 600px)
+			font-family: $lato-bold
+			font-size: 32px
+			font-weight: 400
+			color: $gray-text
+			padding: 0 24px 0 48px
+			position: relative
+			margin: 0 0 0 16px
+
+			&:nth-child(n+2)
+				display: none
+
+			@include arrow-left($padd: 24px)
+
+			&:before
+				margin-top: -3px
+				border-width: 10px
+
+			&:after
+				margin-top: -3px
+				border-width: 10px
+				left: 18px

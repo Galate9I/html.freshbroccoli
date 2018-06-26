@@ -1,0 +1,63 @@
+@import '../../node_modules/bootstrap/scss/_functions'
+@import '../../node_modules/bootstrap/scss/_variables'
+@import '../../node_modules/bootstrap/scss/_mixins'
+@import 'configs/_custom'
+
+.menu-catalog
+
+	.footer &
+		margin: 0
+
+		&__padding
+			margin: 0
+
+		&__row
+			margin: 0
+
+		&__align
+			max-height: 373px
+			display: flex
+			flex-direction: column
+			flex-wrap: wrap
+			overflow: hidden
+
+			@media(max-width: 600px)
+				column-count: 3
+				text-align: center
+				display: block
+
+			@media(max-width: 480px)
+				column-count: 2
+				text-align: left
+
+
+		&__title
+			color: #2f4b55
+			font-family: $lato-bold
+			font-size: 15px
+			font-weight: 400
+			line-height: 15px
+			color: #2f4b55
+			letter-spacing: 0.6px
+			margin: 0 0 16px
+
+			@media(max-width: 600px)
+				text-align: center
+
+		&__item
+			color: $gray-500
+			margin: 0 0 8px
+
+		&__link
+			color: #718391
+			font-family: $lato-base
+			font-size: 13px
+			font-weight: 300
+			line-height: 24px
+			letter-spacing: 0.52px
+
+			&:hover
+				color: #1c2831
+
+			@media(max-width: 600px)
+				line-height: 16px

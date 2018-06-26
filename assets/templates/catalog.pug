@@ -1,0 +1,48 @@
+include ../blocks/page
+	.catalog
+
+		include ../blocks/breadcrumbs
+		include ../blocks/page__title
+		.page__inner
+			.sidebar
+				.sidebar__left
+					include ../blocks/sidebar
+				button.btn.btn-outline-success.btn-lg Применить
+				button.btn.btn-success.btn-lg Очистить
+
+			.content
+				include ../blocks/catalog-banner
+				include ../blocks/catalog__head
+				include ../blocks/catalog__items
+
+				.catalog__foot
+					a.btn.btn-success.btn-lg(href="#") + Посмотреть ещё
+
+					include ../blocks/pager
+	.wrapp-inner
+		include ../blocks/slider__items
+		include ../blocks/accordion
+
+	.wrapp-inner
+		include ../blocks/messeng__block
+
+		//- .wrapp-inner
+		//- 	h2.home-title Наши предложения
+		//- 	include ../blocks/action-main
+		//- 	a.btn.btn-outline-secondary.btn-lg(href="") Смотреть все акции
+
+		//- .wrapp-inner
+		//- 	h2.home-title Отзывы о нашем магазине
+		//- 	include ../blocks/review__block
+
+		//- h2.home-title Коллекция рецептов от Broccoli
+
+		//- .wrapp-inner
+		//- 	include ../blocks/recipe__block
+		//- 	a.btn.btn-outline-secondary.btn-lg(href="") Смотреть еще 35 рецептов
+
+		//- .wrapp-inner
+		//- 	include ../blocks/messeng__block
+
+
+include ../blocks/footer

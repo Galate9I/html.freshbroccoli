@@ -1,0 +1,175 @@
+.slider__title
+	display: flex
+	justify-content: center
+	align-items: center
+	height: 32px
+	font-size: 16px
+	font-weight: 500
+	color: $body-color
+
+.slider__items
+	position: relative
+	margin-bottom: 50px
+
+	& .catalog__items-wrap--banner
+		display: none
+
+	&-block
+		width: 100%
+		//overflow: hidden
+
+	& div.catalog__items
+		margin: 0 -8px
+		overflow: hidden
+
+		@media (max-width: 480px)
+			margin: 0 -4px
+
+		& .catalog__items-list
+			flex-wrap: inherit
+			margin: 0 0 16px
+			padding: 0
+			transition: .3s linear
+			//overflow: hidden
+			justify-content: space-around
+			flex-grow: 1
+			position: relative
+
+			& .catalog__items-item
+				flex: 0 0 13.29%
+				max-width: 210px
+				display: flex
+
+				@media (max-width: 1600px)
+					flex: 0 0 15.7%
+
+				@media (max-width: 1280px)
+					flex: 0 0 19.1%
+
+				@media (max-width: 960px)
+					flex: 0 0 24.1%
+
+				@media (max-width: 768px)
+					flex: 0 0 32.4%
+
+				@media (max-width: 600px)
+					flex: 0 0 48.14%
+
+			// &:before
+			// 	content: ''
+			// 	position: absolute
+			// 	top: 0
+			// 	left: 0
+			// 	width: 30px
+			// 	height: 100%
+			// 	z-index: 1
+			// 	background: linear-gradient(90deg, #fff, #fff0)
+
+			// &:after
+			// 	content: ''
+			// 	position: absolute
+			// 	top: 0
+			// 	right: 0
+			// 	width: 30px
+			// 	height: 100%
+			// 	z-index: 1
+			// 	background: linear-gradient(90deg, #fff0, #fff)
+
+			& .slick-track
+				height: 100%
+				//display: flex
+
+				@media (min-width: 900px)
+					margin-left: -2px
+
+.slick-arrow
+	background-color: $white
+	border: none
+	border-radius: 100%
+	color: $body-color
+	width: 32px
+	min-width: 32px
+	height: 32px
+	margin: 0 16px
+	text-align: center
+	line-height: 40px
+	position: relative
+	z-index: 10
+	cursor: pointer
+	vertical-align: middle
+
+	&:hover
+		background-color: $gray-bg
+
+	&:focus
+		outline: none
+
+
+	&:before,
+	&:after
+		width: 0
+		height: 0
+		border: 8px solid transparent
+		display: inline-block
+		transform: translate(25%, -50%)
+		position: absolute
+		top: 50%
+
+	&.arrow-left
+		left: 5px
+
+		&:before
+			content: ''
+			left: 0
+			border-right-color: $body-color
+
+		&:after
+			content: ''
+			left: 2px
+			border-right-color: $white
+
+		&:hover
+			color: $gray-600
+
+			&:before
+				content: ''
+				border-right-color: $gray-600
+
+			&:after
+				border-right-color: $gray-bg
+
+		@media (min-width: 480px)
+			left: 0
+
+	&.arrow-right
+		right: 5px
+
+		&:before
+			content: ''
+			border-left-color: $body-color
+			transform: translate(-15%, -50%)
+
+		&:after
+			content: ''
+			right: 2px;
+			border-left-color: $white
+			transform: translate(-15%, -50%)
+
+		&:hover
+			color: $gray-600
+
+			&:before
+				content: ''
+				border-left-color: $gray-600
+
+			&:after
+				border-left-color: $gray-bg
+				
+		@media (min-width: 480px)
+			right: 0
+
+
+
+
+
+

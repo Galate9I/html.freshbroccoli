@@ -1,0 +1,677 @@
+@import '../../node_modules/bootstrap/scss/_functions'
+@import '../../node_modules/bootstrap/scss/_variables'
+@import '../../node_modules/bootstrap/scss/_mixins'
+@import 'configs/_custom'
+@import 'mixins/_color'
+@import 'mixins/_icon'
+@import 'menu'
+@import 'search'
+
+.navigation
+	$this: &
+	$media-icon-width: 40
+	$media-icon-height: 40
+	position: relative
+	background-color: $navigation-bgc
+	padding: 0
+
+	@media (max-width: 600px)
+		display: none
+
+		&:target
+			display: block
+	&__btn
+		max-width: 256px
+
+	.btn-search
+		color: $dark-main-color
+		background-color: $white
+		width: 33px
+		height: 33px
+		border-radius: 50%
+
+	.dropdown-menu
+		z-index: 3
+
+	&.open
+		display: block
+
+	&__padding
+		width: 100%
+
+	&__align
+		display: flex
+		justify-content: space-between
+
+		@media (max-width: 600px)
+			flex-direction: column
+	
+	&__item
+		$item: &
+		+color-yiq($navigation-bgc)
+		text-decoration: none
+		flex-grow: 1
+		flex-shrink: 0
+		min-height: 56px
+
+		@media (max-width: 600px)
+			max-width: inherit
+			width: 100%
+			padding: 8px 0
+
+		&-padding
+			text-align: center
+			padding: $grid-gutter-width / 8 $grid-gutter-width / 2
+			height: 100%
+
+		&-align
+			display: flex
+			justify-content: center
+			align-items: center
+			height: 120%
+			height: calc(100% + #{$grid-gutter-width / 4})
+
+			&:not(:empty)
+				margin: '-#{$grid-gutter-width}' / 8 '-#{$grid-gutter-width}' / 4
+
+			> *
+				&:not(script)
+					&:not(:empty)
+						padding: 0 4px
+						margin: 4px 0
+
+		&-burger
+			display: inline-block
+			margin-right: 10px
+			width: 16px
+			height: 16px
+			background-image: linear-gradient(0deg, rgba(white, 0) 0,rgba(white, 1) 0,rgba(white, 1) 15%,rgba(white, 0) 15%), linear-gradient(0deg,rgba(white, 0) 45%,rgba(white, 1) 45%,rgba(white, 1) 55%,rgba(white, 0) 55%),linear-gradient(0deg,rgba(white, 0) 85%,rgba(white, 1) 85%,rgba(white, 1) 100%,rgba(white, 0) 100%)
+
+
+		&-title,
+		&-nail
+			display: inline-block
+			vertical-align: bottom
+			text-align: center
+			margin: 3px 0
+			white-space: nowrap
+			line-height: 18px
+
+		&-nail
+			@media (max-width: 1280px)
+				display: none
+
+		&-title + &-nail
+			margin-left: 4px
+
+
+		&-title
+			+color-yiq($navigation-bgc)
+			font-size: 16px
+			font-weight: 400
+			position: relative
+			letter-spacing: 1px
+
+			@media (max-width: 1280px)
+				font-size: 14px
+
+			@media (max-width: 1024px)
+				font-size: 13px
+
+			&--lk
+				padding-left: 25px
+
+				@media (max-width: 1024px)
+					span
+						display: none
+
+
+				.icon__person-lk
+					position: absolute
+					left: -4px
+					top: -3px
+					fill: transparent
+					stroke: $white
+					stroke-width: 4px
+					width: 22px
+					height: 23px
+		&-link
+			display: inline-block
+			color: $white
+
+			&:hover
+				color: $white
+				text-decoration: underline
+
+		&[href^='#'],
+		&[href^='http']
+			&:hover,
+			&:focus
+				text-decoration: none
+
+		@media (max-width: 600px)
+			&:hover,
+			&:focus
+				background-color: lighten($navigation-bgc, $fibo-asymp-l-percentage)
+
+		&:not(&--dropdown)
+			&[href^='#'],
+			&[href^='http']
+				&:hover,
+				&:focus
+					+color-yiq($navigation-bgc)
+					outline: none
+					background-color: lighten($navigation-bgc, $fibo-asymp-l-percentage)
+
+					#{$this}__nail,
+					#{$this}__nail-item
+						color: lighten(mix(custom-color-yiq($navigation-bgc), $navigation-bgc, $fibo-asymp-xxxl-percentage), $fibo-asymp-l-percentage)
+
+				&:active
+					background-color: lighten($navigation-bgc, $fibo-asymp-xl-percentage)
+
+					#{$this}__nail,
+					#{$this}__nail-item
+						color: lighten(mix(custom-color-yiq($navigation-bgc), $navigation-bgc, $fibo-asymp-xxxl-percentage), $fibo-asymp-xl-percentage)
+
+		&--dropdown
+			position: relative
+			background: none
+
+			&.show
+				#{$this}
+					&__dropdown-toggle
+						background-color: lighten($navigation-bgc, $fibo-asymp-l-percentage)
+
+						@media (max-width: 600px)
+							background-color: inherit
+
+						&:focus
+							box-shadow: inset 0 0 0 3px lighten($navigation-bgc, $fibo-asymp-xl-percentage)
+
+							@media (max-width: 600px)
+								box-shadow: none
+								background-color: inherit
+					
+						&:active
+							box-shadow: none
+							background-color: lighten($navigation-bgc, $fibo-asymp-xl-percentage)
+
+							@media (max-width: 600px)
+								background-color: inherit
+
+							#{$this}
+								&__nail,
+								&__nail-item
+									color: lighten(mix(custom-color-yiq($navigation-bgc), $navigation-bgc, $fibo-asymp-xxxl-percentage), $fibo-asymp-xl-percentage)
+
+									@media (max-width: 600px)
+										background-color: inherit
+
+					&__nail,
+					&__nail-item
+						color: lighten(mix(custom-color-yiq($navigation-bgc), $navigation-bgc, $fibo-asymp-xxxl-percentage), $fibo-asymp-l-percentage)
+
+						@media (max-width: 600px)
+							background-color: inherit
+
+			@media (max-width: 600px)
+				&:hover,
+				&:focus
+					+color-yiq($navigation-bgc)
+					outline: none
+					background-color: lighten($navigation-bgc, $fibo-asymp-l-percentage)
+
+					#{$this}__nail,
+					#{$this}__nail-item
+						color: lighten(mix(custom-color-yiq($navigation-bgc), $navigation-bgc, $fibo-asymp-xxxl-percentage), $fibo-asymp-l-percentage)
+
+				&:active
+					background-color: lighten($navigation-bgc, $fibo-asymp-xl-percentage)
+
+					#{$this}__nail,
+					#{$this}__nail-item
+						color: lighten(mix(custom-color-yiq($navigation-bgc), $navigation-bgc, $fibo-asymp-xxxl-percentage), $fibo-asymp-xl-percentage)
+
+		&-media
+			$media: &
+			text-align: right
+			line-height: 1
+			flex-grow: 0
+			flex-shrink: 0
+			flex-basis: 40px
+
+			&:not(:empty)
+				&~#{$item}-content
+					text-align: left
+					max-width: 100% - $fibo-asymp-xxl-percentage
+					max-width: calc(100% - 40px)
+
+					#{$item}
+						&-title,
+						&-nail
+							text-align: left
+
+					#{$this}__nail-align
+						justify-content: flex-start
+
+					@media (min-width: $l)
+						max-width: 75%
+
+					@media (min-width: $xl)
+						max-width: 100% - $fibo-asymp-xxl-percentage / ($fibo-asymp-m * 100)
+
+					@media (min-width: $xxl)
+						max-width: 100% - $fibo-asymp-xxl-percentage / ($fibo-asymp-l * 100)
+
+				_:-ms-input-placeholder, :root &~#{$item}-content
+					max-width: $fibo-asymp-xxxl-percentage
+
+		&-content
+			&-row
+				&:first-child
+					display: block
+				
+				> *
+					&:not(script)
+						padding: 0 $grid-gutter-width / 8
+
+				&:not(:empty)
+					margin: '-#{$grid-gutter-width}' / 8
+				
+				& > div
+					text-align: left
+
+					@media (max-width: 600px)
+						text-align: center
+
+		&-icon
+			+icon-size ($media-icon-width, $media-icon-height)
+			position: relative
+			display: block
+			margin: 0 auto
+
+		&--menu
+			box-sizing: border-box
+			flex-grow: 1
+
+		&--drop-menu
+			min-width: 256px
+
+			@media (max-width: 1280px)
+				min-width: auto
+
+			@media (max-width: 600px)
+				max-width: inherit
+
+			#{$item}
+				&-content-row
+					@media (min-width: $xl)
+						display: flex
+						flex-direction: row
+						justify-content: center
+						align-items: center
+
+					$hr: 0
+
+			#{$this}__dropdown
+				left: 0
+				right: auto
+				display: none
+
+			&.show
+				#{$this}__dropdown
+					pointer-events: auto
+					display: block
+					z-index: 100
+
+					@media (max-width: 600px)
+						box-shadow: none
+						top: 17px
+
+		&--authorization
+			@media (max-width: 600px)
+				display: none
+
+		&--basket
+			& .navigation__item-content
+				@media (max-width: 768px)
+					display: none
+
+			@media (max-width: 600px)
+				display: none
+
+			#{$this}
+				&__nail-align
+					&:not(:empty)
+						margin: '-#{$grid-gutter-width}' / 8 '-#{$grid-gutter-width}' / 16
+
+				&__nail-item
+					padding: 0 $grid-gutter-width / 16
+
+			#{$item}-media
+				position: relative
+
+		&--search
+			position: static
+			flex-basis: 75px
+			flex-grow: 0
+			margin-left: auto
+			z-index: 3
+			display: flex
+			align-items: center
+			justify-content: center
+
+			@media (max-width: 600px)
+				display: none
+
+			#{$this}
+				&__dropdown-toggle
+					&::before
+						$media-width: 24
+						$media-height: 24
+						font-size: 18px
+						display: block
+						margin: 0 auto
+						line-height: 1
+
+		&:not(:empty)
+			~ #{$item}
+				&--search
+					margin-left: 0
+
+		&:not(&--authorization)
+			&:not(#{$item + '--basket'})
+				#{$this}__nail-item
+					overflow: hidden
+					text-overflow: ellipsis
+					white-space: nowrap
+
+	&__cart-counter
+		position: absolute
+		text-align: center
+		overflow: hidden
+		white-space: nowrap
+		top: 50%
+		left: 50%
+		width: 20.2px
+		width: 20.2 / 12 + em
+		width: calc(20.2em / 12)
+		margin-top: (1 - $fibo-asymp-xl) * -1 + em
+		margin-left: -.53em
+		font-size: 12px
+		font-size: 12 / 40 + em
+		font-size: calc(12em / 40)
+
+	&__nail
+		&-align
+			display: flex
+			justify-content: center
+			align-items: center
+
+			&:not(:empty)
+				margin: '-#{$grid-gutter-width}' / 8
+
+		&-item
+			$color: custom-color-yiq($navigation-bgc)
+			color: mix($color, $navigation-bgc, $fibo-asymp-xxxl-percentage)
+			text-decoration: none
+			line-height: $line-height-base
+			font-size: 12px
+			padding: 0 $grid-gutter-width / 8
+			margin: $grid-gutter-width / 8 0
+			flex-shrink: 0
+
+			&[href^='#'],
+			&[href^='http']
+				&:hover
+					text-decoration: underline
+					color: $color
+
+	&__dropdown-toggle
+		+color-yiq($navigation-bgc)
+		width: 100%
+		display: block
+		text-align: center
+		background: none
+		border: none
+		outline: none
+		height: 100%
+		font-size: $font-size-root
+		font-size: 1rem
+		line-height: $line-height-base
+		padding: 0
+
+		&:focus
+			outline: none
+			box-shadow: inset 0 0 0 3px lighten($navigation-bgc, $fibo-asymp-l-percentage)
+
+			@media (max-width: 600px)
+				box-shadow: inherit
+
+		&:hover
+			background-color: lighten($navigation-bgc, $fibo-asymp-l-percentage)
+
+		&:hover,
+		&:focus
+			+color-yiq($navigation-bgc)
+			outline: none
+			background-color: lighten($navigation-bgc, $fibo-asymp-l-percentage)
+
+			@media (max-width: 600px)
+				background-color: inherit
+
+			#{$this}
+				&__nail,
+				&__nail-item
+					color: lighten(mix(custom-color-yiq($navigation-bgc), $navigation-bgc, $fibo-asymp-xxxl-percentage), $fibo-asymp-l-percentage)
+
+		&:active
+			box-shadow: none
+			background-color: lighten($navigation-bgc, $fibo-asymp-xl-percentage)
+
+			@media (max-width: 600px)
+				background-color: inherit
+
+			#{$this}
+				&__nail,
+				&__nail-item
+					color: lighten(mix(custom-color-yiq($navigation-bgc), $navigation-bgc, $fibo-asymp-xxxl-percentage), $fibo-asymp-xl-percentage)
+
+	&__search
+		max-width: $container-max-width - $grid-gutter-width
+		margin: 0 auto
+
+	&__dropdown
+		position: absolute
+		float: none
+		min-width: auto
+		left: 0
+		right: 0
+		margin: 0
+		padding: 0
+		border: none
+
+	&__nail-item--amount
+		@media (max-width: 1280px)
+			display: inline-block
+
+	&__moby
+		width: 100%
+		background-color: $main-color
+		height: 64px
+		margin: auto
+		padding: 8px
+		display: flex
+		position: relative
+
+		@media (min-width: 601px)
+			display: none
+
+		&-btn
+			width: 20%
+
+			.navigation__item-burger
+				margin: 0
+
+		&-search,
+		&-lk,
+		&-cart,
+		&-icon
+			height: 100%
+			flex-grow: 1
+
+		// &-search
+		// 	width: 100%
+		// 	position: absolute
+		// 	top: 0
+		// 	left: 0
+
+		// &-basket
+		// 	position: absolute
+		// 	top: 8px
+		// 	right: 16px
+
+		// &-home,
+		// &-btn
+		// 	z-index: 11
+
+		&-icon
+			border: 2px solid $green
+			border-width: 2px 0
+			position: relative
+			width: 24px
+			flex-grow: inherit
+
+			&:before
+				content: ''
+				display: block
+				width: 100%
+				border-top: 2px solid $green
+				position: absolute
+				top: 50%
+				transform: translateY(-50%)
+
+		&-dropdown-toggle
+			width: 100%
+			display: block
+			text-align: center
+			background: none
+			border: none
+			outline: none
+			height: 100%
+			font-size: $font-size-root
+			font-size: 1rem
+			line-height: $line-height-base
+			padding: 0
+			text-decoration: none
+
+			&:hover,
+			&:focus
+				color: $green
+				outline: none
+
+				#{$this}
+					&__nail,
+					&__nail-item
+						color: lighten(mix(custom-color-yiq($navigation-bgc), $navigation-bgc, $fibo-asymp-xxxl-percentage), $fibo-asymp-l-percentage)
+
+			&:active
+
+				#{$this}
+					&__nail,
+					&__nail-item
+						color: lighten(mix(custom-color-yiq($navigation-bgc), $navigation-bgc, $fibo-asymp-xxxl-percentage), $fibo-asymp-xl-percentage)
+
+		&-dropdown
+			margin-left: -8px
+
+			&.show
+				transform: translate3d(0px, 56px, 0px) !important
+
+		&__search
+			max-width: $container-max-width - $grid-gutter-width
+			margin: 0 auto
+
+			.search
+				&__input,
+				&__submit,
+				&__clear
+					&:focus
+						box-shadow: inset 3px 0 0 0 $gray-300, inset 0 3px 0 0 $gray-300, inset -3px 0 0 0 $gray-300, inset 0 -2px 0 0 $gray-300
+
+					&:active
+						box-shadow: none
+
+		& .custom-font-1:before,
+		& .custom-font-2:before,
+		& .custom-font-3:before,
+		& .custom-font-4:before,
+		& .custom-font-5:before,
+		& .custom-font-6:before,
+		& .custom-font-7:before,
+		& .custom-font-8:before,
+		& .custom-font-cart:before,
+		& .custom-font-cross:before,
+		& .custom-font-eye:before,
+		& .custom-font-logo:before,
+		& .custom-font-magnifer:before,
+		& .custom-font-cart span
+			color: #fff
+
+	&__moby-list,
+	&__moby-info
+		text-align: left
+		border-bottom: 1px solid $gray-border
+
+	&__moby-ap,
+	&__moby-list,
+	&__moby-info
+		display: none
+
+		@media (max-width: 600px)
+			display: block
+
+	&__moby-info
+		padding: 16px 32px
+
+	&__moby-tel
+		display: inline-block
+		vertical-align: top
+		font-size: 20px
+		font-weight: 700
+		margin-bottom: 8px
+
+
+	&__moby-info-btn
+		width: 100%
+
+	&__moby-item
+		width: 100%
+		padding: 12px 36px
+
+	&__moby-link
+		color: $gray-600
+		font-size: 16px
+
+		@media (max-width: 480px)
+			padding: 0 30px 0 36px
+			display: block
+			width: 256px
+			margin: 0 auto
+
+	&__moby-text
+		color: $gray-600
+		font-size: 14px
+
+	&__moby-app
+		border: none
+
+.moby-menu
+	padding: 0
+	margin: 0
+	border: none
+	border-radius: 0
+
+	@media (max-width: 480px)
+		right: 0

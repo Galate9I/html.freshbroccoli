@@ -1,0 +1,522 @@
+.banner
+	height: 360px
+	display: flex
+	margin: 24px auto
+
+	@media(max-width: 960px)
+		flex-wrap: wrap
+		justify-content: space-between
+		height: auto
+
+	&-home
+
+		@media(max-width: 600px)
+			margin: 0
+
+	&.container
+		padding: 0
+
+	&__mini
+		width: 208px
+		min-width: 208px
+		display: flex
+		flex-direction: column
+		border-radius: 8px
+		margin: 0 16px
+		height: 100%
+		overflow: hidden
+
+		@media(max-width: 960px)
+			min-height: 306px
+			max-width: 456px
+			width: calc(50% - 20px)
+			margin: 16px 0 0
+			flex-direction: row
+			min-height: inherit
+			margin: 16px 0
+
+		@media(max-width: 480px)
+			width: 100%
+
+		&:first-child
+
+			@media(max-width: 960px)
+				margin: 16px 4px 0 16px
+
+			@media(max-width: 480px)
+				margin: 16px 8px 0
+
+		&:last-child
+
+			@media(max-width: 960px)
+				margin: 16px 16px 0 4px
+
+			@media(max-width: 480px)
+				margin: 16px 8px 0
+
+		&-img
+			height: 211px
+
+			@media(max-width: 768px)
+				height: 27.475vw
+				flex: 1 1 50%
+
+			@media(max-width: 600px)
+				height: 30vw
+
+			@media(max-width: 480px)
+				flex: inherit
+				min-width: 40%
+				height: 40vw
+
+			& > img
+				height: 100%
+				object-fit: none
+				object-position: bottom center
+
+				@media(max-width: 960px)
+					width: 208px
+
+				@media(max-width: 768px)
+					width: 100%
+					object-fit: cover
+
+				@media(max-width: 480px)
+					max-width: 208px
+					// object-position: center
+
+			.banner__mini-bot &
+				order: 1
+
+				@media(max-width: 960px)
+					order: 0
+
+		&-content
+			padding: 16px
+			text-align: left
+			display: flex;
+			flex-direction: column
+			justify-content: space-evenly
+
+			@media(max-width: 768px)
+				flex: 1 1 50%
+
+			@media(max-width: 600px)
+				padding: 8px
+
+			@media(max-width: 480px)
+				padding: 8px 8px 8px 3vw
+				justify-content: space-evenly
+				flex: inherit
+				flex-grow: 1
+
+		&-title
+			font-family: $lato-bold
+			font-size: 14px
+			font-weight: 400
+			line-height: 20px
+
+			@media(max-width: 600px)
+				font-size: 2.5vw
+
+			@media(max-width: 480px)
+				font-size: 4.16vw
+				font-weight: 700
+				line-height: 7vw
+
+			@media(max-width:320px)
+				font-size: 16px
+				line-height: 24px
+
+		&-price
+			font-family: $lato-bold
+			font-size: 18px
+			font-weight: 700
+			line-height: 18px
+			margin: 8px 0 0
+
+			@media(max-width: 480px)
+				font-size: 20px
+				font-weight: 700
+
+			@media(max-width:320px)
+				font-size: 16px
+
+		&-btn
+			margin: 16px 0 0
+			display: inline-table
+
+			@media(max-width: 600px)
+				display: none
+
+
+
+
+	&__big   // **** Баннер главный на всю ширину страницы **** //
+		height: 100%
+		width: 100%
+		display: block
+		height: 100%
+		overflow: hidden
+
+		@media(max-width: 960px)
+			order: -1
+			height: 360px
+
+			.banner__home &
+				margin: 0 16px
+
+		.banner__home &
+
+			@media(max-width: 600px)
+				margin: 0
+
+		&-list
+			list-style: none
+			height: 100%
+			padding: 0
+			margin: auto
+			max-width: 1582px
+
+			& > li
+				height: 100%
+
+		&-block
+			height: 100%
+			background-size: cover
+			background-repeat: no-repeat
+			background-position: center
+			border-radius: 8px
+			position: relative
+
+			@media(max-width: 600px)
+				border-radius: 0px
+
+		&-points
+			position: absolute
+			width: 100%
+			bottom: 16px
+
+		&-point
+			width: 12px
+			height: 12px
+			border: 4px solid $white
+			border-radius: 100%
+			display: inline-block
+			margin: 0 16px
+
+		&-content
+			display: flex
+			height: 100%
+			align-items: center
+			flex-wrap: wrap
+			// margin: auto
+			justify-content: center
+			max-width: 424px
+			text-align: left;
+
+		&-inner
+			margin: 0
+
+
+		&-title
+			font-size: 24px
+			font-weight: 700
+			line-height: 32px
+			margin: 0 0 24px
+			font-family: $lato-bold
+
+			@media(max-width: 600px)
+				font-size: 20px
+				line-height: 26px
+
+			@media(max-width: 480px)
+				font-size: 28px
+				line-height: 40px
+
+		&-text
+			font-family: $lato-base
+			font-size: 14px;
+			font-weight: 300;
+			line-height: 24px;
+			letter-spacing: 0.28px
+
+		&-label
+			font-size: 128px
+			font-weight: 700
+			line-height: 94px
+			letter-spacing: -5.12px
+			font-family: $lato-bold
+			margin: 0 0 32px
+
+			@media(max-width: 600px)
+				font-size: 107px
+				line-height: 72px
+				margin: 0 0 16px
+
+			@media(max-width: 480px)
+				font-size: 56px
+				line-height: 40px
+
+
+
+		&-btn
+			margin: 16px 0 0
+
+			@media(max-width: 600px)
+				margin: 8px 0 0
+
+			@media(max-width: 600px)
+				display: none
+
+		&-img
+			position: absolute
+			top: 0
+			height: 100%
+
+	&__fon // темный светлый фон *светлый по умолчанию
+
+		&-dark,
+		&-dark:hover
+			color: $white
+
+		&-light,
+		&-light:hover
+			color: $green-1
+
+	&__position // позиционирование контента *center по умолчанию
+
+		&-left
+
+			& .banner__large-content
+				justify-content: flex-start
+				padding: 0 0 0 40px
+
+				@media(max-width: 768px)
+					padding: 0 0 0 16px
+
+				@media(max-width: 480px)
+					padding: 0 0 0 8px
+
+				.banner__home &
+					text-align: left
+
+			& .banner__large-img
+				right: 40px
+
+				@media(max-width: 768px)
+					right: 16px
+
+		&-right
+
+			& .banner__large-content
+				justify-content: flex-end
+				padding: 0 40px 0 0
+
+				@media(max-width: 480px)
+					padding: 0 16px 0 0
+
+				.banner__home &
+					text-align: right
+
+			& .banner__large-img
+				left: 10%
+
+
+
+
+	&__large   // **** Баннер на всю ширину страницы **** //
+		width: 100%
+		display: block
+		overflow: hidden
+
+		@media(max-width: 768px)
+			height: 210px !important
+
+		@media(max-width: 600px)
+			height: auto !important
+
+		&-list
+			list-style: none
+			height: 100%
+			padding: 0
+			margin: auto
+			max-width: 1582px
+
+			& > li
+				height: 100%
+
+		&-block
+			height: 100%
+			background-size: cover
+			background-repeat: no-repeat
+			background-position: center
+
+		&-content
+			display: flex
+			height: 100%
+			align-items: center
+			flex-wrap: wrap
+			// margin: auto
+			justify-content: center
+			max-width: 424px
+
+			@media(max-width: 768px)
+				max-width: 340px
+
+			@media(max-width: 600px)
+				width: 100%
+				max-width: inherit
+
+				& br
+					display: none
+
+		&-wrapp
+			max-width: 1064px
+			width: 100%
+			margin: auto
+			height: 100%
+			position: relative
+			left: -64px
+
+			@media(max-width: 1280px)
+				left: -24px
+
+			@media(max-width: 960px)
+				left: 0
+
+		&-inner
+			margin: 0
+
+
+		&-title
+			font-size: 24px
+			font-weight: 700
+			line-height: 32px
+			margin: 0 0 24px
+			font-family: $lato-bold
+
+			@media(max-width: 768px)
+				font-size: 18px
+				line-height: 24px
+				margin: 0 0 16px
+
+			@media(max-width: 600px)
+				font-size: 40px
+				line-height: 52px
+
+			@media(max-width: 320px)
+				font-size: 32px
+				line-height: 40px
+
+		&-text
+			font-family: $lato-base
+			font-size: 14px;
+			font-weight: 300;
+			line-height: 24px;
+			letter-spacing: 0.28px
+
+			@media(max-width: 768px)
+				font-size: 14px
+				line-height: 16px
+
+			@media(max-width: 600px)
+				font-size: 32px
+				line-height: 35px
+
+			@media(max-width: 320px)
+				font-size: 24px
+				line-height: 32px
+
+		// &-label
+		// 	font-size: 128px
+		// 	font-weight: 700
+		// 	line-height: 94px
+		// 	letter-spacing: -5.12px
+		// 	font-family: $lato-bold
+		// 	margin: 0 0 32px
+
+		// 	@media(max-width: 600px)
+		// 		font-size: 107px
+		// 		line-height: 72px
+		// 		margin: 0 0 16px
+
+		// 	@media(max-width: 480px)
+		// 		font-size: 56px
+		// 		line-height: 40px
+
+
+
+		&-btn
+			margin: 16px 0 0
+			font-family: $lato-bold
+
+			@media(max-width: 768px)
+				padding: 12px 32px
+
+			@media(max-width: 600px)
+				font-size: 32px
+				line-height: 35px
+				margin: 24px 0 0
+
+			@media(max-width: 320px)
+				font-size: 24px
+				line-height: 32px
+
+		&-img
+			position: absolute
+			top: 0
+			height: 100%
+
+			@media(max-width: 600px)
+				position: static
+				margin: 64px 0 0
+				width: 100%
+
+	&__fon // темный светлый фон *светлый по умолчанию
+
+		&-dark,
+		&-dark:hover
+			color: $white
+
+		&-light,
+		&-light:hover
+			color: $green-1
+
+	&__position // позиционирование контента *center по умолчанию
+
+		&-left
+
+			& .banner__large-content
+				justify-content: flex-start
+				padding: 0 0 0 40px
+
+				@media(max-width: 768px)
+					padding: 0 0 0 16px
+
+				@media(max-width: 600px)
+					padding: 96px 8px 0
+
+			& .banner__large-img
+				right: 40px
+
+				@media(max-width: 768px)
+					right: 16px
+
+		&-right
+
+			& .banner__large-content
+				justify-content: flex-end
+				padding: 0 40px 0 0
+
+				@media(max-width: 768px)
+					padding: 0 16px 0 0
+
+				@media(max-width: 600px)
+					padding: 96px 8px 0
+
+			& .banner__large-img
+				left: 40px
+
+				@media(max-width: 768px)
+					left: 16px

@@ -1,0 +1,86 @@
+@import '../../node_modules/bootstrap/scss/_functions'
+@import '../../node_modules/bootstrap/scss/_variables'
+@import '../../node_modules/bootstrap/scss/_mixins'
+@import 'configs/_custom'
+
+.main-footer
+	flex: 1 1 40%
+
+	&__padding
+		display: flex
+		flex-direction: column
+		height: 100%
+
+	&__title
+			color: #2f4b55
+			font-family: $lato-bold
+			font-size: 15px
+			font-weight: 400
+			line-height: 15px
+			color: #2f4b55
+			letter-spacing: 0.6px
+			margin: 0 0 16px
+
+			@media(max-width: 600px)
+				text-align: center
+
+	&__app
+		flex-grow: 1
+
+		&-link
+			font-family: $lato-bold
+			font-size: 13px
+			font-weight: 400
+			line-height: 40px
+			color: #5cadbd
+			letter-spacing: 0.52px
+			margin: 0 0 0 16px
+			height: 48px
+			display: inline-block
+			text-decoration: underline
+
+			@media(max-width: 1280px)
+				display: block
+				margin: 0
+
+			@media(max-width: 480px)
+				margin: 16px 0
+				display: block
+
+		&-img
+			display: inline-block
+			vertical-align: top
+			width: 120px
+			height: 40px
+
+		@media(max-width: 480px)
+				text-align: center
+
+	&__google
+		margin: 0 0 16px
+
+	&__copyright
+
+		@media(max-width: 480px)
+				text-align: center
+
+	&__main-link
+		margin: 0
+		font-family: $lato-bold
+		font-size: 13px
+		font-weight: 400
+		line-height: 13px
+		color: #2f4b55
+		letter-spacing: 0.52px
+
+	&__maps
+		font-family: $lato-bold
+		font-size: 13px
+		font-weight: 400
+		line-height: 13px
+		color: #2f4b55
+		letter-spacing: 0.52px
+		margin: 0 0 16px
+
+		@media(max-width: 480px)
+				text-align: center

@@ -1,0 +1,30 @@
+.shipp__block
+	.shipp__block-wrapp
+		p.shipp__block-title Рассчитайте стоимость вашей доставки прямо сейчас!
+			.shipp__block-calcblock
+				.shipp__block-calc
+					.shipp__block-data
+						label
+							span Выберите ваш город:
+							select(id="siti")
+								span
+								option Город
+								option(data-id="1") Абакан
+								option(data-id="2") Москва
+								option(data-id="3") Норильск
+								option(data-id="4") Ростов-на-Дону
+						label
+							span Укажите адрес доставки:
+							select(id="address" class="")
+								span
+								option Улица, дом, квартира
+					.shipp__block-total Стоимость вашей доставки:
+						span 1000 руб.
+						p
+							b Бесплатно 
+							| при заказе от 1000&nbsp;р.
+				.shipp__block-imgavo
+				.shipp__block-imgcar
+		.shipp__block-btnblock
+			a(href='').btn.btn-success.btn-lg.shipp__block-btn Рассчитать стоимость доставки
+			a(href='').btn.btn-outline-success.btn-lg.shipp__block-btn Перейти к условиям доставки 

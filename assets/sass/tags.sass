@@ -1,0 +1,136 @@
+.tags
+
+	&__action
+		&-item
+			display: inline-block
+			margin: 0 16px 0 0
+
+			& > a
+				padding: 6px 16px
+				border-radius: 16px
+				font-size: 13px
+				line-height: 13px
+				color: #fff
+				background-color: #9687bd
+				font-weight: 400
+				font-family: $lato-bold
+				&[data-tag="loyal"]
+					background-color: transparent
+					border: 1px solid $yellow
+					color: $yellow
+
+	&__label
+		list-style: none
+		display: inline-block
+		margin: 8px
+		position: relative
+
+		& > a > i
+			font-size: 14px
+			line-height: 10px
+
+			@media (max-width: 480px)
+				margin: 2px
+
+		@media (max-width: 480px)
+			padding: 0
+
+		&.active
+
+			&:before 
+				content: 'x'
+				position: absolute
+				line-height: 32px
+				right: 8px
+				color: $white
+				cursor: pointer
+
+			& > a
+				padding-right: 24px
+
+		&:nth-child(3n+1)
+
+			& > a.btn
+				border: 1px solid $green
+				color: $green
+
+				&:hover
+					background-color: $green
+					border: 1px solid $green
+					color: $white
+
+			&.active > a.btn
+				background-color: $green
+				color: $white
+
+		&:nth-child(3n+2)
+
+			& > a.btn
+				border: 1px solid $yellow
+				color: $yellow
+
+				&:hover
+					background-color: $yellow
+					border: 1px solid $yellow
+					color: $white
+
+			&.active > a.btn
+				background-color: $yellow
+				color: $white
+
+		&:nth-child(3n+3) 
+
+			& > a.btn
+				border: 1px solid $purple
+				color: $purple
+
+				&:hover
+					background-color: $purple
+					border: 1px solid $purple
+					color: $white
+
+			&.active > a.btn
+				background-color: $purple
+				color: $white
+
+	&__sort
+		list-style: none
+		display: inline-block
+		margin: 8px
+		position: relative
+
+		.btn
+			color: $gray-600
+
+			&:hover
+				color: $body-color
+
+			&.checked
+				background-color: $gray-bg
+				color: $body-color
+
+		.arrow
+			font-size: 14px
+			line-height: 10px
+
+			@media (max-width: 480px)
+				margin: 2px
+
+		@media (max-width: 480px)
+			padding: 0
+
+	&__type
+		list-style: none
+		display: inline-block
+		margin: 8px
+		position: relative
+
+		& > a > i
+			font-size: 14px
+			line-height: 10px
+
+			@media (max-width: 480px)
+				margin: 2px
+
+		@media (max-width: 480px)
+			padding: 0

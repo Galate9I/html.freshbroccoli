@@ -1,0 +1,792 @@
+@import '../../node_modules/bootstrap/scss/_functions'
+@import '../../node_modules/bootstrap/scss/_variables'
+@import '../../node_modules/bootstrap/scss/_mixins'
+@import 'configs/_custom'
+@import 'mixins/_mixins'
+@import 'mixins/_color'
+@import 'pager'
+@import 'rewiew__list'
+@import 'tags'
+@import 'stars'
+
+.item__cart
+	display: flex
+	flex-wrap: wrap
+	margin: 32px 0 0
+	padding: 0 16px
+
+	/* IMG */
+	&-imgblock
+		margin: 0
+
+		@media (max-width: 960px)
+			width: 40%
+
+		@media (max-width: 768px)
+			max-width: 256px
+
+		@media (max-width: 600px)
+			max-width: calc(100% + 32px)
+			width: calc(100% + 32px)
+			position: relative
+
+	&-photo
+		margin: 0
+		border-radius: 16px
+		overflow: hidden
+
+		@media (max-width: 600px)
+			margin: 0 0 16px
+			margin-left: -32px
+			margin-right: -32px
+
+		& img
+			object-fit: contain
+			object-position: center bottom
+			width: 100%
+			height: 100%
+
+	&-iconzoom
+		margin: 0
+
+	&-gallery
+		
+		@media (max-width: 600px)
+			position: absolute
+			bottom: 24px
+			width: 100%
+			text-align: center
+
+	&-list
+		margin: 16px 0
+		overflow: hidden
+
+		& > li
+			width: 50px
+			height: 50px
+			display: inline-block
+			margin: 2px 4px
+			border-radius: 8px
+			//overflow: hidden
+			cursor: pointer
+
+			@media (max-width: 768px)
+				width: 35px
+				height: 35px
+
+			@media (max-width: 600px)
+				width: 16px
+				height: 16px
+				border: 5px solid $white
+				border-radius: 100%
+				margin: 16px
+
+				&:hover,
+				&:active,
+				&:focus
+					background-color: $white
+
+				&:first-child
+					margin-left: 0
+
+				&:last-child
+					margin-right: 0
+
+			@media (max-width: 480px)
+				margin: 16px 24px 16px 0
+
+			& img
+				width: 100%
+				height: 100%
+				object-fit: contain
+				object-position: center bottom
+
+				@media (max-width: 600px)
+					margin: -24px 0 0 0
+					opacity: 0
+
+		@media (max-width: 768px)
+			display: inline-flex
+			flex-wrap: wrap
+			margin-left: -2px
+			margin-right: -2px
+
+	&-like,
+	&-twit
+		display: inline-block
+		font-family: $lato-bold
+		font-size: 14px
+		font-weight: 400
+		line-height: 24px
+		letter-spacing: .28px
+
+		@media (max-width: 600px)
+			display: none
+
+		& a.btn
+			padding-left: 48px
+			position: relative
+
+			& svg
+				width: 22px
+				height: 22px
+				transform: translateY(-50%)
+				stroke: $gray-600
+				fill: transparent
+				position: absolute
+				left: 16px
+				top: 50%
+
+				@media (max-width: 768px)
+					left: 10px
+
+			@media (max-width: 768px)
+				padding: 8px 16px 8px 40px
+				line-height: 13px
+				font-size: 13px
+
+		&:hover a.btn svg
+			stroke: $white
+
+
+	&-like
+		margin: 0 16px 16px 0
+
+	&-twit
+		margin: 0
+
+	/* infoblock */
+	&-infoblock
+		flex-grow: 1
+		flex: 1
+		padding: 0 32px 32px
+		box-sizing: border-box
+
+		@media (max-width: 768px)
+			padding: 0 0 32px 16px
+
+		@media (max-width: 600px)
+			padding: 0 0 32px 0
+			display: flex
+			flex-direction: column
+			width: 100%
+
+			& > h1
+				margin: 16px 0 0
+				font-size: 40px
+				line-height: 1
+
+				@media (max-width: 480px)
+					font-size: 8vw
+
+	&-info
+
+		@media (max-width: 600px)
+			margin: 32px 0
+
+		@media (max-width: 480px)
+			margin: 16px 0 32px
+
+		& > span
+			font-family: $lato-bold
+			font-size: 16px
+			font-weight: 500
+			line-height: 24px
+			color: $body-color
+			letter-spacing: .32px
+
+			@media (max-width: 600px)
+				font-size: 28px
+				font-weight: 700
+				line-height: 1
+
+		& > ul
+			list-style: none
+
+			& > li
+				font-family: $lato-base
+				font-size: 14px
+				font-weight: 300
+				line-height: 24px
+				color: $body-color
+				letter-spacing: .28px
+				color: #718391
+
+				&:nth-child(n+2)
+					margin: 32px 0 0
+
+				@media (max-width: 600px)
+					font-size: 28px
+					line-height: 1
+
+				@media (max-width: 480px)
+					font-size: 5.5vw
+					margin: 24px 0 0
+
+				& > a
+					font-family: $lato-base
+					font-size: 14px
+					font-weight: 300
+					line-height: 24px
+					color: $teal
+					text-decoration: underline
+					padding: 0 0 0 4px
+					letter-spacing: .28px
+
+					@media (max-width: 600px)
+						font-size: 28px
+						line-height: 1
+
+					@media (max-width: 480px)
+						font-size: 5.5vw
+						padding: 0
+
+		&--title
+
+			& + ul > li
+				margin: 32px 0 0
+
+		&--mini
+
+			& > li
+				display: inline-block
+				margin: 0 16px 0 0
+
+
+	&-label
+		margin: 0
+
+	&-price
+		font-family: $lato-bold
+		font-size: 28px
+		font-weight: 700
+		line-height: 32px
+		color: $green-1
+
+		@media (max-width: 600px)
+			font-size: 40px
+
+		@media (max-width: 480px)
+			font-size: 8vw
+
+		@media (max-width: 320px)
+			font-size: 24px
+
+		& > span
+			font-family: $lato-bold
+			font-size: 18px
+			font-weight: 500
+			line-height: 24px
+			text-decoration: line-through
+			color: $grey
+			letter-spacing: .36px
+			padding: 0 0 0 16px
+
+			@media (max-width: 600px)
+				font-size: 32px
+
+			@media (max-width: 480px)
+				font-size: 5vw
+
+			@media (max-width: 320px)
+				font-size: 14px
+
+	&-cart
+		display: flex
+		margin: 24px 0 0
+		height: 48px
+		border: 1px solid $gray-bg
+		flex-wrap: wrap
+		border-radius: 8px
+		width: 100%
+		max-width: 209px
+
+		@media (max-width: 600px)
+			margin: 32px 0
+			max-width: inherit
+			border: inherit
+			height: 88px
+
+			& .quantity
+				border: 1px solid $gray-bg
+				border-radius: 8px
+				width: 48%
+				margin: 0 2% 0 0
+
+				& > input
+					border: none
+					padding: 24px 8px
+					font-size: 34px
+					line-height: 1
+
+				& .minus
+					border: none
+					top: 50%
+					transform: translate(0, -50%)
+					right: 24px
+
+					&:before
+						content: "—"
+						border: none
+						transform: translate(-6px, -12px)
+						color: $grey
+
+				& .plus
+					border: none
+					top: 50%
+					transform: translate(0, -50%)
+					left: 16px
+
+					&:before
+						content: "+"
+						border: none
+						transform: translate(-6px, -12px)
+						color: $grey
+
+			& .catalog__items-btn
+				border: 1px solid $gray-bg
+				border-radius: 8px
+				width: 48%
+				margin: 0 0 0 2%
+				font-size: 34px
+				background-color: #8CAD26
+				justify-content: center
+
+				& span
+					color: $white
+					flex-grow: 0
+					padding: 0 0 0 8px
+
+				& svg
+					max-width: 56px
+					stroke: #dff08b
+					stroke-width: 2
+
+		@media (max-width: 480px)
+			height: 18vw
+			margin: 32px 0 16px
+
+			& .quantity
+
+				& > input
+					font-size: 5vw
+
+			& .catalog__items-btn
+
+				& span
+					font-size: 6vw
+
+				& svg
+					max-width: 9vw
+
+	&-qty
+		border-radius: 8px
+		border: 1px solid $gray-300
+		color: $gray-600
+		font-family: $lato-bold
+		font-size: 14px
+		font-weight: 400
+		line-height: 24px
+		color: $body-color
+		letter-spacing: .28px
+		max-width: 168px
+		display: inline-block
+		margin: 0 16px 0 0
+
+		& .plus,
+		& .minus
+			width: 15%
+			text-align: center
+			line-height: 44px
+			cursor: pointer
+
+		& .plus
+			border-right: 1px solid $gray-300
+
+		& .minus
+			border-left: 1px solid $gray-300
+
+		& input
+			width: 70%
+			border: none
+			padding: 8px 16px
+
+	&-qtyblock
+		display: flex
+		height: 100%
+
+	&-incart
+		border-radius: 8px
+		background-color: $main-color
+		color: $white
+		font-family: $lato-bold
+		font-size: 14px
+		font-weight: 400
+		line-height: 24px
+		letter-spacing: .28px
+		display: flex
+
+	&-pricebtn,
+	&-cartbtn
+		display: flex
+		align-items: center
+		padding: 0 24px
+
+	&-pricebtn
+		border-right: 1px solid
+
+	&-cartbtn
+		color: $white
+
+	&-stars
+		margin-bottom: 16px
+		display: inline-block
+
+		@media (max-width: 600px)
+			display: none
+
+	&-infostart
+		display: inline-block
+		margin: 0 0 0 24px
+
+		@media (max-width: 600px)
+			display: none
+
+		& > span
+			padding: 0 24px 0 0
+			font-family: $lato-bold
+			font-size: 12px
+			line-height: 24px
+			color: $gray-600
+			font-weight: 300
+
+			& > b
+				padding: 0 0 0 4px
+
+	&-shippinfo
+		background-color: $gray-bg
+		min-height: 40px
+		margin: 24px 0 0
+		padding: 8px 24px 8px 16px
+		border-radius: 8px
+		display: flex
+		position: relative
+		align-items: center
+		width: fit-content
+
+		@media (max-width: 600px)
+			display: none
+
+		& > img
+			width: 30px
+
+		& > span
+			font-family: $lato-base
+			font-size: 14px
+			font-weight: 300
+			line-height: 18px
+			color: $green-1
+			letter-spacing: 0.28px
+			padding: 0 0 0 24px;
+
+	&-tags
+		margin: 16px 0 16px -4px
+
+		@media (max-width: 600px)
+			order: 1
+			margin: 0 0 0 -4px
+
+		& .btn
+			border: 1px solid $purple
+			color: $purple
+			padding: 8px
+
+			@media (max-width: 600px)
+				font-size: 28px
+				line-height: 1
+				color: #5dae96
+				text-decoration: underline
+				padding: 0
+				border: none
+				font-weight: 400
+				font-family: $lato-bold
+				white-space: inherit
+
+				&:after
+					content: ","
+
+			@media (max-width: 480px)
+				font-size: 5.5vw
+
+			&:hover
+				background-color: $purple
+				color: $white
+
+				@media (max-width: 600px)
+					background-color: inherit
+					color: inherit
+
+		& .tags__type
+
+			@media (max-width: 768px)
+				margin: 4px
+
+			@media (max-width: 600px)
+				margin: 0 0 16px
+
+				&:after
+					content: "\00A0"
+
+	&-label
+		margin: 8px 0
+
+		@media (max-width: 600px)
+			display: none
+
+		& > ul > li
+			margin: 8px 16px 8px 0
+
+			@media (max-width: 768px)
+				margin: 8px 8px 8px 0
+
+	&-labelinfo
+		margin: 0 0 0 8px
+		display: inline-block
+
+		& > a
+			font-family: Lato
+			font-size: 12px
+			font-weight: 400
+			line-height: 24px
+			text-decoration: underline
+			color: #718391
+			letter-spacing: 0.24px
+
+	/* TABS */
+
+	&-tabs
+		flex: 1 1 100%
+		border-top: 1px solid $grey
+		padding: 40px 0 0
+		margin: 32px 0 0
+
+		@media (max-width: 600px)
+			border: none
+			padding: 0
+			margin: 0 0 64px
+			width: 100%
+
+		& > input
+			display: none
+
+			&:checked
+
+				& + label
+					color: $main-color
+					letter-spacing: .32px
+					border-bottom: 1px solid $main-color
+
+				& + ul
+
+					& > li
+						display: block
+
+			&[in*="1"]:checked ~ ul > li[in*="1"],
+			&[in*="2"]:checked ~ ul > li[in*="2"],
+			&[in*="3"]:checked ~ ul > li[in*="3"],
+			&[in*="4"]:checked ~ ul > li[in*="4"],
+			&[in*="5"]:checked ~ ul > li[in*="5"]
+				display: block
+				height: auto
+
+	&-tab
+		color: $body-color
+		font-family: $lato-base
+		font-size: 14px
+		line-height: 18px
+		letter-spacing: .28px
+		max-width: 840px
+
+		@media (max-width: 600px)
+			margin: 0 -32px
+			padding: 32px 16px 0
+			border-top: 1px solid $gray-500
+
+			&--contblock
+				padding: 0
+				display: none
+				height: 0
+				opacity: 0
+				transition: 0s
+				overflow: hidden
+				cursor: pointer
+
+				&.open
+
+					display: block
+					height: auto
+					padding: 0 16px 32px
+					opacity: 1
+					transition: .3s linear
+
+					& .item__cart-tab--cont
+						display: block
+
+					.item__cart-rewiew + &
+						padding: 0 8px
+						max-height: 100%
+
+
+			&--cont
+				display: none
+
+			// &:hover
+
+			// 	& .item__cart-tab--contblock
+			// 		//display: block
+			// 		height: auto
+			// 		padding: 32px 0
+			// 		opacity: 1
+			// 		//transition: .1s linear
+
+			// 	& .item__cart-tab--cont
+			// 		display: block
+
+		&--name
+			max-width: 840px
+			display: none
+
+			@media (max-width: 600px)
+				display: block
+				font-size: 28px
+				font-family: $lato-bold
+				font-weight: 700
+				padding: 0 16px 32px
+				border-bottom: 1px solid $white
+
+				.item__cart-tab.o &
+					border-bottom: 1px solid $gray-500
+
+			@media (max-width: 600px)
+				font-size: 8vw
+
+	&-tabname
+		margin: 0 48px 0 0
+		font-family: $lato-bold
+		font-size: 16px
+		font-weight: 500
+		line-height: 24px
+		letter-spacing: .32px
+		color: $green-1
+		cursor: pointer
+
+		@media (max-width: 768px)
+			margin: 0 24px 0 0
+
+		@media (max-width: 600px)
+			display: none
+
+		&:hover
+			color: $gray-600
+			letter-spacing: .32px
+
+	&-tabcontent
+		padding: 32px 0 0
+
+		@media (max-width: 600px)
+			padding: 0
+		
+		& > li
+			display: none
+			height: 0
+
+			@media (max-width: 600px)
+				display: block
+				height: auto
+
+	&-tablist
+		display: flex
+		justify-content: space-between
+
+		@media (max-width: 480px)
+			flex-wrap: wrap
+
+		& > li
+			display: flex
+			flex-direction: column
+			align-items: center
+			padding: 0 8px
+			color: $green-1
+			font-family: $lato-base
+			font-size: 14px
+			line-height: 24px
+			letter-spacing: 0.28px
+
+			@media (max-width: 480px)
+				align-items: end
+				width: 50%
+				text-align: left
+				padding: 0 0px 24px 8px
+
+			& span
+				font-family: $lato-bold
+				font-weight: 600
+				line-height: 24px
+				font-size: 18px
+				letter-spacing: 0.36px
+
+	&-kkal
+		display: inline-block
+		background-color: #eee
+		padding: 24px 48px
+		margin: 16px 0 0
+		border-radius: 8px
+		min-width: 90%
+
+		@media (max-width: 768px)
+			min-width: 100%
+			width: 100%
+
+		@media (max-width: 480px)
+			padding: 24px 16px 0
+
+	&-rewiew
+		border-top: 1px solid $gray-500
+		border-bottom: 1px solid $gray-500
+		display: inline-block
+		width: 100%
+		padding: 40px 0
+		margin: 32px 0 64px
+
+		@media (max-width: 600px)
+			border: none
+			padding: 0
+			margin: 0
+			cursor: pointer
+
+			& h2
+				font-size: 28px
+				font-family:  $lato-bold
+				font-weight: 700
+				padding: 32px
+				border-bottom: 1px solid $grey
+				border-top: 1px solid $grey
+				margin: 0 -32px
+
+		&-add
+			margin: 16px 0 0 0
+
+			@media (max-width: 600px)
+				width: 100%
+				font-size: 32px
+				font-family: $lato-bold
+				font-weight: 400
+				padding: 32px 0
+				margin: 32px 0
+
+			@media (max-width: 480px)
+				font-size: 8vw
+
+		&--all
+			@media (max-width: 600px)
+				display: none

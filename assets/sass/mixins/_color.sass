@@ -1,0 +1,15 @@
+@import '../configs/_custom'
+
+// Color contrast
+@function custom-color-yiq($if-color, $wish-color: $white, $alter-color: $black)
+	$_color: $wish-color
+	$r: red($if-color)
+	$g: green($if-color)
+	$b: blue($if-color)
+
+	$yiq: (($r * 299) + ($g * 587) + ($b * 114)) / 1000
+
+	@if ($yiq >= 185) // Тут меняется порог переключения цвета шрифта в кнопке в зависимости от её же цвета background-color
+		$_color: $alter-color
+
+	@return $_color

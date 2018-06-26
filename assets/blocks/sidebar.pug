@@ -1,0 +1,272 @@
+-
+    var href = 'javascript:void(0);',
+        group = {
+            name: 'catalog',
+            'Выпускной': {
+                href: href,
+                url: ''
+            },
+            'Сезон гриль': {
+                href: href,
+                url: ''
+            },
+            'Товары для животных': {
+                href: href,
+                url: '',
+                class: {
+                    'Корм для кошек': {
+                        href: href,
+                        url: '',
+                        type: {
+                            'Влажный корм': {
+                                href: href,
+                                url: ''
+                            },
+                            'Сухой корм': {
+                                href: href,
+                                url: ''
+                            }
+                        }
+                    },
+                    'Корм для собак': {
+                        href: href,
+                        url: '',
+                        type: {
+                            'Консервы': {
+                                href: href,
+                                url: ''
+                            },
+                            'Сухой корм': {
+                                href: href,
+                                url: ''
+                            }
+                        }
+                    },
+                    'Наполнители для туалетов': {
+                        href: href,
+                        url: '',
+                        type: {
+                            'Впитывающий': {
+                                href: href,
+                                url: ''
+                            },
+                            'Комкующийся': {
+                                href: href,
+                                url: ''
+                            }
+                        }
+                    }
+                }
+            },
+            'Фрукты, ягоды': {
+                href: href,
+                url: '',
+            },
+            'Молочные продукты': {
+                href: href,
+                url: '',
+            },
+            'Мясо, птица, яйца': {
+                href: href,
+                url: '',
+            },
+            'Рыба, морепродукты': {
+                href: href,
+                url: '',
+            },
+            'Мясная гастрономия': {
+                href: href,
+                url: '',
+            },
+            'Хлеб и свежая выпечка': {
+                href: href,
+                url: '',
+                class: {
+                    'Корм для кошек': {
+                        href: href,
+                        url: '',
+                        type: {
+                            'Влажный корм': {
+                                href: href,
+                                url: ''
+                            },
+                            'Сухой корм': {
+                                href: href,
+                                url: ''
+                            }
+                        }
+                    },
+                    'Корм для собак': {
+                        href: href,
+                        url: '',
+                        type: {
+                            'Консервы': {
+                                href: href,
+                                url: ''
+                            },
+                            'Сухой корм': {
+                                href: href,
+                                url: ''
+                            }
+                        }
+                    },
+                    'Наполнители для туалетов': {
+                        href: href,
+                        url: '',
+                        type: {
+                            'Впитывающий': {
+                                href: href,
+                                url: ''
+                            },
+                            'Комкующийся': {
+                                href: href,
+                                url: ''
+                            }
+                        }
+                    }
+                }
+            },
+            'Орехи, сухофрукты': {
+                href: href,
+                url: '',
+            },
+            'Бакалея': {
+                href: href,
+                url: '',
+            },
+            'Соусы, преправы': {
+                href: href,
+                url: '',
+            },
+            'Консервация': {
+                href: href,
+                url: '',
+            },
+            'Чай, кофе, какао': {
+                href: href,
+                url: '',
+            },
+            'Подарки': {
+                href: href,
+                url: '',
+            }
+        },
+        tags = {
+            'Товары дня': {
+                href: href,
+                url: ''
+            },
+            'Суперцена': {
+                href: href,
+                url: ''
+            },
+            'Акция': {
+                href: href,
+                url: '',
+            },
+            'Хит продаж': {
+                href: href,
+                url: '',
+            },
+            'Акция': {
+                href: href,
+                url: '',
+            }
+        },
+        country = {
+            'Россия': {
+                href: href,
+                url: ''
+            },
+            'Дагестан': {
+                href: href,
+                url: ''
+            },
+            'Узбекистан': {
+                href: href,
+                url: '',
+            },
+            'Таиланд': {
+                href: href,
+                url: '',
+            },
+            'Китай': {
+                href: href,
+                url: '',
+            }
+        }
+    ;
+
+block left_sidebar
+
+    
+
+    if price && typeof price === 'object'
+        .sidebar__left-price.sidebar__left-group
+
+
+    .sidebar__left-tags.sidebar__left-group
+        .sidebar__left-name.dropdown.toggle.open Цена (руб.)
+        .sidebar__left-blockwrap.dropwrap
+            .sidebar__left-block.dropblock
+                .sidebar__left-blocklist
+                    .sidebar__left-list.filter__range
+                        span от
+                        input.filter__range-min(value="18")
+                        span до
+                        input.filter__range-max(value="5000")
+                        #slider-range.filter__range-slider
+
+    .sidebar__left-tags.sidebar__left-group
+        .sidebar__left-name.dropdown.toggle.open Наши предложения
+        .sidebar__left-blockwrap.dropwrap
+            .sidebar__left-block.dropblock
+                .sidebar__left-blocklist
+                    ul.sidebar__left-list
+                        li
+                            label.check-btn
+                                input(type="checkbox")
+                                span.checkbox-new
+                                span Товар дня
+                        li
+                            label.check-btn 
+                                input(type="checkbox")
+                                span.checkbox-new
+                                span Суперцена
+                        li
+                            label.check-btn 
+                                input(type="checkbox")
+                                span.checkbox-new
+                                span Акция
+                        li
+                            label.check-btn 
+                                input(type="checkbox")
+                                span.checkbox-new
+                                span Хит продаж
+
+    if country && typeof group === 'country'
+        .sidebar__left-country
+
+
+    .sidebar__left-catalog.sidebar__left-group
+        .sidebar__left-name.dropdown.toggle Каталог
+        .sidebar__left-blockwrap.dropwrap
+            .sidebar__left-block.dropblock
+                each group__val, group__key in group
+                    div(
+                    class='sidebar__left-title' + (typeof group__val.class === 'object' ? ' dropdown' : '') + ''
+                    )= group__key
+                    if group__val && typeof group__val === 'object'
+                    .sidebar__left-blocklist.dropwrap
+                        ul.sidebar__left-list
+                            if group__val.class && typeof group__val.class === 'object'
+                                each class__val, class__key in group__val.class
+                                    li
+                                        label.check-btn               
+                                            input(type="checkbox")
+                                            span.checkbox-new
+                                            span= class__key
+                                    ul.sidebar__left-typelist
+                                        if class__val.type && typeof class__val.type === 'object'
+                                            each type__val, type__key in class__val.type
+                                                li= type__key      

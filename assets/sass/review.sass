@@ -1,0 +1,171 @@
+.review
+	text-align: left
+
+	.stars
+		pointer-events: none
+
+	&__list
+		display: flex
+		padding: 0
+		margin: 0 -8px
+
+		@media(max-width: 768px)
+			flex-direction: column-reverse
+
+	&__item
+		border-radius: 8px
+		list-style: none
+		display: inline-block
+		vertical-align: top
+		margin: 0 8px
+		max-width: 265px
+
+		@media(max-width: 480px)
+			max-width: 220px
+
+		&:focus
+			outline: none
+
+		&--info
+			width: 25%
+			display: flex
+			flex-direction: column
+			justify-content: space-between
+			align-content: space-between
+			max-width: 345px
+
+			@media(max-width: 1440px)
+				width: 30%
+
+			@media(max-width: 800px)
+				width: 50%
+
+			@media(max-width: 768px)
+				margin: 0 auto
+
+			@media(max-width: 600px)
+				width: 80%
+
+	&__block-list
+		width: 80%
+		display: flex
+		justify-content: space-between
+		align-items: center
+		margin: 0 -8px
+
+		@media(max-width: 1440px)
+			width: 70%
+
+		@media(max-width: 800px)
+			width: 50%
+
+		@media(max-width: 768px)
+			margin-bottom: 15px
+			width: auto
+
+		.review__text
+			height: 212px
+			overflow: hidden
+
+		.slick-arrow
+			@media(max-width: 1440px)
+				margin: 0 6px
+
+	&__info,
+	&__wrapp
+		border-radius: 8px
+		padding: 32px 24px
+		box-sizing: border-box
+		width: 100%
+
+	&__info
+		@media(max-width: 768px)
+			display: none
+
+	&__wrapp
+		background-color: $gray-bg
+		padding: 16px
+		display: flex
+		flex-direction: column
+
+	&__info
+		border: 1px dashed $green
+		margin: 0 0 16px
+
+		@media(max-width: 1600px)
+			padding: 16px
+			margin-bottom: 16px
+
+		.review__text
+			margin-bottom: 0
+
+	&__title
+		font-family: $lato-base
+		color: $green
+		font-size: 16px
+		font-weight: 400
+		letter-spacing: .32px
+
+	&__data
+		color: $gray-500
+		font-family: $lato-base
+		font-size: 12px
+		font-weight: 400
+		letter-spacing: 1px
+		margin: 16px 0
+
+	&__text
+		color: $body-color
+		font-family: $lato-base
+		font-size: 13px
+		font-weight: 300
+		line-height: 24px
+		letter-spacing: .26px
+		flex-grow: 1
+		margin: 0 0 16px
+
+	&__btn-wrap
+		display: flex
+		justify-content: space-between
+
+		@media(max-width: 1600px)
+			flex-wrap: wrap
+
+
+	&__btn
+		width: 48%
+		align-items: center
+		display: inline-block
+		margin-right: 8px
+		font-family: $lato-base
+		font-size: 14px
+		font-weight: 400
+		line-height: 29px
+		letter-spacing: .28px
+		height: 48px
+
+		&:last-child
+			margin-right: 0
+
+		@media(max-width: 1600px)
+			margin-right: 0
+			margin-bottom: 10px
+			width: 100%
+	&__name
+		color: $body-color
+		font-family: $lato-base
+		font-size: 16px
+		font-weight: 500
+		letter-spacing: 1px
+
+	&__link
+		color: $dark-main-color
+		font-family: $lato-base
+		font-size: 14px
+		font-weight: 400
+		letter-spacing: .28px
+
+		&:hover
+			color: $light-main-color
+			text-decoration: none
+

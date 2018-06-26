@@ -1,0 +1,145 @@
+@import '../../node_modules/bootstrap/scss/_functions'
+@import '../../node_modules/bootstrap/scss/_variables'
+@import '../../node_modules/bootstrap/scss/_mixins'
+@import 'configs/_custom'
+@import 'mixins/_icon'
+
+.main-header
+	$this: &
+	border-bottom: 1px solid $gray-300
+
+	@media (max-width: 600px)
+		display: none
+
+	&__logo
+		$logo-width: 127.73
+		$logo-height: 37
+		+icon-size ($logo-width, $logo-height, $grid-gutter-width)
+		display: block
+		text-decoration: none
+		color: $green
+
+		&:hover,
+		&:focus
+			color: $green
+			text-decoration: inherit
+
+		@media (min-width: $l)
+			&~ #{$this}__slogan
+				$ml: 24px;
+				margin-left: $ml
+				margin-left: calc((#{$xxxl} - 100vw) * -#{number(str-replace(#{$ml}, unit($ml), '')) / (number(str-replace(#{$xxxl}, unit($xxxl), '')) - number(str-replace(#{$l}, unit($l), '')))} + #{$ml})
+
+		$hr: 0
+
+		@media (min-width: $xxxl)
+			&~ #{$this}__slogan
+				$ml: 24px;
+				margin-left: $ml
+
+		$hr: 0
+
+	&__limit
+		max-width: $xxxl
+		margin: 0 auto
+		padding: 0 $grid-gutter-width / 2
+
+	&__row
+		&:not(:empty)
+			margin: '-#{$grid-gutter-width}' / 8 '-#{$grid-gutter-width}' / 4
+
+	&__align
+		display: flex
+		flex-wrap: wrap
+		align-items: center
+		justify-content: center
+		> *
+			&:not(script)
+				padding: 0 '#{$grid-gutter-width}' / 4
+				margin: $grid-gutter-width / 8 0
+
+	&__padding
+		padding: $grid-gutter-width / 2 0
+
+	&__brand-row
+		&:not(:empty)
+			margin: '-#{$grid-gutter-width}' / 8 '-#{$grid-gutter-width}' / 4
+
+	&__brand-align
+		display: flex
+		flex-wrap: wrap
+		align-items: center
+		justify-content: center
+		
+		> *
+			&:not(script)
+				padding: 0 '#{$grid-gutter-width}' / 4
+				margin: $grid-gutter-width / 8 0
+
+	&__slogan
+		text-align: center
+		font-size: 13px
+
+	&__phone
+		display: inline-block
+		line-height: 1
+		font-weight: 500;
+		color: $body-color
+		font-size: $font-size-base
+
+	&__box
+		&~&
+			&:not(:empty)
+				margin-top: $grid-gutter-width / 4
+
+	&__retail
+
+		@media (max-width: 480px)
+			display: none
+
+	&__retail-row
+		&:not(:empty)
+			margin: '-#{$grid-gutter-width}' / 8 '-#{$grid-gutter-width}' / 4
+
+	&__retail-align
+		display: flex
+		flex-wrap: wrap
+		justify-content: center
+		align-items: center
+
+		> *
+			&:not(script)
+				padding: 0 '#{$grid-gutter-width}' / 4
+				margin: $grid-gutter-width / 8 0
+
+	&__address-row
+		&:not(:empty)
+			margin: '-#{$grid-gutter-width}' / 16 '-#{$grid-gutter-width}' / 4
+
+	&__address-align
+		display: flex
+		flex-wrap: wrap
+		justify-content: center
+		align-items: center
+		> *
+			&:not(script)
+				padding: 0 '#{$grid-gutter-width}' / 4
+				margin: $grid-gutter-width / 16 0
+
+	&__address-slog
+		$fz: 12px
+		font-size: $fz
+		font-size: $fz / $font-size-base + rem
+		color: $gray-600
+		&~&
+			position: relative
+			&:before
+				content: '|'
+				position: absolute
+				right: 100%
+				width: 1px
+				margin-right: .5px
+
+	@media (min-width: $l)
+		&__align
+			justify-content: space-between

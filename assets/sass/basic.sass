@@ -1,0 +1,411 @@
+@import 'configs/custom'
+@import 'mixins/_mixins'
+
+// ----------  Root  ----------
+
+html
+	//#{--scroll-width}: 15px
+	font-size: $font-size-root
+	height: 100%
+	overflow-x: hidden
+
+body
+	min-height: 100%
+	font-size: 100%
+	min-width: 320px
+	overflow-x: hidden
+
+.container
+	@media(max-width: 480px)
+		padding-right: 8px;
+		padding-left: 8px;
+
+/******************************************/
+// ----------  TYPOGRAPHY  ----------
+
+h2,
+.h2
+	font-weight: 500
+
+h3,
+.h3
+	font-weight: 300
+h4,
+.h4
+	font-weight: 500
+
+h5,
+.h5
+	font-weight: normal
+
+h6,
+.h6
+	font-weight: normal
+
+b,
+strong
+	font-family: $lato-bold
+	font-weight: 700
+
+a
+	&:hover
+		text-decoration: none
+
+	&:active,
+	&:focus
+		outline: none
+		box-shadow: none
+
+a,
+.btn,
+input
+	&:active,
+	&:focus
+		outline: none
+		box-shadow: none
+
+ul
+	margin: 0
+	padding: 0
+	list-style: none
+
+p
+	margin: 0 0 16px
+
+
+/******************************************/
+/**** FORM ****/
+
+label
+	position: relative
+
+.quantity
+	height: 100%
+	width: 50%
+	position: relative
+	//max-width: 98px
+
+	&:focus
+		outline: none
+
+
+	& > input
+		width: 100%
+		height: 100%
+		border: none
+		background-color: transparent
+		padding: 8px 28px 8px 8px
+		text-align: center
+		border-right: 1px solid #e2e2e2
+		border-radius: 0
+
+		@media (max-width: 480px)
+			font-size: .8em
+
+.plus,
+.minus
+	width: 0
+	height: 0
+	border: 5px solid transparent
+	border-top-color: $body-color
+	position: absolute
+	right: 8px
+	text-align: center
+	font-size: 23px
+	cursor: pointer
+
+.plus:before,
+.minus:before
+	content: ''
+	width: 0
+	height: 0
+	border: 6px solid transparent
+	border-top-color: $white
+	display: inline-block
+	-webkit-transform: translate(-6px, -17px)
+
+.plus:hover,
+.minus:hover
+	border-top-color: $main-color
+
+.plus
+	top: 8px  
+	transform: rotate(180deg) translate(0, 5px)
+
+.minus
+	bottom: 8px
+	transform: rotate(0) translate(0, 5px)
+
+tooltips
+	text-align: center
+
+
+
+/* new select */
+
+select, 
+.new-select
+	@include arrow-top
+
+	margin: 4px 0 8px
+	padding: 16px 32px 16px 16px
+	border: 1px solid $gray-300
+	border-radius: 4px
+	width: 100%
+	background-color: $white
+	-webkit-appearance: none
+	-moz-appearance: none
+	appearance: none
+	color: $gray-400
+	position: relative
+	display: inline-table
+	cursor: pointer
+
+	& > option
+		color: $body-color
+
+		&:first-child
+			color: $gray-400
+
+	&[data-selected]
+		color: $black
+select
+	display: none
+	color: $gray-400
+
+.new-select
+	color: $gray-400
+
+	&.open
+		border-radius: 4px 4px 0 0
+		box-shadow: 2px 2px 1px rgba(52, 62, 69, .18)
+
+	&:not([rel="0"]):not([rel=""])
+		color: $body-color
+
+.new-options
+	display: none
+	padding: 16px 32px 8px 16px
+	border: 1px solid $gray-300
+	border-radius: 0 0 4px 4px
+	position: absolute
+	z-index: 10
+	width: 100%
+	background-color: $white
+	box-shadow: 2px 2px 1px rgba(52, 62, 69, .18)
+	top: calc(100% - 9px)
+
+	.open + &
+		display: block
+
+	& > li
+		list-style: none
+		margin: 0 0 8px
+		cursor: pointer
+
+		&:first-child
+			color: $gray-400
+			cursor: default
+
+
+
+
+/* input */
+
+input
+	padding: 11px 24px
+	border-radius: 8px
+	box-shadow: none
+	border: 1px solid $gray-300
+	background-color: $white
+	text-align: left
+	font-family: $lato-bold
+	font-size: 14px
+	font-weight: 500
+	line-height: 24px
+	letter-spacing: .28px
+	color: $body-color
+
+	&::-webkit-input-placeholder
+		color: $gray-400
+		font-weight: 300
+
+	&::-moz-placeholder
+		color: $gray-400
+		font-weight: 300
+
+	&:-moz-placeholder
+		color: $gray-400
+		font-weight: 300
+
+	&:-ms-input-placeholder
+		color: $gray-400
+		font-weight: 300
+
+	&:active,
+	&:focus
+		color: $black
+
+
+
+/* new checkbox */
+
+label.check-btn
+	display: flex;
+	align-items: center
+	margin: 0
+
+	& > input[type="checkbox"]
+		display: none
+
+		& + .checkbox-new
+			display: inline-block
+			border: 1px solid $gray-500
+			border-radius: 4px
+			margin: 0 8px 0 0
+			width: 16px
+			height: 16px
+			box-sizing: border-box
+			background-color: $white
+			cursor: pointer
+
+		&:checked + .checkbox-new
+			background-color: $green
+
+
+
+
+
+/******************************************/
+/**** OTHER ****/
+
+/* dropdown */
+
+.dropdown
+	cursor: pointer
+
+	&.open + .dropwrap
+		height: auto
+		display: inline;
+
+.dropwrap
+	height: 0
+	overflow: hidden
+	transition: .3s linear
+
+
+.boxShow-content.open
+	max-height: 1000px
+	transition: max-height .5s;
+// will-change: transform
+// transform: scaleY(1)
+// transform-origin: center top
+// transition: transform 1s, position 1s
+// position: static
+
+.boxShow-content.dropdown-menu.open
+	display: block
+
+.collapsing
+	transition: height 0.5s
+
+
+
+
+// ----------  Basic  ----------
+
+.container-fluid--limited
+	max-width: $xxxl
+	margin: 0 auto
+	width: auto
+
+// ---------- FPS Accelerator  ----------
+
+.disable-hover
+	pointer-events: none
+	*
+		pointer-events: none
+
+
+body::-webkit-scrollbar-track,
+.sidebar__left-blocklist::-webkit-scrollbar-track,
+.menu__class-container::-webkit-scrollbar-track,
+.menu__type-container::-webkit-scrollbar-track,
+.menu__floats-banner::-webkit-scrollbar-track
+	-webkit-box-shadow: inset 0 0 1px $gray-500
+	border-radius: 10px
+
+body::-webkit-scrollbar,
+.sidebar__left-blocklist::-webkit-scrollbar,
+.menu__class-container::-webkit-scrollbar,
+.menu__type-container::-webkit-scrollbar,
+.menu__floats-banner::-webkit-scrollbar
+	width: 6px
+	background-color: #c9c9c9e3
+	border-radius: 10px
+
+body::-webkit-scrollbar-thumb,
+.sidebar__left-blocklist::-webkit-scrollbar-thumb,
+.menu__class-container::-webkit-scrollbar-thumb,
+.menu__type-container::-webkit-scrollbar-thumb,
+.menu__floats-banner::-webkit-scrollbar-thumb
+	border-radius: 10px
+	background-color: $iron
+	box-shadow: 1px 5px 4px #a9a9aa
+
+
+/*** tooltip ***/
+
+.tooltip-inner
+	background-color: #fff
+	border: 1px solid #808080
+	opacity: 1
+	color: #2f4b55
+	font-family: $lato-base
+	font-size: 12px
+	font-weight: 300
+	letter-spacing: 0.24px
+	padding: 8px
+	border-radius: 8px
+
+	.bs-tooltip-top &
+		top: -4px
+		position: relative
+
+.tooltip.bs-tooltip-right
+	margin-left: 5px
+
+.tooltip.bs-tooltip-right .arrow
+	left: -2px
+
+.tooltip.bs-tooltip-top .arrow
+	bottom: 4px
+	z-index: 10
+
+.tooltip.bs-tooltip-right .arrow::before
+	border-right-color: #808080
+	border-width: 7px 7px 7px 0;
+
+.tooltip.bs-tooltip-right .arrow::after
+	content: ""
+	position: absolute
+	border-color: transparent
+	border-style: solid
+	border-width: 7px 7px 7px 0
+	border-right-color: $white
+	margin-top: -3px
+	margin-left: 2px
+
+.tooltip.bs-tooltip-top .arrow::before
+	border-top-color: #808080
+	border-width: 7px 7px 7px 7px
+
+.tooltip.bs-tooltip-top .arrow::after
+	content: ""
+	position: absolute
+	border-color: transparent
+	border-style: solid
+	border-width: 7px 7px 7px 7px
+	border-top-color: $white
+	margin-top: -2px
+	margin-left: -3px

@@ -1,0 +1,57 @@
+// @import '../../node_modules/bootstrap/scss/_variables'
+@import 'mixins/_font'
+
+// ----------  Fonts config  ----------
+
+$font-name: 'Lato'
+$font-path: '../fonts/Lato/'
+
+
+// ----------  Lato  ----------
+
++font-face($font-name, '#{$font-path}Lato-Hairline',       normal, 100)
++font-face($font-name, '#{$font-path}Lato-HairlineItalic', italic, 100)
++font-face($font-name, '#{$font-path}Lato-Thin',           normal, 200)
++font-face($font-name, '#{$font-path}Lato-ThinItalic',     italic, 200)
++font-face($font-name, '#{$font-path}Lato-Light',          normal, 300)
++font-face($font-name, '#{$font-path}Lato-LightItalic',    italic, 300)
++font-face($font-name, '#{$font-path}Lato-Regular',        normal, normal)
++font-face($font-name, '#{$font-path}Lato-Italic',         italic, normal)
++font-face($font-name, '#{$font-path}Lato-Medium',         normal, 500)
++font-face($font-name, '#{$font-path}Lato-MediumItalic',   italic, 500)
++font-face($font-name, '#{$font-path}Lato-Semibold',       normal, 600)
++font-face($font-name, '#{$font-path}Lato-SemiboldItalic', italic, 600)
++font-face($font-name, '#{$font-path}Lato-Bold',           normal, bold)
++font-face($font-name, '#{$font-path}Lato-BlackItalic',    italic, bold)
++font-face($font-name, '#{$font-path}Lato-Black',          normal, 900)
++font-face($font-name, '#{$font-path}Lato-BlackItalic',    italic, 900)
+
+
+// ----------  Custom font  ----------
+
+@import 'utilities/_custom-font'
+
+
+// ----------  SpriteSmith  ----------
+
+.sprite-smith [class*='icon-']
+	display: inline-block
+
+
+// ----------  Font icon  ----------
+
+[class*='custom-font-']
+	display: inline-block
+	line-height: 1
+
+	&:before
+		display: block
+
+
+@font-face
+	font-family: 'GothamPro-Bold'
+	src: url('../fonts/GothamPro/GothamProBold.eot')
+	src: url('../fonts/GothamPro/GothamProBold.eot') format('eot'), url('../fonts/GothamPro/GothamProBold.woff') format('woff'), url('../fonts/GothamPro/GothamProBold.ttf') format('truetype')
+	font-weight: normal
+	font-style: normal
+

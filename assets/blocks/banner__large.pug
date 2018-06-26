@@ -1,0 +1,16 @@
+a(href="" class="banner__position-left banner__fon-"+ theme +"" style="background-color: "+ bgcolor +"; height: "+ height +"").banner__large
+	ul.banner__large-list
+		li
+			.banner__large-block(style="background-image: url('"+ ind +"')")
+				.banner__large-wrapp
+					.banner__large-content
+						.banner__large-inner
+							if title
+								.banner__large-title!= title
+							if text
+								.banner__large-text!= text
+							if label
+								.banner__large-label= label
+							.btn.btn-lg.banner__large-btn(style="color:"+ btn_color +"" class="btn-"+ btn_class +"")= btn_text
+					if imgurl
+						img.banner__large-img(src=""+ imgurl +"")

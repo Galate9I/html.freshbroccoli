@@ -1,0 +1,28 @@
+-
+	var href = 'javascript:void(0);',
+		dwarfLinks = {
+		'О компании':          '' + href + '',
+		'Оплата':              '' + href + '',
+		'Доставка':            '' + href + '',
+		'Гарантия качества':   '' + href + '',
+		'Вопрос-ответ':        '' + href + '',
+		'Новости':             '' + href + '',
+		'Фрукты в офис':       '' + href + '',
+		'Мелкий опт и HoReCa': '' + href + '',
+		'Партнерам':           '' + href + '',
+		'Социальные проекты.': '' + href + '',
+		'Вопрос-ответ.':       '' + href + '',
+		'Новости.':            '' + href + '',
+		'Фрукты в офис.':      '' + href + '',
+		'Мелкий опт и HoReCa.':'' + href + ''
+	};
+
+block menu-dwarf
+	.menu-dwarf
+		.menu-dwarf__padding.container
+			.menu-dwarf__row
+				.menu-dwarf__title Меню
+				.menu-dwarf__align
+					each val, link in dwarfLinks
+						.menu-dwarf__item
+							a.menu-dwarf__link(href='' + val + '')= link

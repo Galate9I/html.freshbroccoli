@@ -1,0 +1,15 @@
+a(href="").banner__large.banner__fon-dark.banner__position-left
+		ul.banner__large-list
+			li
+				.banner__large-block(style="background-image: url('images/ban1.jpg')")
+					.banner__large-content
+						.banner__large-wrap
+							.banner__large-title Сезон винограда открыт.
+								br
+								| Вперед за покупками!
+							//- .banner__large-text Молоко, сыры, кефир и творог
+							//- 	br
+							//- 	| от 20 руб. /уп.
+							.banner__large-label -30%
+							.btn.btn-white.btn-lg.banner__large-btn Купить&nbsp;&nbsp;
+								span >

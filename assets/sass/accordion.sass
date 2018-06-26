@@ -1,0 +1,59 @@
+.accordion
+	border: 1px solid $gray-border
+	border-bottom: none
+
+	&__header
+		border-bottom: 1px solid $gray-border
+		cursor: pointer
+
+		&:hover
+			background-color: $gray-bg
+
+			& .btn
+				color: $body-color
+				svg
+					stroke: $body-color
+
+	&__title,
+	&__text
+		margin: 0 auto
+		text-align: left
+		max-width: 1100px
+		padding: 0 8px
+
+	&__title
+		padding: 20px 0
+
+	&__text
+		padding: 30px 0
+		font-size: 13px
+		color: $gray-600
+		line-height: 24px
+
+		&-wrap
+			border-bottom: 1px solid $gray-border
+			margin-bottom: -1px
+
+	&__title .btn
+		position: relative
+		padding: 0
+		cursor: pointer
+		font-size: 14px
+		font-weight: 500
+		color: $dark-main-color
+		
+		svg
+			width: 10px
+			height: 7px
+			margin: 0 10px
+			stroke: $dark-main-color
+
+		svg.turn
+			transform: rotate(180deg)
+
+		&:focus,
+		&:hover
+			text-decoration: none
+
+
+

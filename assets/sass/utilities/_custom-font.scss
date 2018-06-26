@@ -1,0 +1,122 @@
+@font-face {
+	font-family: "custom-font";
+	src: url('../fonts/custom-font/custom-font.eot');
+	src: url('../fonts/custom-font/custom-font.eot?#iefix') format('eot'),
+		url('../fonts/custom-font/custom-font.woff2') format('woff2'),
+		url('../fonts/custom-font/custom-font.woff') format('woff'),
+		url('../fonts/custom-font/custom-font.ttf') format('truetype'),
+		url('../fonts/custom-font/custom-font.svg#custom-font') format('svg');
+}
+
+@mixin custom-font-styles {
+	font-family: "custom-font";
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	// speak: none; // only necessary if not using the private unicode range (firstGlyph option)
+	text-decoration: none;
+	text-transform: none;
+}
+
+%custom-font {
+	@include custom-font-styles;
+}
+
+@function custom-font-char($filename) {
+	$char: "";
+
+	@if $filename == 1 {
+		$char: "\E001";
+	}
+	@if $filename == 2 {
+		$char: "\E002";
+	}
+	@if $filename == 3 {
+		$char: "\E003";
+	}
+	@if $filename == 4 {
+		$char: "\E004";
+	}
+	@if $filename == 5 {
+		$char: "\E005";
+	}
+	@if $filename == 6 {
+		$char: "\E006";
+	}
+	@if $filename == 7 {
+		$char: "\E007";
+	}
+	@if $filename == 8 {
+		$char: "\E008";
+	}
+	@if $filename == cart {
+		$char: "\E009";
+	}
+	@if $filename == cross {
+		$char: "\E00A";
+	}
+	@if $filename == eye {
+		$char: "\E00B";
+	}
+	@if $filename == logo {
+		$char: "\E00C";
+	}
+	@if $filename == magnifer {
+		$char: "\E00D";
+	}
+
+	@return $char;
+}
+
+@mixin custom-font($filename, $insert: before, $extend: true) {
+	&:#{$insert} {
+		@if $extend {
+			@extend %custom-font;
+		} @else {
+			@include custom-font-styles;
+		}
+		content: custom-font-char($filename);
+	}
+}
+
+.custom-font-1 {
+	@include custom-font(1);
+}
+.custom-font-2 {
+	@include custom-font(2);
+}
+.custom-font-3 {
+	@include custom-font(3);
+}
+.custom-font-4 {
+	@include custom-font(4);
+}
+.custom-font-5 {
+	@include custom-font(5);
+}
+.custom-font-6 {
+	@include custom-font(6);
+}
+.custom-font-7 {
+	@include custom-font(7);
+}
+.custom-font-8 {
+	@include custom-font(8);
+}
+.custom-font-cart {
+	@include custom-font(cart);
+}
+.custom-font-cross {
+	@include custom-font(cross);
+}
+.custom-font-eye {
+	@include custom-font(eye);
+}
+.custom-font-logo {
+	@include custom-font(logo);
+}
+.custom-font-magnifer {
+	@include custom-font(magnifer);
+}

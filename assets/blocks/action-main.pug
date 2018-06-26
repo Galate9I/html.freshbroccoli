@@ -1,0 +1,194 @@
+-
+    var href = 'javascript:void(0);',
+        action = [
+            {
+                name: 'Акция на товары «Мираторг»',
+                href: href,
+                url: '',
+                src: 'images/ic8.png',
+                btn: {
+                    color: '',
+                    text: 'Купить'
+                },
+                label: {
+                    bgcolor: '',
+                    text: '-30%',
+                    modificator: 'num'
+                }
+            },
+            {
+                name: 'Булочки Bun Boys — купи 3 по цене 2-х!',
+                href: href,
+                url: '',
+                src: 'images/ac1.png',
+                btn: {
+                    color: '',
+                    text: 'Купить'
+                },
+                label: {
+                    bgcolor: '#9fba18',
+                    text: '3 за 2',
+                    modificator: 'num'
+                }
+            },
+            {
+                name: 'Варенье из летних ягод',
+                href: href,
+                url: '',
+                src: 'images/ac2.png',
+                btn: {
+                    color: '',
+                    text: 'Купить'
+                },
+                label: {
+                    bgcolor: '#718391',
+                    text: 'Вкусно<br>в этом<br>сезоне'
+                }
+            },
+            {
+                name: 'Охлажденная рыба со скидкой',
+                href: href,
+                url: '',
+                src: 'images/ac3.png',
+                btn: {
+                    color: '',
+                    text: 'Купить'
+                },
+                label: {
+                    bgcolor: '#f1493c',
+                    text: '-10%',
+                    modificator: 'num'
+                }
+            },
+            {
+                name: 'Всё для шашлыка на даче',
+                href: href,
+                url: '',
+                src: 'images/ic4.png',
+                btn: {
+                    color: '',
+                    text: 'Купить'
+                },
+                label: {
+                    bgcolor: '#a2b7b7',
+                    text: 'Сезон<br>гриль'
+                }
+            },
+            {
+                name: 'Разные категории — выгода одна!',
+                href: href,
+                url: '',
+                src: '',
+                color: {
+                    color: '',
+                    text: 'Товары по<br><span>50</span><br>рублей'
+                },
+                text: ''
+            },
+            {
+                name: 'Средство для мытья посуды Finish по акции 5+1',
+                href: href,
+                url: '',
+                src: 'images/ic5.png',
+                btn: {
+                    color: '',
+                    text: 'Купить'
+                },
+                label: {
+                    bgcolor: '#9fba18',
+                    text: '5 за 1',
+                    modificator: 'num'
+                }
+            },
+            {
+                name: 'Гранат по суперцене — 99 руб./кг',
+                href: href,
+                url: '',
+                src: 'images/ic6.png',
+                btn: {
+                    color: '',
+                    text: 'Купить'
+                },
+                label: {
+                    bgcolor: '#9f93c9',
+                    text: 'Суперцена'
+                }
+            },
+            {
+                name: 'На ассортимент бренда «Петелинка» —20%',
+                href: href,
+                url: '',
+                src: 'images/ic7.png',
+                btn: {
+                    color: '',
+                    text: 'Купить'
+                },
+                label: {
+                    bgcolor: '',
+                    text: '-20%',
+                    modificator: 'num'
+                }
+            },
+            {
+                name: 'На ассортимент «Петелинка» —20%',
+                href: href,
+                url: '',
+                src: 'images/ic8.png',
+                btn: {
+                    color: '',
+                    text: 'Купить'
+                }
+            },
+            {
+                name: 'Средство для мытья Finish по акции 5+1',
+                href: href,
+                url: '',
+                src: 'images/ic9.png',
+                btn: {
+                    color: '',
+                    text: 'Купить'
+                },
+                label: {
+                    bgcolor: '#9f93c9',
+                    text: 'Суперцена'
+                }
+            },
+            {
+                name: 'Гранат по суперцене — 99 руб',
+                href: href,
+                url: '',
+                src: '',
+                color: {
+                    bgcolor: '#ffa810',
+                    text: 'Хиты продаж',
+                }
+            }
+        ]
+    ;
+
+block action__items
+
+.action-main
+    ul.action-main__list
+        each act in action.splice(0, 12)
+            li
+                if act.color && typeof act.color === 'object'
+                    .action-main__color-block(style='background-color:' + act.color.bgcolor + '')
+                        .action-main__overlay.overlay
+                        .action-main__text!= act.color.text
+                        img.action-main__img(src='images/ic9.png')
+
+                else
+                    .action-main__img-block
+                        .action-main__overlay.overlay
+                        a(href="").btn.btn-outline-white.action-main__btn Купить&nbsp;&nbsp;
+                            span &rsaquo;
+                        if act.label && typeof act.label === 'object'
+                            .div(
+                            style='background-color:' + act.label.bgcolor + ''
+                            class='action-main__label-block ' + (act.label.modificator ? 'action-main__label-block--' + act.label.modificator : '') + ''
+                            )
+                                .action-main__label!= act.label.text
+                        img.action-main__img(src='' + (act.src ? act.src : ''))
+
+                .action-main__title= act.name

@@ -1,0 +1,19 @@
+
+.container
+	ul.news
+		- for (var i=0; i<10; i++) {
+			li.news__item
+				a.news__link(href= '#')
+					.news__overlay
+					img.news__img(src= 'images/news-img.png')
+				p.news__date 1 марта 2018
+				p.news__text Идеальные подарки для любимых
+		- }
+
+.wrapp-inner
+	.news__subscribe
+		.container
+			form.news__form
+				label.news__label Хотите быть в курсе всех акций и событий?  Подпишитесь на наши новости!
+				input.news__input(id="news-email" type="e-mail" placeholder='Ваш  E-mail')
+				button.btn.btn-success.btn-lg.news__btn(type='submit') Подписаться

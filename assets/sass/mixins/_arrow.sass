@@ -1,0 +1,118 @@
+@mixin arrow-top($top: 50%, $right: 16px, $width: 5px, $color: $gray-600)
+
+	&:before
+		content: ''
+		width: 0
+		height: 0
+		border: $width solid transparent
+		border-top-color: $color
+		position: absolute
+		right: $right
+		top: $top
+		text-align: center
+		font-size: 25px
+		cursor: pointer
+		margin-top: -1px
+		z-index: 1
+		transition: .2s linear
+
+	&:after
+		content: ''
+		height: 0
+		border: $width solid transparent
+		border-top-color: $white
+		display: inline-block
+		position: absolute
+		right: $right
+		top: $top
+		margin-top: -2px
+		z-index: 1
+		transition: .2s linear
+
+	&.open
+		&:before
+			content: ''
+			//border-bottom-color: $color
+			margin-top: -3px
+			//border-top-color: transparent
+			//transform: translateY(-50%)
+			transform: rotate(-180deg) translateY(50%)
+
+
+		&:after
+			content: ''
+			//border-bottom-color: white
+			//border-top-color: transparent
+			//transform: translateY(-50%)
+			transform: rotate(-180deg) translateY(50%)
+
+@mixin arrow-left($top: 50%, $left: 16px, $width: 5px, $color: $gray-600, $weight: 1, $padd: 16px)
+
+	padding-left: $padd * 2
+
+	&:before
+		content: ''
+		width: 0
+		height: 0
+		border: $width solid transparent
+		border-right-color: $color
+		position: absolute
+		left: $left
+		top: $top
+		text-align: center
+		cursor: pointer
+		margin-top: -1px
+		z-index: 1
+		transition: .2s linear
+		transform: translateY(-30%)
+
+	&:after
+		content: ''
+		width: 0
+		height: 0
+		border: $width solid transparent
+		border-right-color: $white
+		display: inline-block
+		position: absolute
+		left: $left + $weight
+		top: $top
+		margin-top: -1px
+		z-index: 1
+		transition: .2s linear
+		transform: translateY(-30%)
+
+
+@mixin arrow-right($top: 50%, $left: 16px, $width: 5px, $color: $gray-600, $weight: 1, $padd: 16px)
+
+	padding-left: $padd * 3
+
+	&:before
+		content: ''
+		width: 0
+		height: 0
+		border: $width solid transparent
+		border-right-color: $color
+		position: absolute
+		left: $left
+		top: $top
+		text-align: center
+		cursor: pointer
+		margin-top: -1px
+		z-index: 1
+		transition: .2s linear
+		transform: translateY(-30%)
+
+	&:after
+		content: ''
+		width: 0
+		height: 0
+		border: $width solid transparent
+		border-right-color: $white
+		display: inline-block
+		position: absolute
+		left: $left + $weight
+		top: $top
+		margin-top: -1px
+		z-index: 1
+		transition: .2s linear
+		transform: translateY(-30%)

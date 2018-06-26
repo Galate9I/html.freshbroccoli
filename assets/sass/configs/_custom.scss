@@ -1,0 +1,386 @@
+// Bootstrap overrides
+//
+// Copy variables from `_variables.scss` to this file to override default values
+// without modifying source files.
+
+// Thanks Hugo!
+
+@import 'functions/number';
+@import '../../../node_modules/bootstrap/scss/_variables';
+
+// ----------  Configs  ----------
+
+$ie-scroll-width: 17px;
+$menu-item-width: 20px;
+
+$xxxs: 0;
+$xxs:  320px;
+$xs:   480px;
+$s:    600px;
+$m:    768px;
+$l:    960px;
+$xl:   1280px;
+$xxl:  1600px;
+$xxxl: 1920px;
+
+// ---------- Asymptotic Fibonacci numbers  ----------
+
+$fibonacci-number: 1.61803398875;
+$fibo-asymp-xxxl: number(str-replace(#{$fibonacci-number - 1 / 1}, '-', ''));   // 0.61803398875
+$fibo-asymp-xxl:  number(str-replace(#{$fibonacci-number - 2 / 1}, '-', ''));   // 0.381966011
+$fibo-asymp-xl:   number(str-replace(#{$fibonacci-number - 3 / 2}, '-', ''));   // 0.118033989
+$fibo-asymp-l:    number(str-replace(#{$fibonacci-number - 5 / 3}, '-', ''));   // 0.048632678
+$fibo-asymp-m:    number(str-replace(#{$fibonacci-number - 8 / 5}, '-', ''));   // 0.018033989
+$fibo-asymp-s:    number(str-replace(#{$fibonacci-number - 13 / 8}, '-', ''));  // 0.006966011
+$fibo-asymp-xs:   number(str-replace(#{$fibonacci-number - 21 / 13}, '-', '')); // 0.002649373
+$fibo-asymp-xxs:  number(str-replace(#{$fibonacci-number - 34 / 21}, '-', '')); // 0.00101363
+$fibo-asymp-xxxs: number(str-replace(#{$fibonacci-number - 55 / 34}, '-', '')); // 0.00038693
+
+// ---------- Asymptotic Fibonacci percentage  ----------
+
+$fibo-asymp-xxxl-percentage: $fibo-asymp-xxxl * 100%; // 61.803398875%
+$fibo-asymp-xxl-percentage:  $fibo-asymp-xxl * 100%;  // 38.1966011%
+$fibo-asymp-xl-percentage:   $fibo-asymp-xl * 100%;   // 11.8033989%
+$fibo-asymp-l-percentage:    $fibo-asymp-l * 100%;    // 4.8632678%
+$fibo-asymp-m-percentage:    $fibo-asymp-m * 100%;    // 1.8033989%
+$fibo-asymp-s-percentage:    $fibo-asymp-s * 100%;    // 0.6966011%
+$fibo-asymp-xs-percentage:   $fibo-asymp-xs * 100%;   // 0.2649373%
+$fibo-asymp-xxs-percentage:  $fibo-asymp-xxs * 100%;  // 0.101363%
+$fibo-asymp-xxxs-percentage: $fibo-asymp-xxxs * 100%; // 0.038693%
+
+// ----------  Colors  ----------
+
+$white:  #fff;
+$gray-100: #edf3fa;
+$gray-200: #dee7ef;
+$gray-300: #d4dde6;
+$gray-400: #c4cfda;
+$gray-500: #afbac3;
+$gray-600: #718391;
+$gray-700: #454e57;
+$gray-800: #313940;
+$gray-850: #303030;
+$gray-900: #1f2429;
+$black:  #000;
+
+$gray-bg: #eee;
+$gray-border: #ddd;
+$gray-text: #808080;
+
+$grays: (
+	100: $gray-100,
+	200: $gray-200,
+	300: $gray-300,
+	400: $gray-400,
+	500: $gray-500,
+	600: $gray-600,
+	700: $gray-700,
+	800: $gray-800,
+	850: $gray-850,
+	900: $gray-900
+);
+
+$blue:     #418ee0;
+$blue-1:   #7BB8C7;
+$blue-2:   #1A8BE0;
+$indigo:   #5f62d9;
+$purple:   #9786bd;
+$purple-1: #9F6B9C;
+$purple-2: #7C4651;
+$purple-3: #9291E5;
+$purple-4: #7062A5;
+$pink:     #e88ea3;
+$pink-1:   #F2727B;
+$pink-2:   #F49BA9;
+$pink-3:   #DD9E6F;
+$red:      #f25851;
+$red-1:    #FF5652;
+$red-2:    #5C3835;
+$red-3:    #EA5154;
+$red-4:    #f1493c;
+$orange:   #ff8212;
+$orange-1: #FF830F;
+$yellow:   #ffa810;
+$yellow-1: #9FBA18;
+$green:    #7a9a01;
+$green-1:  #2F4B55;
+$green-2:  #1E6163;
+$green-3:  #2ABA9E;
+$green-4:  #00A8B2;
+$teal:     #5dae96;
+$cyan:     #42a8b2;
+$grey:     #AFBAC3;
+$grey-1:   #718391;
+$brown:    #4D4D4D;
+$beige:    #AF9C8E;
+
+
+$colors: (
+	blue:      $blue,
+	indigo:    $indigo,
+	purple:    $purple,
+	pink:      $pink,
+	red:       $red,
+	orange:    $orange,
+	yellow:    $yellow,
+	green:     $green,
+	teal:      $teal,
+	cyan:      $cyan,
+	white:     $white,
+	gray:      $gray-600,
+	gray-dark: $gray-800,
+	gray-bg:     $gray-bg
+);
+
+$theme-colors: (
+	primary:   $blue,
+	secondary: $gray-600,
+	success:   $green,
+	info:      $cyan,
+	warning:   $orange,
+	attention: $yellow,
+	danger:    $red,
+	light:     $gray-300,
+	dark:      $gray-900,
+	white:     $white,
+	purple:    $purple
+);
+
+// ----------  Options  ----------
+
+$enable-transitions: false;
+
+// ----------  Body  ----------
+
+$body-color: #2f4b55;
+
+// ----------  Links  ----------
+
+$link-color: $body-color;
+$link-hover-color: $body-color;
+
+// ----------  Paragraphs  ----------
+
+$paragraph-margin-bottom: 1.5em;
+
+// ----------  Custom colors  ----------
+
+$iron: #e2e4e6;
+$navigation-bgc: $green;
+$menu-bgc: $body-bg;
+
+$main-color: #8CAD26;
+$light-main-color: #9FBA18;
+$dark-main-color: #7A9A01;
+
+// secondary colors
+
+$cl-icon: (
+	meat:  $red-1,
+	milkgoods: $yellow,
+	preserves:  $purple-1,
+	spices: $purple-2,
+	vegetables: $green,
+	nuts: $green-1,
+	fruits: $pink-1,
+	gastoromy: $pink-2,
+	drinks: $blue-1,
+	bread: $orange-1,
+	chemicals: $grey,
+	homegoods: $grey-1,
+	baby: $purple-3,
+	beauty: $purple-4,
+	coffeetea: $red-2,
+	frozen: $blue-2,
+	cook: $brown,
+	grill: $green-2,
+	petfood: $grey-1,
+	wintergoods: $green-3,
+	seafood: $green-4,
+	gift: $yellow-1,
+	sweets: $pink-3,
+	grocery: $beige,
+	sale: $red-3
+);
+
+
+@each $name in $cl-icon{
+	.icon.icon-#{$name}{
+		stroke: #{$name};
+	}
+}
+
+@each $bgcolor, $value in $colors{
+	.bgcolor-#{$bgcolor}{
+		background-color: #{$value};
+	}
+}
+
+
+// ----------  Grid breakpoints  ----------
+
+$grid-breakpoints: (
+	xxxs: $xxxs,
+	xxs:  $xxs,
+	xs:   $xs,
+	s:    $s,
+	m:    $m,
+	l:    $l,
+	xl:   $xl,
+	xxl:  $xxl,
+	xxxl: $xxxl
+);
+
+// ----------  Grid containers  ----------
+
+$container-max-width: $xxl - 18;
+$container-max-widths: (
+	xxxs: $container-max-width
+);
+
+// ----------  Grid columns  ----------
+
+$grid-columns:      12;
+$grid-gutter-width: 32px;
+
+// ----------  Fonts  ----------
+
+$font-family-sans-serif: "Lato", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$font-family-sans-serif-bold: "Lato-Bold", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$font-family-base:		$font-family-sans-serif;
+$lato-base:				$font-family-sans-serif;
+$lato-bold:				$font-family-sans-serif-bold;
+$gotham:				"GothamPro-Bold";
+
+$font-size-small:       12px;
+$font-size:             14px;
+$font-size-root:        16px;
+$font-size-base:        .875rem; // 16px * 0.875rem => 14px
+$font-size-number:      number(str-replace(#{$font-size}, unit($font-size), ''));
+$font-size-root-number: number(str-replace(#{$font-size-root}, unit($font-size-root), ''));
+$font-size-lg:          1.125rem;
+$font-size-sm:          .75rem;
+$font-size-sm-number:   number(str-replace(#{$font-size-sm}, unit($font-size-sm), ''));
+$font-size-lg-number:   number(str-replace(#{$font-size-lg}, unit($font-size-lg), ''));
+$line-height-base:      $font-size-root-number / $font-size-number; // 1.142857143
+
+$h1-font-size: 24 / $font-size-root-number + unquote(unit($font-size-base)); // 24 / 16 => 1.5rem
+$h2-font-size: 18 / $font-size-root-number + unquote(unit($font-size-base)); // 18 / 16 => 1.125rem
+$h3-font-size: 18 / $font-size-root-number + unquote(unit($font-size-base)); // 18 / 16 => 1.125rem
+$h4-font-size: 16 / $font-size-root-number + unquote(unit($font-size-base)); // 16 / 16 => 1rem
+$h5-font-size: 14 / $font-size-root-number + unquote(unit($font-size-base)); // 14 / 16 => 0.875rem
+$h6-font-size: 12 / $font-size-root-number + unquote(unit($font-size-base)); // 12 / 16 => 0.75rem
+
+$headings-margin-bottom: 1.5em;
+$headings-font-weight:   bold;
+$headings-line-height:   $line-height-base;
+
+$display1-weight: normal;
+$display2-weight: normal;
+$display3-weight: normal;
+$display4-weight: normal;
+$display-line-height: $headings-line-height;
+
+$lead-font-size:   1rem;
+$lead-font-weight: 500;
+$small-font-size:  .75rem; // 16px / 12px = > .75rem
+
+// ----------  Z-index master list  ----------
+
+$zindex-dropdown-backdrop: 1;
+$zindex-navbar:            2;
+$zindex-dropdown:          2;
+$zindex-fixed:             3;
+$zindex-sticky:            3;
+$zindex-modal-backdrop:    4;
+$zindex-modal:             5;
+$zindex-popover:           6;
+$zindex-tooltip:           7;
+
+// ----------  Components  ----------
+
+$line-height-lg:         $line-height-base;
+$line-height-sm:         $line-height-base;
+
+$transition-base:        all     .1s  ease-in-out;
+$transition-fade:        opacity .15s linear;
+$transition-collapse:    height  .3s  ease;
+
+// ----------  Buttons  ----------
+
+$input-btn-padding-y-sm:   8.5 / $font-size-root-number + rem;
+$input-btn-padding-x-sm:   .8125rem;
+$input-btn-line-height-sm: $line-height-base;
+
+$input-btn-padding-y:      .5rem;
+$input-btn-padding-x:      .75rem;
+$input-btn-line-height:    $line-height-base;
+
+$input-btn-padding-y-lg:   .5rem;
+$input-btn-padding-x-lg:   1rem;
+$input-btn-line-height-lg: $line-height-base;
+
+@each $color, $value in $theme-colors {
+	.btn-#{$color} {
+		//@include button-variant($value, $value);
+		cursor: pointer
+	}
+	.btn-#{$color}:hover {
+		background-color: lighten($value, 5%);
+		border-color: #8cad26;
+	}
+}
+
+
+// $input-btn-padding-y:       .5rem !default;
+// $input-btn-padding-x:       .75rem !default;
+// $input-btn-line-height:     1.25 !default;
+
+// $input-btn-padding-y-sm:    .25rem !default;
+// $input-btn-padding-x-sm:    .5rem !default;
+// $input-btn-line-height-sm:  1.5 !default;
+
+// $input-btn-padding-y-lg:    .5rem !default;
+// $input-btn-padding-x-lg:    1rem !default;
+// $input-btn-line-height-lg:  1.5 !default;
+
+
+
+
+$btn-font-weight:          500;
+// $btn-box-shadow:                 inset 0 1px 0 rgba($white,.15), 0 1px 1px rgba($black,.075);
+// $btn-focus-box-shadow:           0 0 0 3px rgba(theme-color("primary"), .25);
+// $btn-active-box-shadow:          inset 0 3px 5px rgba($black,.125);
+
+// $btn-link-disabled-color:        $gray-600;
+
+// $btn-block-spacing-y:            .5rem;
+
+// // Allows for customizing button radius independently from global border radius
+// $btn-border-radius:              $border-radius;
+// $btn-border-radius-lg:           $border-radius-lg;
+// $btn-border-radius-sm:           $border-radius-sm;
+
+// $btn-transition:                 background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
+// ----------  Forms  ----------
+
+$custom-file-text: (
+	placeholder: (
+		en: 'Choose file...',
+		ru: 'Выберите файл...'
+	),
+	button-label: (
+		en: 'Browse',
+		ru: 'Просмотр'
+	)
+);
+
+// ----------  Tooltips  ----------
+
+$tooltip-bg: rgba(113, 131, 145, .2);
+$tooltip-arrow-color: $tooltip-bg;
+$tooltip-color: $body-color;
+$tooltip-align: left;
+$tooltip-max-width: 150px;
+$tooltip-padding-y: 8px;

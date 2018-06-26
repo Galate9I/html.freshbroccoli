@@ -1,0 +1,267 @@
+@import '../../node_modules/bootstrap/scss/_functions'
+@import '../../node_modules/bootstrap/scss/_variables'
+@import '../../node_modules/bootstrap/scss/_mixins'
+@import 'configs/_custom'
+@import 'mixins/_color'
+
+.action-main
+	text-align: center
+
+	&__list
+		display: flex
+		flex-wrap: wrap
+		padding: 0
+
+		.catalog &
+			flex-wrap: inherit
+			overflow: hidden
+
+			@media(max-width: 480px)
+				margin: 0 0 0 -8px
+
+		& > li
+			list-style: none
+			display: inline-block
+			flex: 0 0 24.4%
+			margin: .3% .3% 16px
+			display: flex
+			flex-direction: column
+			cursor: pointer
+
+			@media(max-width: 960px)
+				flex: 0 0 32.7%
+
+			@media(max-width: 768px)
+				flex: 0 0 49%
+				margin: .5%
+
+			@media(max-width: 600px)
+				flex: 0 0 100%
+				margin: 0
+
+			.catalog &
+				flex: 0 0 11.92%
+
+				@media(max-width: 1280px)
+					flex: 0 0 16.11%
+
+				@media(max-width: 960px)
+					flex: 0 0 24.45%
+
+				@media(max-width: 768px)
+					flex: 0 0 32.4%
+
+				@media(max-width: 600px)
+					margin: .5%
+
+				@media(max-width: 480px)
+					flex: 0 0 49.2%
+
+
+
+	&__img-block,
+	&__color-block
+		position: relative
+
+		&:hover > .overlay
+			opacity: 1
+			background: rgba(0, 0, 0, .4)
+			height: 100%
+			width: 100%
+			position: absolute
+
+			& + .btn
+				opacity: 1
+
+	&__img
+		width: 100%
+
+	&__color-block
+		background-color: $red-4
+		border-radius: 8px
+		display: flex
+		align-items: center
+		text-align: center
+
+		& img
+			opacity: 0
+
+	&__overlay
+		opacity: 0
+		border-radius: 8px
+		transition: 0.3s linear
+
+	&__btn
+		opacity: 0
+		border-radius: 4px
+		position: absolute
+		bottom: 50%
+		left: 50%
+		transform: translate(-50%, 50%)
+		padding: 12px 32px
+		font-size: 14px
+		line-height: 14px
+		font-family: $lato-bold
+		font-weight: 400
+		letter-spacing: 0.28px
+		transition: 0.3s linear
+
+		& > span
+			font-size: 20px
+			vertical-align: bottom
+
+			.catalog &
+				font-size: 16px
+
+		.catalog &
+			bottom: 8px
+			left: 8px
+			padding: 4px 8px
+			font-size: 12px
+
+	&__text
+		width: 100%
+		position: absolute
+		color: $white
+		font-family: $lato-bold
+		font-weight: 700
+		font-size: 2.2vw
+		line-height: 3.3vw
+
+		@media(min-width: 1920px)
+			font-size: 42px
+			line-height: 63px;
+
+		@media(max-width: 960px)
+			font-size: 2.6vw
+			line-height: 4.1vw
+
+		@media(max-width: 600px)
+			font-size: 4.5vw
+			line-height: 6.1vw
+
+		@media(max-width: 480px)
+			font-size: 9.5vw
+			line-height: 10.9vw
+
+		& > span
+			font-size: 5.1vw
+			top: .5vw
+			position: relative
+
+			@media(min-width: 1920px)
+				font-size: 96px
+				top: 12px
+
+			@media(max-width: 960px)
+				font-size: 8.1vw
+				top: 1.0vw
+
+			@media(max-width: 600px)
+				font-size: 11.1vw
+				top: 1.3vw
+
+			@media(max-width: 480px)
+				font-size: 15.5vw
+				top: 1.5vw
+
+			.catalog &
+				font-size: 3.1vw
+				top: .4vw
+
+				@media(min-width: 1920px)
+					font-size: 48px
+					top: 6px
+
+				@media(max-width: 960px)
+					font-size: 4.1vw
+
+				@media(max-width: 768px)
+					font-size: 5.8vw
+
+				@media(max-width: 480px)
+					font-size: 10.1vw
+					top: 1vw
+
+		.catalog &
+			font-size: 1.2vw
+			line-height: 1.8vw
+
+			@media(min-width: 1920px)
+				font-size: 16px
+				line-height: 24px
+
+			@media(max-width: 960px)
+				font-size: 2.2vw
+				line-height: 2.8vw
+
+			@media(max-width: 768px)
+				font-size: 3.0vw
+				line-height: 4.6vw
+
+			@media(max-width: 480px)
+				font-size: 4.2vw
+				line-height: 6.8vw
+
+	&__label-block
+		position: absolute
+		bottom: 0
+		right: 0
+		border-radius: 8px 0 8px 0
+		color: $white
+		background-color: $red
+		font-family: $font-family-sans-serif
+		font-size: 12px
+		font-weight: 300
+		line-height: 16px
+		letter-spacing: 0.14px
+		max-width: 70px
+		max-height: 70px
+		width: 35%
+		height: 45%
+		align-items: center
+		display: flex
+		opacity: .9
+
+		@media(max-width: 728px)
+			font-size: 12px
+			line-height: 12px
+
+		@media(max-width: 480px)
+			font-size: 14px
+			line-height: 16px
+
+		&--num
+			font-size: 23px
+			letter-spacing: 0.23px
+
+			@media(max-width: 728px)
+				font-size: 18px
+
+			@media(max-width: 480px)
+				font-size: 23px
+
+			.catalog &
+				font-size: 14px
+
+		.catalog &
+			font-size: 14px
+			width: auto
+			padding: 8px
+			height: 60%
+
+	&__label
+		margin: auto
+
+		.catalog &
+			line-height: 12px
+
+	&__title
+		text-align: center
+		margin: 16px 0
+		color: $gray-850
+		font-family: $lato-bold
+		font-size: 14px
+		font-weight: 400
+		line-height: 16px
+		letter-spacing: 0.14px

@@ -1,0 +1,78 @@
+.catalog-lists
+	display: flex
+	flex-wrap: wrap
+	list-style: none
+	padding: 0
+	padding-top: 16px
+	margin-right: -24px
+	margin-left: -24px
+
+.catalog-list
+	list-style: none
+	padding: 0
+	overflow: hidden
+	// transition: max-height .5s;
+	// max-height: 0;
+	// will-change: transform
+	// transform: scaleY(0)
+	// transform-origin: center top
+	// transition: all 1s
+	// position: absolute
+
+	@media(min-width: 720px)
+		position: static
+		height: auto
+		max-height: 1000px
+		overflow: visible
+		transition: none
+	
+	&__wrap
+		position: relative
+		padding: 0 24px
+		width: 100%
+
+		@media(min-width: 720px)
+			width: 50%
+			margin-bottom: 16px
+
+		@media(min-width: 1140px)
+			width: 25%
+			margin-bottom: 32px
+
+	&__img
+		width: 34px
+		height: 40px
+		margin: 0 16px
+		display: inline-block
+
+	&__item
+		a
+			font-size: 14px
+			line-height: 40px
+			color: $gray-600
+
+			&:hover
+				color: $green-1
+
+	&__title
+		position: relative
+		font-size: 16px
+		line-height: 32px
+		padding: 8px 0 16px
+		cursor: pointer
+		display: flex
+		align-items: center
+
+		@media(min-width: 720px)
+			cursor: default
+
+
+		&:after
+			content: ''
+			display: block
+			height: 1px
+			background-color: $gray-500
+			position: absolute
+			bottom: 0
+			left: 0
+			right: 0

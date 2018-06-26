@@ -1,0 +1,35 @@
+block stars
+
+.stars
+	- for (var i = 0; i < 5; i++) {
+	input(type="radio" name="stars" id= 'star'+ '' + i + '')
+	label.stars-item(for= 'star'+ '' + i + '')
+		svg(width="16" height="16")
+			use(xlink:href='images/svg/icon.svg#star')
+
+	- }
+	//- label.stars-item
+	//- input(type="checkbox")
+	//- span.stars-img
+	//- 	svg(width="16" height="16")
+	//- 		use(xlink:href='images/svg/icon.svg#star')
+	//- label.stars-item
+	//- 	input(type="checkbox")
+	//- 	span.stars-img
+	//- 		svg(width="16" height="16")
+	//- 			use(xlink:href='images/svg/icon.svg#star')
+	//- label.stars-item
+	//- 	input(type="checkbox")
+	//- 	span.stars-img
+	//- 		svg(width="16" height="16")
+	//- 			use(xlink:href='images/svg/icon.svg#star')
+	//- label.stars-item
+	//- 	input(type="checkbox")
+	//- 	span.stars-img
+	//- 		svg(width="16" height="16")
+	//- 			use(xlink:href='images/svg/icon.svg#star')
+	//- label.stars-item
+	//- 	input(type="checkbox")
+	//- 	span.stars-img
+	//- 		svg(width="16" height="16")
+	//- 			use(xlink:href='images/svg/icon.svg#star')

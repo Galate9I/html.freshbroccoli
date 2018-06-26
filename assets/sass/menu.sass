@@ -1,0 +1,407 @@
+@import '../../node_modules/bootstrap/scss/_functions'
+@import '../../node_modules/bootstrap/scss/_variables'
+@import '../../node_modules/bootstrap/scss/_mixins'
+@import 'configs/_custom'
+@import 'mixins/_color'
+@import 'mixins/_arrow'
+
+.menu
+	$menu: &
+	display: block
+	padding: 0
+	background-color: $menu-bgc
+	margin: 0
+
+	&__group
+		cursor: auto
+		position: relative
+		display: block
+		text-align: center
+		padding: 0
+		margin: 0
+		background-color: $gray-bg
+		width: 256px
+		z-index: 3
+		box-shadow: 2px 3px 7px rgba(0, 0, 0, 0.2)
+		padding: 8px 0
+		min-height: 740px
+
+		@media (max-width: 768px)
+			background-color: $white
+
+		@media (max-width: 600px)
+			min-height: auto
+			padding: 8px 0 0
+
+		@media (max-width: 480px)
+			width: 100%
+
+		& .menu__item.active > .menu__floats
+			display: block
+
+			@media (max-width: 600px)
+				display: none
+
+		&:active
+
+			@media (max-width: 480px)
+				left: -100%
+
+		&-container
+			text-align: left
+			display: inline-block
+			vertical-align: top
+			width: 100%
+			box-sizing: border-box
+
+			@media (max-width: 600px)
+				margin-top: -1px
+				box-shadow: none;
+
+	&__link
+		display: block
+		font-size: 16px
+		width: 100%
+		padding: 8px 30px 8px 36px
+		margin: 0
+		cursor: pointer
+		position: relative
+
+		&.menu__link--catalog
+			color: $dark-main-color
+			font-weight: 400
+
+			@media (max-width: 600px)
+				display: none
+
+		@media (max-width: 600px)
+			padding-top: 12px
+			padding-bottom: 12px
+
+		@media (max-width: 480px)
+			display: block
+			width: 256px
+			margin: 0 auto
+
+		.active > &
+
+			@media (max-width: 600px)
+				border-width: 1px 0 2px 0
+				border-style: solid
+				border-color: #eee
+				font-family: $lato-bold
+				font-weight: 500
+
+	&__class,
+	&__type
+		width: 256px
+		display: none
+
+		&-container
+			text-align: left
+			display: block
+			vertical-align: top
+			max-width: 100%
+			height: 100%
+
+	&__class,
+	&__type,
+	&__floats
+		background-color: $white
+		min-height: 740px
+		box-sizing: border-box
+		position: absolute
+		padding: 8px 0
+		z-index: 3
+		left: 100%
+		opacity: 1
+		top: 0
+		bottom: 0
+		margin: 0
+		font-size: 0
+		text-align: left
+		line-height: 0
+		letter-spacing: -1px
+
+		@media (max-width: 600px)
+			position: static
+			height: auto
+			min-height: auto
+			padding: 8px 0 0
+			border-width: 1px 0 1px 0
+			border-style: solid
+			border-color: #eee
+
+		menu menuitem.default > a + &
+
+			@media (max-width: 480px)
+				position: relative
+				height: auto
+	&__floats
+		z-index: 2
+		display: none
+		background-color: $white
+		left: 200%
+		width: 340px
+		padding: 16px
+		box-shadow: 2px 3px 7px rgba(0, 0, 0, 0.2)
+
+		&-padding
+			height: 100%
+			padding: $grid-gutter-width / 2
+
+		&-container
+			overflow: hidden
+			overflow-y: auto
+
+		&-align
+			display: flex
+			flex-direction: column
+			justify-content: space-between
+			height: 100%
+
+		&-btn
+			margin-bottom: $grid-gutter-width / 2
+			padding: $grid-gutter-width / 2
+
+	&__class
+		&-container
+			border-right: 1px solid $gray-300
+
+			@media (max-width: 960px)
+				height: 100%
+				display: block
+
+		@media (max-width: 960px)
+			height: 50%
+			width: 100%
+
+		@media (max-width: 480px)
+			height: inherit
+
+		// &:hover > .menu__floats
+		// 	display: block
+
+	&__type
+		width: 100%
+
+		&-container
+			border-right: 1px solid $gray-300
+
+		&-align
+
+			@media (max-width: 960px)
+				flex-direction: row
+				flex-wrap: wrap
+				position: relative
+
+		&-banner
+			display: flex
+			flex-direction: column
+			justify-content: space-between
+			height: calc(100% - 66px)
+			width: 100%
+			overflow: hidden
+			overflow-y: auto
+
+			@media (max-width: 960px)
+				flex-wrap: wrap
+				position: relative
+				flex-direction: row
+				height: calc(100% + 16px)
+
+	&__float
+		flex-grow: 1
+		padding: $grid-gutter-width / 2
+		background-color: $gray-100
+		border-radius: 6px
+		margin-bottom: $grid-gutter-width / 2
+		position: relative
+		min-height: 224px
+
+		&:last-child
+			margin-bottom: 0
+
+		&-link
+			display: block
+			height: 100%
+
+			&:hover
+				text-decoration: none
+
+		&-padding
+			height: 100%
+
+		&-align
+			display: flex
+			flex-wrap: wrap
+			flex-direction: column
+
+		&-title
+			text-align: left
+			margin: 0 0 8px
+			
+			.menu__float_seafood_discount--all &
+				font-size: $font-size-root * 2
+				font-weight: 700
+				letter-spacing: 1.68px
+				text-align: center
+				text-transform: uppercase
+
+		&-text
+			display: block
+			font-size: $font-size-base
+			line-height: $line-height-base
+			letter-spacing: normal
+			font-weight: 300
+			text-align: left
+			margin: 0
+
+			.menu__float_seafood_discount--all &
+				text-align: center
+				font-family: Lato
+				font-size: $font-size-base
+				font-weight: 700;
+				letter-spacing: 0.75px
+				text-transform: uppercase
+		&-img
+			position: absolute
+			bottom: 0
+			left: 0
+			max-height: 100%
+
+		&-labels
+
+			.menu__float_seafood_discount &
+				font-size: $font-size-root / 8 * 9
+				line-height: $line-height-base
+				letter-spacing: normal
+				font-weight: bold
+				position: absolute
+				bottom: 0
+				right: 0
+				padding: ($grid-gutter-width * 6) / 8 $grid-gutter-width / 2
+				background-color: $red
+				border-radius: 6px 0 6px 0
+				color: $white
+				text-transform: uppercase
+			
+			.menu__float_seafood_discount--all &
+				font-family: Lato
+				font-size: $font-size-root * 5
+				font-weight: 700;
+				letter-spacing: 1.31px
+				line-height: 1
+				padding: $grid-gutter-width / 4 0
+
+			.menu__float_seafood_discount:nth-child(2n) &
+				background-color: $green
+
+		&-zero
+			flex-grow: 1
+
+		@media (max-width: 960px)
+			height: calc(50% - 8px)
+			margin: 0 8px 8px
+
+	&__item
+		display: block
+		width: 100%
+		font-size: $font-size-base
+		line-height: $line-height-base
+		letter-spacing: normal
+		font-weight: 300
+
+		@media (max-width: 600px)
+			border-bottom: 1px solid $gray-border
+
+			&.active
+				border: none
+
+				&:hover
+					color: inherit
+
+		&.active > ul
+			display: block
+
+		&:hover
+			> #{$menu}__link
+				text-decoration: none
+				color: $navigation-bgc
+				background-color: lighten(custom-color-yiq($menu-bgc, $gray-900, $gray-100), $fibo-asymp-xl * 100)
+
+				&:active
+					color: darken($navigation-bgc, $fibo-asymp-xl-percentage)
+
+		@media (max-width: 600px)
+			&:hover
+				color: inherit
+
+		&:focus
+			outline: none
+
+			> #{$menu}__link
+				outline: none
+				box-shadow: inset 0 0 0 3px inset 0 3px 0 0 lighten(custom-color-yiq($menu-bgc, $gray-900, $gray-100), $fibo-asymp-xl * 100)
+
+		.menu__group-container > &.default
+
+			@media (max-width: 600px)
+
+				&:not(active) > a
+					@include arrow-top
+
+				&.active > a
+
+					@include arrow-left(50%, 32px, 6px, $gray-600, 3)
+
+					// &:before,
+					// &:after
+					// 	display: none
+
+					&:hover a
+						color: inherit
+
+		// &.expanded
+		// 	> #{$menu}__link
+		// 		text-decoration: none
+		// 		color: $navigation-bgc
+		// 		background-color: lighten(custom-color-yiq($menu-bgc, $gray-900, $gray-100), $fibo-asymp-xl * 100)
+
+		// 		&:active
+		// 			color: darken($navigation-bgc, $fibo-asymp-xl-percentage)
+
+		// &:hover,
+		// &:focus,
+		// &.expanded
+		// 	> #{$menu}
+		// 		&__class,
+		// 		&__type,
+		// 		&__floats
+		// 			opacity: 1
+		// 			pointer-events: auto
+		// 			background-color: $white
+
+		// 			@media (max-width: 480px)
+		// 				//left: 0;
+
+		.menu__group:active .menu__group-container > &:not(default)
+			@media (max-width: 480px)
+				display: none
+
+		// &.default
+		// 	> #{$menu}
+		// 		&__class,
+		// 		&__type,
+		// 		&__floats
+		// 			pointer-events: auto
+		// 			background-color: $white
+
+		&--bold
+			font-family: $font-family-sans-serif-bold
+			font-weight: 500
+
+			&:nth-last-child(3)
+				border-top: 1px solid $gray-border
+				padding-top: 8px
+				margin-top: 8px

@@ -1,0 +1,126 @@
+@import '../../node_modules/bootstrap/scss/_functions'
+@import '../../node_modules/bootstrap/scss/_variables'
+@import '../../node_modules/bootstrap/scss/_mixins'
+@import 'configs/_custom'
+
+.menu-dwarf
+	flex: 1 1 30%
+
+	@media (max-width: 600px)
+		display: none
+
+	.header &
+		background-color: $gray-bg
+		font-size: $font-size-small
+
+		@media (max-width: 480px)
+			display: none
+
+		&__padding
+			padding-top: 8px
+			padding-bottom: 8px
+			// $padding-devider: $font-size-root-number * $font-size-sm-number
+			// padding: #{$grid-gutter-width / 4} 0
+			// padding: 1em * (number(str-replace(#{$grid-gutter-width / 4}, unit($font-size), '')) / $padding-devider) 0
+			// padding: calc(1em * (#{number(str-replace(#{$grid-gutter-width / 4}, unit($font-size), ''))} / #{$padding-devider})) 0
+
+		&__row
+			&:not(:empty)
+				font-size: 0
+				line-height: 0
+				letter-spacing: -1px
+				margin: '-#{$grid-gutter-width}' / 8 '-#{$grid-gutter-width}' / 4
+
+		&__align
+			text-align: center
+			display: flex
+			justify-content: center
+			align-items: center
+			flex-wrap: wrap
+
+			@media (min-width: $s)
+				justify-content: space-between
+
+		&__item
+			display: inline-block
+			padding: 0 '#{$grid-gutter-width}' / 4
+			font-size: $font-size-small
+			font-weight: 300
+			line-height: $line-height-base
+			margin: '#{$grid-gutter-width}' / 8 0
+
+		&__link
+			display: block
+			color: $body-color
+			font-size: inherit
+			line-height: 16px
+			letter-spacing: 1px
+
+			&:hover,
+			&:focus
+				text-decoration: underline
+
+	.footer &
+
+		&__padding
+			margin: 0
+			padding-left: 0
+
+		&__row
+			margin: 0
+
+		&__align
+			max-height: 373px
+			// display: flex
+			// flex-direction: column
+			// flex-wrap: wrap
+			column-count: 4
+			overflow: hidden
+
+			@media(max-width: 1280px)
+				column-count: 3
+
+			@media(max-width: 768px)
+				column-count: 2
+
+			@media(max-width: 600px)
+				// column-count: 3
+				// text-align: center
+				// display: block
+
+			@media(max-width: 480px)
+				column-count: 2
+
+		&__title
+			display: none
+			color: #2f4b55
+			font-family: $lato-bold
+			font-size: 15px
+			font-weight: 400
+			line-height: 15px
+			color: #2f4b55
+			letter-spacing: 0.6px
+			margin: 0 0 16px
+
+			@media(max-width: 600px)
+				text-align: center
+
+		&__item
+			color: $gray-500
+			margin: 0 0 8px
+
+		&__link
+			color: #718391
+			font-family: $lato-base
+			font-size: 13px
+			font-weight: 300
+			line-height: 24px
+			letter-spacing: 0.52px
+
+			&:hover
+				color: #1c2831
+
+			@media(max-width: 600px)
+				line-height: 16px
+
+

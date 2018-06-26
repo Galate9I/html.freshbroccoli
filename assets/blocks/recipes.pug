@@ -1,0 +1,107 @@
+-
+	var href = 'javascript:void(0);',
+		recipe = [
+			{
+				name: 'Акция на товары «Мираторг»',
+				href: href,
+				url: '',
+				src: 'images/ic8.png',
+				person: '4',
+				time: '120'
+			},
+			{
+				name: 'Булочки Bun Boys — купи 3 по цене 2-х!',
+				href: href,
+				url: '',
+				src: 'images/ac1.png',
+				person: '4',
+				time: '20'
+			},
+			{
+				name: 'Варенье из летних ягод',
+				href: href,
+				url: '',
+				src: 'images/ac2.png',
+				person: '4',
+				time: '120'
+			},
+			{
+				name: 'Охлажденная рыба со скидкой',
+				href: href,
+				url: '',
+				src: 'images/ac3.png',
+				person: '4',
+				time: '20'
+			},
+			{
+				name: 'Всё для шашлыка на даче',
+				href: href,
+				url: '',
+				src: 'images/ic4.png',
+				person: '4',
+				time: '20'
+			},
+			{
+				name: 'Разные категории — выгода одна!',
+				href: href,
+				url: '',
+				src: 'images/ic8.png',
+				person: '4',
+				time: '120'
+			},
+			{
+				name: 'Всё для шашлыка на даче',
+				href: href,
+				url: '',
+				src: 'images/ic4.png',
+				person: '4',
+				time: '20'
+			},
+			{
+				name: 'Разные категории — выгода одна!',
+				href: href,
+				url: '',
+				src: 'images/ic8.png',
+				person: '4',
+				time: '120'
+			},
+			{
+				name: 'Всё для шашлыка на даче',
+				href: href,
+				url: '',
+				src: 'images/ic4.png',
+				person: '4',
+				time: '20'
+			},
+			{
+				name: 'Разные категории — выгода одна!',
+				href: href,
+				url: '',
+				src: 'images/ic8.png',
+				person: '4',
+				time: '120'
+			}
+		]
+	;
+
+block recipes
+	.recipes
+		ul.recipes-list
+			each re in recipe.splice(0, 9)
+				li
+					.recipes-imgblock
+						.recipes-overlay.overlay
+							.recipes-infoblock
+								.recipes-time= re.time + ' мин.'
+									svg
+										use(xlink:href="images/svg/icon.svg#time")
+								.recipes-person= re.person + ' порции'
+									svg
+										use(xlink:href="images/svg/icon.svg#person")
+							a(href="").btn.btn-outline-white.recipes-btn Узнать
+								span &nbsp;рецепт&nbsp;&nbsp;
+									span &rsaquo;
+						img.recipes-img(src='' + (re.src ? re.src : ''))
+
+					.recipes-title= re.name
+

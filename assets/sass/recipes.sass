@@ -1,0 +1,162 @@
+.recipes
+	text-align: center
+
+	&-list
+		display: flex
+		flex-wrap: wrap
+		padding: 0
+
+		& > li
+			list-style: none
+			display: inline-block
+			flex: 0 0 calc(100%/4 - 8px)
+			margin: 0 0 40px
+			display: flex
+			flex-direction: column
+			cursor: pointer
+			border: 1px solid #d4dde6
+			border-radius: 8px
+
+			&:last-child
+				display: none
+
+			@media(max-width: 960px)
+				flex: 0 0 calc(100%/3 - 8px)
+
+				&:last-child
+					display: flex
+
+			@media(max-width: 768px)
+				flex: 0 0 calc(100%/2 - 8px)
+
+				&:last-child
+					display: none
+
+			.item__cart &
+				flex: 15.5%
+				max-width: 15.5%
+				margin: .3% .55% 16px
+				border: none
+
+				@media(max-width: 960px)
+					flex: 18.9%
+					max-width: 18.9%
+
+				@media(max-width: 768px)
+					flex: 23.9%
+					max-width: 23.9%
+
+				@media(max-width: 600px)
+					flex: 32.2%
+					max-width: 32.2%
+
+				@media(max-width: 480px)
+					flex: 48.9%
+					max-width: 48.9%
+
+			.item__cart &
+				flex-wrap: inherit
+
+	&-imgblock
+		position: relative
+
+		&:hover > .overlay
+			opacity: 1
+			background: rgba(0, 0, 0, .4)
+			height: 100%
+			width: 100%
+			position: absolute
+
+			& + .btn
+				opacity: 1
+
+	&-img
+		width: 100%
+		object-fit: cover
+
+	&-overlay
+		opacity: 0
+		border-radius: 8px 8px 0 0
+		transition: .3s linear
+
+		&:hover .btn
+			opacity: 1
+
+	&-infoblock
+		margin: 0
+		position: absolute
+		width: 100%
+		top: 50%
+		transform: translateY(-100%)
+
+		.item__cart &
+			display: none
+
+	&-person,
+	&-time
+		display: inline-block
+		margin: 16px 8px 16px 0
+		padding: 0 0 0 20px
+		color: $white
+		font-family: $lato-bold
+		font-size: 14px
+		font-weight: 400
+		letter-spacing: .28px
+		position: relative
+
+		& > svg
+			fill: transparent
+			stroke: $white
+			stroke-width: 4
+			stroke-miterlimit: 10
+			width: 16px
+			height: 16px
+			position: absolute
+			left: 0
+			top: -2px
+
+	&-btn
+		opacity: 0
+		border-radius: 4px
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%)
+		padding: 12px 32px
+		font-size: 14px
+		line-height: 14px
+		font-family: $lato-bold
+		font-weight: 400
+		letter-spacing: .28px
+
+		& > i
+			font-size: 20px
+			vertical-align: bottom
+
+		& > span
+
+			.item__cart &
+				display: none
+
+		.item__cart &
+			transform: translate(-50%, -50%)
+
+	&-title
+		margin-top: -8px
+		background-color: $white
+		z-index: 1
+		border-radius: 0 0 8px 8px
+		background-color: $white
+		text-align: center
+		margin: 16px 8px 16px 16px
+		color: $body-color
+		font-family: $lato-bold
+		font-size: 14px
+		font-weight: 400
+		line-height: 16px
+		letter-spacing: .128px
+		display: inline-block
+
+		.item__cart &
+			text-align: left
+			margin: 8px 0

@@ -1,0 +1,84 @@
+block navbar
+	.navigation__moby
+		button.navigation__dropdown-toggle.boxShow.navigation__moby-btn
+			.navigation__item-burger.boxShow#moby-menu
+		nav#navigation-moby.dropdown-menu.moby-menu.boxShow-content.open(aria-boxShow="moby-menu")
+			include menu
+		.navigation__moby-home
+			a.main-header__logo.custom-font-logo(href='/')
+
+		.navigation__moby-search
+			button#navigation__search-toggle.navigation__moby-dropdown-toggle.custom-font-magnifer(data-toggle='dropdown', type='button', aria-expanded='false', aria-haspopup="true")
+			.navigation__dropdown.navigation__dropdown--search.dropdown-menu.navigation__moby-dropdown(aria-labelledby='navigation__search-toggle')
+				include search
+		.navigation__moby-basket
+			span.navigation__item-icon.custom-font-cart
+				span.navigation__cart-counter 23
+
+	nav#navigation.navigation.navbar.navbar-expand-m.navbar-light.boxShow-content
+		.container.navigation__container
+			.navigation__padding
+				.navigation__align
+					.navigation__item.navigation__item--dropdown.navigation__item--menu.navigation__item--drop-menu.nav-item.dropdown
+						button#group-menu.navigation__dropdown-toggle.boxShow.navigation__btn
+							.navigation__item-padding
+								.navigation__item-align
+									.navigation__item-content
+										span.navigation__item-burger
+										span.navigation__item-title Каталог
+										span.navigation__item-nail.navigation__nail-item Более 10 000 товаров
+
+						.navigation__dropdown.navigation__dropdown--menu.dropdown-menu.boxShow-content(aria-boxShow="group-menu")
+							include menu
+
+					a.navigation__item(href='#')
+						.navigation__item-padding
+							.navigation__item-align
+								.navigation__item-content
+									.navigation__item-content-row
+										h4.navigation__item-title Акции и скидки
+					a.navigation__item(href='#')
+						.navigation__item-padding
+							.navigation__item-align
+								.navigation__item-content
+									.navigation__item-content-row
+										h4.navigation__item-title Новинки
+					a.navigation__item(href='#')
+						.navigation__item-padding
+							.navigation__item-align
+								.navigation__item-content
+									.navigation__item-content-row
+										h4.navigation__item-title Рецепты
+
+					.navigation__item.navigation__item--authorization.navigation__item--menu
+						.navigation__item-padding
+							.navigation__item-align
+								.navigation__item-content
+									span.navigation__item-title.navigation__item-title--lk
+										a.navigation__item-link(href='#')
+											svg.icon__person-lk
+												use(xlink:href="images/svg/icon.svg#person")
+											span Личный кабинет
+									span.navigation__item-nail
+										a.navigation__nail-item(href='#') Вход
+										span.navigation__nail-item |
+										a.navigation__nail-item(href='#') Регистрация
+
+					a.navigation__item.navigation__item--basket.navigation__item--menu(href='#')
+						.navigation__item-padding
+							.navigation__item-align
+								.navigation__item-media
+									span.navigation__item-icon.custom-font-cart
+										span.navigation__cart-counter 23
+
+								.navigation__item-content
+									span.navigation__item-title Корзина
+									span.navigation__item-nail.navigation__nail-item.navigation__nail-item--amount 10 000 руб.
+
+					.navigation__item.navigation__item--dropdown.navigation__item--search.nav-item.dropdown
+						button#navigation__search-toggle.navigation__dropdown-toggle.btn-search.custom-font-magnifer(data-toggle='dropdown', type='button', aria-expanded='false', aria-haspopup='true')
+						.navigation__dropdown.navigation__dropdown--search.dropdown-menu(aria-labelledby='navigation__search-toggle')
+							include search
+
+
+

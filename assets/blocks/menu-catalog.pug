@@ -1,0 +1,34 @@
+-
+	var href = 'javascript:void(0);',
+		catalogLinks = {
+		'Скоро новый год':          '' + href + '',
+		'Овощи, зелень':              '' + href + '',
+		'Фрукты, ягоды':            '' + href + '',
+		'Молочные продукты':   '' + href + '',
+		'Мясо, птица, яйца':        '' + href + '',
+		'Бакалея':             '' + href + '',
+		'Фрукты, ягоды':       '' + href + '',
+		'Скоро новый год':          '' + href + '',
+		'Овощи, зеленьи':              '' + href + '',
+		'Фрукты, ягодыи':            '' + href + '',
+		'Молочные продуктыи':   '' + href + '',
+		'Мясо, птица, яйцаи':        '' + href + '',
+		'Бакалеяи':             '' + href + '',
+		'Скоро новый годф':          '' + href + '',
+		'Овощи, зелениьф':              '' + href + '',
+		'Фрукты, ягодыиф':            '' + href + '',
+		'Молочные продуктыиф':   '' + href + '',
+		'Мясо, птица, яйцаиф':        '' + href + '',
+		'Бакалеяф':             '' + href + '',
+		'Фрукты, ягодыиф':       '' + href + ''
+	};
+
+block menu-catalog
+	.menu-catalog
+		.menu-catalog__padding
+			.menu-catalog__row
+				.menu-dwarf__title Каталог
+				.menu-catalog__align
+					each val, link in catalogLinks
+						.menu-catalog__item
+							a.menu-catalog__link(href='' + val + '')= link

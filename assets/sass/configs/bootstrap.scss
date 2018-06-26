@@ -1,0 +1,46 @@
+/*!
+ * Bootstrap v4.0.0-beta (https://getbootstrap.com)
+ * Copyright 2011-2017 The Bootstrap Authors
+ * Copyright 2011-2017 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+
+@import "functions"; // Reсopied to change $yiq compare number
+// @import "variables";
+@import "mixins";
+
+@import "custom"; // Redefines _variables.scss
+
+@import "print";
+@import "reboot";
+@import "type";
+@import "images";
+@import "code";
+@import "grid";
+
+@import "tables"; // Reсopied and redefined to FIX bug => https://stackoverflow.com/questions/45868537/bootstrap-4-error-undefined-operation-null-lt-9/45881067#45881067
+
+@import "forms";
+@import "buttons";
+@import "transitions";
+@import "dropdown";
+@import "button-group";
+@import "input-group";
+@import "custom-forms";
+@import "nav";
+@import "navbar";
+@import "card";
+@import "breadcrumb";
+@import "pagination";
+@import "badge";
+@import "jumbotron";
+@import "alert";
+@import "progress";
+@import "media";
+@import "list-group";
+@import "close";
+@import "modal";
+@import "tooltip";
+@import "popover";
+@import "carousel";
+@import "utilities";

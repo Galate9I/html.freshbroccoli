@@ -1,0 +1,268 @@
+-
+	var href = 'javascript:void(0);',
+		catalog__items = [
+			{
+				name: 'Сырок глазированный «Ваниль» Простоквашино, 120 гр.',
+				href: href,
+				url: '',
+				src: 'images/photo-cat.png',
+				price: '89',
+				measure: 'кг',
+				qty: '0.5',
+				step: '0.5',
+				total: '89',
+				tt: 'hit'
+			},
+			{
+				name: 'Сырок глазированный «Ваниль»',
+				href: href,
+				url: '',
+				src: 'images/cat5.png',
+				price: '100',
+				measure: 'ru',
+				qty: '1',
+				step: '1',
+				total: '100',
+				tag: [
+					{
+						img: 'images/svg/tag.svg#new'
+					},
+					{
+						img: 'images/svg/tag.svg#new'
+					},
+					{
+						img: 'images/svg/tag.svg#new'
+					},
+					{
+						img: 'images/svg/tag.svg#class'
+					},
+					{
+						img: 'images/svg/tag.svg#new'
+					},
+					{
+						img: 'images/svg/tag.svg#new'
+					}
+				],
+				tt: 'new'
+			},
+			{
+				name: 'Картофель черри мытый',
+				href: href,
+				url: '',
+				src: 'images/cat1.jpg',
+				price: '9999',
+				measure: 'кг',
+				qty: '2,5',
+				step: '2,5',
+				total: '9999',
+				tag: [
+					{
+						img: 'images/svg/tag.svg#class'
+					},
+					{
+						img: 'images/svg/tag.svg#new'
+					}
+				],
+				tt: 'new'
+			},
+			{
+				name: 'Сырок глазированный Простоквашино, 120 гр.',
+				href: href,
+				url: '',
+				src: 'images/cat4.png',
+				price: '120',
+				measure: '',
+				qty: '1',
+				step: '1',
+				total: '',
+				tt: 'hit'
+			},
+			{
+				name: 'Сырок Простоквашино, 120 гр.',
+				href: href,
+				url: '',
+				src: 'images/cat3.jpg',
+				price: '120',
+				measure: '',
+				qty: '1',
+				step: '1',
+				total: '',
+				tt: 'hit'
+			},
+			{
+				name: 'Сырок «Ваниль» Простоквашино, 120 гр.',
+				href: href,
+				url: '',
+				src: 'images/photo-cat.png',
+				price: '120',
+				measure: '',
+				qty: '1',
+				step: '1',
+				total: '',
+				tag: 'images/svg/tag.svg#new',
+				tt: 'new'
+			},
+			{
+				name: 'Сырок Простоквашино, 120 гр.',
+				href: href,
+				url: '',
+				src: 'images/cat5.png',
+				price: '120',
+				measure: '',
+				qty: '1',
+				step: '1',
+				total: '',
+				tt: 'new'
+			},
+			{
+				name: 'Сырок Простоквашино, 120 гр.',
+				href: href,
+				url: '',
+				src: 'images/cat4.png',
+				price: '120',
+				measure: '',
+				qty: '1',
+				step: '1',
+				total: '',
+				tt: 'new'
+			},
+			{
+				name: 'Сырок глазированный «Вини»',
+				href: href,
+				url: '',
+				src: 'images/cat5.png',
+				price: '100',
+				measure: 'ru',
+				qty: '1',
+				step: '1',
+				total: '100',
+				tt: 'new'
+			},
+			{
+				name: 'Картофель',
+				href: href,
+				url: '',
+				src: 'images/cat1.jpg',
+				price: '9999',
+				measure: 'кг',
+				qty: '2,5',
+				step: '2,5',
+				total: '9999',
+				tt: 'new'
+			},
+			{
+				name: 'Сыр глазированный Простоквашино, 120 гр.',
+				href: href,
+				url: '',
+				src: 'images/cat4.png',
+				price: '120',
+				measure: '',
+				qty: '1',
+				step: '1',
+				total: '',
+				tag: [
+					{
+						img: 'images/svg/tag.svg#class'
+					},
+					{
+						img: 'images/svg/tag.svg#new'
+					}
+				]
+			},
+			{
+				name: 'Сыр',
+				href: href,
+				url: '',
+				src: 'images/cat3.jpg',
+				price: '120',
+				measure: '',
+				qty: '1',
+				step: '1',
+				total: ''
+			},
+			{
+				name: 'Сыр «Ваниль» Простоквашино, 120 гр.',
+				href: href,
+				url: '',
+				src: 'images/photo-cat.png',
+				price: '120',
+				measure: '',
+				qty: '1',
+				step: '1',
+				total: ''
+			},
+			{
+				name: 'черри',
+				href: href,
+				url: '',
+				src: 'images/cat5.png',
+				price: '120',
+				measure: '',
+				qty: '1',
+				step: '1',
+				total: '',
+				tag: [
+					{
+						img: 'images/svg/tag.svg#class'
+					}
+				]
+			},
+			{
+				name: 'Сыр глазированный 120 гр.',
+				href: href,
+				url: '',
+				src: 'images/cat4.png',
+				price: '120',
+				measure: '',
+				qty: '1',
+				step: '1',
+				total: ''
+			}
+		]
+	;
+
+
+
+block catalog__items
+	if ind != 1
+		- count = 14
+
+	.catalog__items
+		ul.catalog__items-list
+			li.catalog__items-wrap.catalog__items-wrap--banner
+				.catalog__items-item
+					.catalog__items-imgblock
+						p.catalog__items-text Купите орехи  или сухофрукты 600 г — получи скидку 20%
+						img.catalog__items-image(src='images/card-ban.png', title='name' alt='name')
+					.catalog__items-banner
+						a(href="#").catalog__items-link Перейти в раздел
+			each it in catalog__items.splice(0, count)
+				li.catalog__items-wrap(data-tags=''+ it.tt +'')
+					.catalog__items-item
+						.catalog__items-imgblock
+							a(href="")
+								img.catalog__items-image(src=''+ it.src +'', title=''+ it.name +'' alt=''+ it.name +'')
+								// среднее изображение 204*204, name.jpg.medium.jpg
+							.catalog__items-stickers
+								if it.tag && typeof it.tag === 'object'
+									each tag_val, tag_key in it.tag.splice(0, 6)
+										- var img = tag_val.img;
+										include stickers
+
+						span.catalog__items-title= it.name
+						span.catalog__items-price 160 руб./кг
+						.catalog__items-addcart
+							.quantity
+								input(type='text' value!=''+ it.qty + ' кг.' disabled)
+								.minus
+								.plus
+							.catalog__items-btn
+								svg(width="48" height="48")
+									use(xlink:href='images/svg/cart.svg#addcart')
+								span!= it.price + '&nbsp;p.'
+						.catalog__items-incart
+							.catalog__items-minus(data-toggle="tooltip" data-placement="top" title="Изменить количество товар в корзине") -
+							.catalog__items-qty!= it.qty + '&nbsp;кг.'
+							.catalog__items-total!= it.total + '&nbsp;p.'
+							.catalog__items-plus(data-toggle="tooltip" data-placement="top" title="Изменить количество товар в корзине") +
+					

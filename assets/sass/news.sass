@@ -1,0 +1,100 @@
+
+.news
+	overflow: hidden
+	white-space: nowrap
+	padding: 8px 0
+
+	&__item
+		list-style: none
+		display: inline-block
+		vertical-align: top
+		text-align: left
+		width: 208px
+		margin-right: 16px
+
+	&__link
+		display: block
+		border-radius: 8px
+		position: relative
+		width: 100%
+		height: 144px
+		margin-bottom: 16px
+
+		&:hover
+			.news__overlay
+				display: block
+
+	.news__overlay
+		display: none
+		border-radius: 8px
+		position: absolute
+		top: 0
+		bottom: 0
+		left: 0
+		right: 0
+		background-color: rgba(0, 0, 0, 0.5)
+
+	&__img
+		width: 100%
+		border-radius: 8px
+
+	&__date
+		color: $gray-600
+		font-size: 12px
+		font-weight: 300
+		margin-bottom: 8px
+
+	&__text
+		white-space: normal
+		font-size: 15px
+		font-weight: 500
+
+	&__subscribe
+		background-color: $gray-bg
+		padding: 16px 0
+		text-align: center
+
+	&__form
+		width: 100%
+		display: flex
+		flex-wrap: wrap
+		justify-content: center
+		align-items: center
+
+	&__label
+		margin-right: 48px
+		font-weight: 500
+
+		@media (max-width: 1060px)
+			margin-right: 15px
+
+		@media (max-width: 1024px)
+			width: 100%
+			margin-right: 0
+			margin-bottom: 24px
+
+	&__input,
+	&__btn
+		vertical-align: middle
+		margin: 0 8px
+
+	&__btn
+		@media (max-width: 600px)
+			width: 100%
+			max-width: 320px
+
+	&__input
+		border: none
+		padding: 12px 24px
+
+		@media (max-width: 1024px)
+			width: 100%
+			max-width: 320px
+
+		@media (max-width: 600px)
+			margin-bottom: 16px
+
+.home-title--news
+	display: flex
+	justify-content: center
+	align-items: center

@@ -1,0 +1,319 @@
+-
+	var $dark  = '#718391',
+		$white = '#ffffff';
+
+	var href = '#',
+		group = {
+			'Овощи, зелень':           href,
+			'Фрукты, ягоды':           href,
+			'Орехи, сухофрукты':       href,
+			'Молочные продукты':       href,
+			'Мясо, птица, яйца':       href,
+			'Рыба, морепродукты': {
+				expanded: false,
+				default: true,
+				href: href,
+				class: {
+					'Охлажденная рыба': {
+						expanded: false,
+						default: true,
+						href: href,
+						float: {
+							'Рис для суши и роллов >': {
+								href: href,
+								modificator: 'seafood_discount',
+								text: 'Правильный рис для любителей <br> японской кухни со скидкой 15%',
+								bgcolor: '#edf3fa;',
+								color: $dark,
+								img: 'images/img1.png',
+								labels: {
+									'-15%': {
+										class: 'success'
+									}
+								}
+							},
+							'Японская лапша >': {
+								href: href,
+								modificator: 'seafood_discount',
+								text: 'Хиты продаж по лучшим ценам!',
+								bgcolor: '#ef962d',
+								color: $white,
+								img: 'images/img2.png',
+								labels: {
+									'new': {
+										class: 'success'
+									}
+								}
+							},
+							'Скидки': {
+								href: href,
+								modificator: 'seafood_discount--all',
+								bgcolor: '#f25851',
+								color: $white,
+								text: 'на рыбу и морепродукты',
+								prefix: 'до',
+								labels: {
+									'-50%': {
+										class: 'success'
+									}
+								}
+							}
+						},
+						type: {
+							'Стерлядь': {
+								expanded: false,
+								default: true,
+								href: href
+							},
+							'Карп':                 href,
+							'Дорадо':               href,
+							'Семга':                href,
+							'Форель':               href,
+							'Сибас':                href,
+							'Окунь морской':        href,
+							'Вся охлажденная рыба': href
+						}
+					},
+					'Соленая и копченая рыба':           href,
+					'Свежемороженная рыба':              href,
+					'Икра':                              href,
+					'Морепродукты':                      href,
+					'Крабовое мясо и палочки':           href,
+					'Морская капуста и закуски из рыбы': href,
+					'Вся рыба и морепродукты': href,
+				}
+			},
+			'Мясная гастрономия': {
+				expanded: false,
+				default: true,
+				href: href,
+				class: {
+					'Охлажденная': {
+						expanded: false,
+						default: true,
+						href: href,
+						float: {
+							'Рис  >': {
+								href: href,
+								modificator: 'seafood_discount',
+								text: 'Правильный рис для любителей <br> японской кухни со скидкой 15%',
+								bgcolor: '#edf3fa;',
+								color: $dark,
+								img: 'images/img1.png',
+								labels: {
+									'-15%': {
+										class: 'success'
+									}
+								}
+							},
+							'Японская  >': {
+								href: href,
+								modificator: 'seafood_discount',
+								text: 'Хиты продаж по лучшим ценам!',
+								bgcolor: '#ef962d',
+								color: $white,
+								img: 'images/img2.png',
+								labels: {
+									'new': {
+										class: 'success'
+									}
+								}
+							},
+							'Скидки': {
+								href: href,
+								modificator: 'seafood_discount--all',
+								bgcolor: '#f25851',
+								color: $white,
+								text: 'на рыбу и морепродукты',
+								prefix: 'до',
+								labels: {
+									'-50%': {
+										class: 'success'
+									}
+								}
+							}
+						},
+						type: {
+							'Стедь': {
+								expanded: false,
+								default: true,
+								href: href
+							},
+							'Карп':                 href,
+							'Дордо':               href,
+							'Сема':                href,
+							'Фоель':               href,
+							'Сис':                href,
+							'Окь морской':        href,
+							'Важденная рыба': href
+						}
+					},
+					'Соленая я рыба':           href,
+					'Свежеморожея рыба':              href,
+					'Икра':                              href,
+					'Морепродты':                      href,
+					'Крабовоесо и палочки':           href,
+					'Морская кста и закуски из рыбы': href,
+					'Вся рыб морепродукты': href,
+				}
+			},
+			'Хлеб и свежая выпечка':   href,
+			'Кондитерские изделия':    href,
+			'Бакалея':                 href,
+			'Соусы, приправы':         href,
+			'Консервация':             href,
+			'Вода, соки, напитки':     href,
+			'Чай, кофе, какао':        href,
+			'Замороженные продукты':   href,
+			'Детское питание и уход':  href,
+			'Бытовая химия':           href
+				};
+
+block menu
+	#menu.menu.navigation__menu
+		.menu__group
+			ul.navigation__moby-list
+				li.navigation__moby-item
+					a.navigation__moby-link(href='#') На главную
+				li.navigation__moby-item
+					a.navigation__moby-link(href='#') Личный кабинет
+			ul.menu__group-container(data-menu='menu__group')
+				li.menu__item
+					a.menu__link.menu__link--catalog(href='#') Перейти в каталог
+				-
+					var menuClassIndex = 0,
+						menuTypeIndex = 0,
+						menuFloatsIndex = 0;
+
+				each group__val, group__key in group
+					#{'li'}(
+						class='menu__item' + (group__val.default ? ' default' : '') + (group__val.expanded ? ' expanded' : '') + '' + (group__val.modificator ? ' menu__item--' + group__val.modificator : ''))
+						a.menu__link(href='' + (typeof group__val === 'object' ? group__val.href : group__val || '#') + '')= group__key
+
+						if group__val && typeof group__val === 'object'
+							ul.menu__class(id='menu__class--' + ++menuClassIndex +'' data-menu='menu__class')
+								
+								if group__val.class && typeof group__val.class === 'object'
+									each class__val, class__key in group__val.class
+										#{'li'}(
+											class='menu__item' + (class__val.default ? ' default' : '') + (class__val.expanded ? ' expanded' : ''))
+											a.menu__link(href='' + (typeof class__val === 'object' ? class__val.href : class__val || '#') + '')= class__key
+
+											if class__val && typeof class__val === 'object'
+												ul.menu__type(id='menu__type--' + ++menuTypeIndex +'' data-menu='menu__type')
+													
+													if class__val.type && typeof class__val.type === 'object'
+														each type__val, type__key in class__val.type
+															#{'li'}(
+																class='menu__item' + (type__val.default ? ' default' : '') + (type__val.expanded ? ' expanded' : ''))
+																a.menu__link(href='' + (typeof type__val === 'object' ? type__val.href : type__val || '#') + '')= type__key
+
+												ul.menu__floats(id='menu__floats--' + ++menuFloatsIndex +'')
+													.menu__floats-banner
+														each class__val, class__key in group__val.class
+															if class__val.float && typeof class__val.float === 'object'
+																- var i = 0
+																for obj in class__val.float
+																	- i++
+																if i < 3
+																	div.menu__float-zero
+																	
+																each float__val, float__key in class__val.float
+																	
+																	#{'li'}(
+																			class='menu__float' + (float__val.default ? ' default' : '') + (float__val.modificator ? ' menu__float_' + float__val.modificator : '') + ''
+																			style='background-color: '+ float__val.bgcolor +''
+																	)
+																		if float__val.href
+																			a.menu__float-link(
+																				href='' + (float__val.href || '#') + '' 
+																				style='color: '+ float__val.color +''
+																			)
+																				.menu__float-padding
+																					.menu__float-align
+																						h3.menu__float-title= float__key
+
+																						if float__val.img
+																							img.menu__float-img(src=''+ float__val.img +'')
+
+																						if float__val.prefix
+																							span.menu__float-prefix= float__val.prefix || ''
+
+																						if float__val.labels && typeof float__val.labels === 'object'
+																							each labels__val, labels__key in float__val.labels
+																								span.menu__float-labels= labels__key || ''
+
+																						if float__val.text
+																							p.menu__float-text!= float__val.text || ''
+
+																		else
+																			.menu__float-padding
+																				.menu__float-align
+
+																			if float__val.label && typeof float__val.label === 'object'
+																				each label__val, label__key in float__val.label
+																					.menu__label= label__key
+
+							ul.menu__floats(id='menu__floats--' + ++menuFloatsIndex +'')
+								.menu__floats-banner
+									each class__val, class__key in group__val.class
+										if class__val.float && typeof class__val.float === 'object'
+											- var i = 0
+											for obj in class__val.float
+												- i++
+											if i < 3
+												div.menu__float-zero
+												
+											each float__val, float__key in class__val.float
+												
+												#{'li'}(
+														class='menu__float' + (float__val.default ? ' default' : '') + (float__val.modificator ? ' menu__float_' + float__val.modificator : '') + ''
+														style='background-color: '+ float__val.bgcolor +''
+												)
+													if float__val.href
+														a.menu__float-link(
+															href='' + (float__val.href || '#') + '' 
+															style='color: '+ float__val.color +''
+														)
+															.menu__float-padding
+																.menu__float-align
+																	h3.menu__float-title= float__key
+
+																	if float__val.img
+																		img.menu__float-img(src=''+ float__val.img +'')
+
+																	if float__val.prefix
+																		span.menu__float-prefix= float__val.prefix || ''
+
+																	if float__val.labels && typeof float__val.labels === 'object'
+																		each labels__val, labels__key in float__val.labels
+																			span.menu__float-labels= labels__key || ''
+
+																	if float__val.text
+																		p.menu__float-text!= float__val.text || ''
+
+													else
+														.menu__float-padding
+															.menu__float-align
+
+														if float__val.label && typeof float__val.label === 'object'
+															each label__val, label__key in float__val.label
+																.menu__label= label__key
+
+
+			ul.navigation__moby-list
+					li.navigation__moby-item
+						a.navigation__moby-link(href='#') Оплата
+					li.navigation__moby-item
+						a.navigation__moby-link(href='#') Доставка
+					li.navigation__moby-item
+						a.navigation__moby-link(href='#') Рецепт
+					li.navigation__moby-item
+						a.navigation__moby-link(href='#') Отзывы
+			.navigation__moby-info
+				a.navigation__moby-tel(href="tel: +74951080798") +7 495 108-07-98
+				p.navigation__moby-text Москва | с 9:00 до 21:00
+				button.btn.btn-success.btn-lg.navigation__moby-info-btn Заказать звонок
+			ul.navigation__moby-app.navigation__moby-list
+				li.navigation__moby-item
+					a.navigation__moby-link(href='#') Полная версия сайта

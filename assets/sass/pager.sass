@@ -1,0 +1,51 @@
+@import '../../node_modules/bootstrap/scss/_functions'
+@import '../../node_modules/bootstrap/scss/_variables'
+@import '../../node_modules/bootstrap/scss/_mixins'
+@import 'configs/_custom'
+@import 'mixins/_color'
+
+.pager
+	display: inline-block
+	float: right
+
+	.catalog__foot &
+		display: block
+		float: inherit
+		width: inherit
+		margin: 32px 0
+
+		&-list
+			text-align: center
+
+	&-list
+		line-height: 32px
+		text-align: right
+		padding: 0 16px
+
+		& > li
+			display: inline-block
+			font-family: $lato-base
+			font-size: 14px
+			font-weight: 500
+			list-style: none
+			color: $gray-600
+			width: 32px
+			text-align: center
+			margin: 0 0 0 8px
+			cursor: pointer
+
+			&:hover
+				color: $gray-700
+
+			&.active
+				border-radius: 100%
+				background-color: $gray-500
+				color: $white
+				margin: 8px 8px 8px 16px
+				cursor: default
+
+	.catalog__head &
+
+		@media(max-width: 768px)
+			display: none
+

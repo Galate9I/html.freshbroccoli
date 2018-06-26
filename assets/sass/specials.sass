@@ -1,0 +1,96 @@
+@import '../../node_modules/bootstrap/scss/_functions'
+@import '../../node_modules/bootstrap/scss/_variables'
+@import '../../node_modules/bootstrap/scss/_mixins'
+@import 'configs/_custom'
+@import 'mixins/_color'
+
+.specials
+	padding-bottom: 16px
+	
+	&__title
+		text-align: center
+		font-weight: 300
+
+	&__list
+		list-style: none
+		padding: 0
+		margin: 0
+
+	&__item
+		position: relative
+		width: 208px
+		margin: 0 8px
+
+	&__link
+		display: block
+
+		&:hover
+			.specials__text
+				color: $body-color
+
+			.specials__img, .specials__info--super-big
+				box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+		&:focus
+			outline: none
+			
+			.specials__text
+				color: $body-color
+
+			.specials__img, .specials__info--super-big
+				box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+
+	&__img
+		display: block
+		width: 208px
+		height: 152px
+		border-radius: 8px
+
+	&__info
+		position: absolute
+		top: 74px
+		left: 123px
+		display: flex
+		align-items: center
+		justify-content: center
+		height: 78px
+		width: 85px
+		border-bottom-right-radius: 8px
+		border-top-left-radius: 8px
+		padding: 0 8px
+
+		&--small p
+			font-size: 14px
+
+		&--big p
+			font-size: 22px
+
+		&--super-big
+			position: static
+			width: 208px
+			height: 152px
+			border-radius: 8px
+
+			p
+				font-size: 24px
+				line-height: 30px
+				font-weight: 700
+
+				span
+					font-size: 50px
+					line-height: 50px
+
+	&__info-text
+		margin: 0
+		color: $white
+		font-weight: 300
+		text-align: center
+
+	&__text
+		display: inline-block
+		width: 100%
+		margin: 0
+		margin-top: 8px
+		text-align: center
+		font-size: 14px
+		font-weight: 300
+

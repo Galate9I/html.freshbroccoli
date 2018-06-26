@@ -1,0 +1,18 @@
+include ../blocks/page
+
+	.item
+
+		include ../blocks/breadcrumbs
+
+		.content
+			include ../blocks/item__cart
+
+		.wrapp-inner
+			- var ind = 1;
+			- var count = 8;
+			include ../blocks/slider__items
+
+		.wrapp-inner
+			include ../blocks/messeng__block
+
+include ../blocks/footer

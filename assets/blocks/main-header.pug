@@ -1,0 +1,24 @@
+block main-header
+    .main-header
+        .container
+            .main-header__padding
+                .main-header__row
+                    .main-header__align
+                        .main-header__brand
+                            .main-header__brand-row
+                                .main-header__brand-align
+                                    a.main-header__logo.custom-font-logo(href='/')
+                                    .main-header__slogan Онлайн-супермаркет Broccoli | Доставка продуктов по Москве и Московской области
+                        
+                        .main-header__retail
+                            .main-header__retail-row
+                                .main-header__retail-align
+                                    a.main-header__phone(href='tel:' + companyPhone.replace(/[^\d\+]*/gmi, '') + '' title='Откроет подходящее для звонка приложение') #{companyPhone}
+                                    .main-header__address
+                                        .main-header__address-row
+                                            .main-header__address-align
+                                                .main-header__address-slog c 9:00 до 21:00
+                                                .main-header__address-slog Москва
+
+                                    .main-header__retail-actions
+                                        button.btn.btn-success.btn-sm(type='button') Заказать звонок

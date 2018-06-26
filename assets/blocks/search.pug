@@ -1,0 +1,13 @@
+block search
+    form#search.search.navigation__search(onsubmit='javascript:return void(0);')
+        .search__padding
+            .search__row
+                .search__align
+                    .search__item.search__item--submit
+                        button.search__submit.custom-font-magnifer(type='submit')
+
+                    .search__item.search__item--input
+                        input#search__input.search__input(type='text' placeholder='Поиск товара' autofocus)
+
+                    .search__item.search__item--clear
+                        button.search__clear.custom-font-cross(type='reset')

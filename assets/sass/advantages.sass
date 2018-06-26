@@ -1,0 +1,93 @@
+.advantages
+	background-color: #eee
+	height: 168px
+
+	@media(max-width: 960px)
+		display: none
+
+	&__list
+		display: flex
+		justify-content: space-between
+		padding: 0 8px
+		height: 100%
+		align-items: center
+		max-width: 1582px
+		padding: 0 24px
+		margin: auto
+
+	&__item
+		list-style: none
+		display: inline-block
+		width: 176px
+		text-align: center
+		flex: 1 1 25%
+		position: relative 
+
+	&__cont
+		display: inline-block
+
+	&__img
+		width: 80px
+		height: 80px
+		stroke: $green-1
+		fill: transparent
+
+	&__text
+		color: $gray-600
+		font-family: $lato-base
+		font-size: 14px
+		font-weight: 300
+		line-height: 24px
+		max-width: 280px
+		margin: 0
+		height: 72px
+
+	&__separator
+		width: 100%
+		min-width: 100px
+		left: 50%
+		top: 0
+		position: absolute
+		padding: 24px 48px
+
+		& > span
+			background-image: url('../images/svg/adx.png')
+			min-width: 100px
+			height: 27px
+			background-repeat: no-repeat
+			background-position: center
+			background-size: contain
+			display: block
+
+		.advantages__item:last-child &
+			display: none
+
+//- OLD advantages__list
+
+.advantages.old
+	background-color: #eee
+
+	&__list
+		display: flex
+		justify-content: center
+		padding: 0 8px
+
+	&__item
+		list-style: none
+		display: inline-block
+		width: 176px
+		text-align: center
+		margin: 0 8px
+
+	&__img
+		width: 48px
+		height: 48px
+		stroke: $main-color
+		fill: transparent
+
+	&__text
+		color: $gray-600
+		font-family: $lato-bold
+		font-size: 13px
+		font-weight: 400
+		line-height: 16px

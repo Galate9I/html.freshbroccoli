@@ -1,0 +1,33 @@
+@import '../../node_modules/bootstrap/scss/_functions'
+@import '../../node_modules/bootstrap/scss/_variables'
+@import '../../node_modules/bootstrap/scss/_mixins'
+@import 'configs/_custom'
+@import 'mixins/_color'
+
+.page__title
+    text-align: center
+    display: flex
+    font-family: $lato-bold
+    font-size: 18px
+    font-weight: 700
+    color: $body-color
+    letter-spacing: .36px
+    line-height: 14px
+    margin-bottom: 24px
+
+    &:before,
+    &:after
+        content: ''
+        height: .5em
+        border-bottom: 1px solid $gray-500
+        display: block
+        flex-grow: 1
+
+        .item__cart &
+            display: none
+
+    &:before
+        margin: 0 16px 0 -128px
+
+    &:after
+        margin: 0 -128px 0 16px

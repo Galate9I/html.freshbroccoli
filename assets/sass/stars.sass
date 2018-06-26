@@ -1,0 +1,37 @@
+.stars
+	display: flex
+	flex-direction: row-reverse
+	justify-content: flex-end
+
+	@media (max-width: 480px)
+		margin: 0 0 24px
+
+	& input
+		display: none
+
+		&:checked ~ label > svg
+			fill: $main-color
+	&-item
+		margin: 0 8px 0 0
+
+		&.fill svg
+			fill: $main-color
+
+
+		&:hover ~ label > svg
+			fill: $main-color
+
+	svg
+		fill: transparent
+		cursor: pointer
+
+		@media (max-width: 600px)
+			width: 24px
+			height: 24px
+
+		@media (max-width: 600px)
+			width: 16px
+			height: 16px
+
+		&:hover
+			fill: $main-color

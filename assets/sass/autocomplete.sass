@@ -1,0 +1,49 @@
+@import '../../node_modules/bootstrap/scss/_functions'
+@import 'configs/_custom'
+
+// sass-lint:disable indentation class-name-format no-important
+.ui-autocomplete
+	position: absolute
+	list-style: none
+	background-color: $white
+	top: 100% !important
+	left: -1px !important
+	right: -1px !important
+	width: auto !important
+	border: 1px solid $gray-300
+	line-height: $line-height-base
+	margin: 0
+	padding: 0
+	box-shadow: 0 4px 4px 0 fade-out($gray-300, $fibo-asymp-xxl)
+
+	&:empty
+		display: none !important
+
+	&:focus
+		outline: none
+		box-shadow: inset 0 0 0 3px $navigation-bgc
+
+.ui-menu-item
+	color: $gray-500
+	letter-spacing: .28px
+
+	&:focus
+		outline: none
+		box-shadow: inset 0 0 0 3px $navigation-bgc
+
+.ui-menu-item-wrapper
+	position: relative
+	display: block
+	padding: $grid-gutter-width / 4 $grid-gutter-width / 2 $grid-gutter-width / 4 56px + $grid-gutter-width / 2 - 1
+
+	&:hover
+		text-decoration: none
+
+	&:hover,
+	&:active,
+	&.ui-state-active
+		+color-yiq($navigation-bgc)
+		background-color: $navigation-bgc
+
+// sass-lint:enable no-important class-name-format
+// sass-lint:enable indentation

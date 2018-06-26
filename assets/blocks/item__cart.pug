@@ -1,0 +1,155 @@
+block item__cart
+
+	.item__cart
+		.item__cart-imgblock
+			.item__cart-photo.zoom
+				img.item__cart-image(src="images/item1.jpg")
+				//- основное изорбражение 430*430, name.jpg 
+				.item__cart-iconzoom
+			.item__cart-gallery
+				ul.item__cart-list
+					li
+						img.item__cart-thumbnail(src="images/item1.jpg")
+						// миниатюра 50*50, name.jpg.small.jpg
+					li
+						img.item__cart-thumbnail(src="images/cat1.jpg")
+					li
+						img.item__cart-thumbnail(src="images/photo-cat.png")
+					li
+						img.item__cart-thumbnail(src="images/cat3.jpg")
+					li
+						img.item__cart-thumbnail(src="images/cat4.png")
+					li
+						img.item__cart-thumbnail(src="images/cat5.png")
+					li
+						img.item__cart-thumbnail(src="images/cat1.jpg")
+			.item__cart-like
+				a.btn.btn-lg.btn-outline-secondary(href="") Любимый товар
+					svg(width="16" height="16")
+						use(xlink:href='images/svg/icon.svg#heart')
+			.item__cart-twit
+				a.btn.btn-lg.btn-outline-secondary(href="") Поделиться
+					svg(width="16" height="16")
+						use(xlink:href='images/svg/icon.svg#ora')
+		.item__cart-infoblock
+			include page__title
+
+			.item__cart-stars
+				include stars
+
+			.item__cart-infostart
+				span Рейтинг:
+					b 4
+				span Отзывов:
+					b 15
+
+			.item__cart-info
+				ul.item__cart-info--mini
+					li Арктикул: 35345346
+					li Вес 1шт ~ 40 грамм
+
+			.item__cart-label
+				include tags__action
+
+			.item__cart-price 116 руб. | шт.
+				span 186 руб. | шт.
+			//- .item__cart-cart
+			//- 	.item__cart-qty
+			//- 		div.item__cart-qtyblock
+			//- 			span.plus +
+			//- 			input(value="1 шт.")
+			//- 			span.minus -
+			//- 	.item__cart-incart
+			//- 		.item__cart-pricebtn 116
+			//- 			cur р.
+			//- 		a.item__cart-cartbtn(href="") В корзину
+			.item__cart-cart
+				.quantity
+					input(type='text' value='1 кг.' disabled)
+					.minus
+					.plus
+				.catalog__items-btn
+					svg(width="48" height="48")
+						use(xlink:href='images/svg/cart.svg#addcart')
+					span 116 &nbsp;p.
+
+			.item__cart-shippinfo
+				img(src="images/car-2.png")
+				//- svg(width="16" height="16")
+				//- 	use(xlink:href='images/svg/icon.svg#shipp')
+				span Доставка сегодня, 13 марта 
+					b бесплатно
+
+			.item__cart-tags
+				ul
+					include tags__type
+			.item__cart-info
+				span.item__cart-info--title Характеристики
+				ul
+					li Объем: 
+						a(href="") 1.5 л
+					li Бренд: 
+						a(href="") Чабан
+					li Тип тепловой обработки: 
+						a(href="") Пастеризованное
+					li Жирность: 
+						a(href="") 3,5%
+					li Страна: 
+						a(href="") Россия
+
+		.item__cart-tabs
+			input(type="radio" name="tabs" checked in="1" id="formula")
+			label(for="formula" class="item__cart-tabname") Состав
+			input(type="radio" name="tabs" in="2" id="des")
+			label(for="des" class="item__cart-tabname") Описание
+			input(type="radio" name="tabs" in="3" id="nice")
+			label(for="nice" class="item__cart-tabname") Условия хранения
+			input(type="radio" name="tabs" in="4" id="recipe")
+			label(for="recipe" class="item__cart-tabname") Рецепты
+			input(type="radio" name="tabs" in="5" id="pack")
+			label(for="pack" class="item__cart-tabname") Упаковка
+			ul.item__cart-tabcontent
+				li.item__cart-tab.boxShow#tab1(in="1")
+					.item__cart-tab--name Состав
+					.item__cart-tab--contblock.boxShow-content(aria-boxShow="tab1")
+						.item__cart-tab--cont Творог обезжиренный, сливки, обезжиренное молоко, сахар; наполнитель (сахарный сироп; глюкозно-фруктозный сироп; кусочки шоколада (какао-масса, какао-масло, сахар); загустители – Е1422, пектины, гуаровая камедь; ароматизаторы; регуляторы кислотности – лимонная кислота, цитрат кальция, цитраты натрия). Может содержать следы глютена, соевого лецитина, яйца куриного, грецкого ореха, фисташки
+							.item__cart-kkal
+								ul.item__cart-tablist
+									li 
+										span 151 кКал
+										| Энергетическая ценность 
+									li 
+										span 5,4 г
+										| Белки
+									li 
+										span 6,7 г
+										| Жиры
+									li 
+										span 17,2 г
+										| Углеводы
+				li.item__cart-tab.boxShow#tab2(in="2")
+					.item__cart-tab--name Описание
+					.item__cart-tab--contblock.boxShow-content(aria-boxShow="tab2")
+						.item__cart-tab--cont Описание
+				li.item__cart-tab.boxShow#tab3(in="3")
+					.item__cart-tab--name Условия хранения
+					.item__cart-tab--contblock.boxShow-content(aria-boxShow="tab3")
+						.item__cart-tab--cont Условия хранения
+				li.item__cart-tab.boxShow#tab4.img-square(in="4")
+					.item__cart-tab--name Рецепты
+					.item__cart-tab--contblock.boxShow-content(aria-boxShow="tab4")
+						.item__cart-tab--cont
+							include recipes
+				li.item__cart-tab.boxShow#tab5(in="5")
+					.item__cart-tab--name Упаковка
+					.item__cart-tab--contblock.boxShow-content(aria-boxShow="tab5")
+						.item__cart-tab--cont Упаковка
+
+			.item__cart-rewiew.boxShow#tab6
+				h2.page__title Отзывы (15)
+			.item__cart-tab--contblock.boxShow-content(aria-boxShow="tab6")
+				.item__cart-tab--cont
+					a.btn.btn-lg.btn-outline-success.item__cart-rewiew-add(href="") + Добавить отзыв
+					include rewiew__list
+					a.btn.btn-lg.btn-outline-dark.btn-center.item__cart-rewiew--all(href="") Загрузить ещё отзывов +
+

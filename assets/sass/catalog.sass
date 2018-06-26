@@ -1,0 +1,270 @@
+@import '../../node_modules/bootstrap/scss/_functions'
+@import '../../node_modules/bootstrap/scss/_variables'
+@import '../../node_modules/bootstrap/scss/_mixins'
+@import 'configs/_custom'
+@import 'mixins/_color'
+@import 'pager'
+@import 'catalog-banner'
+@import 'sidebar'
+@import 'tags'
+@import 'accordion'
+@import 'stickers'
+
+.catalog
+
+	&__head
+		margin: 0
+
+		&-btn
+			display: inline-block
+			width: 70%
+
+		&-sort,
+		&-tags
+			display: inline-block
+			padding: 0 8px
+
+		@media (max-width: 480px)
+			text-align: center
+
+	&__foot
+		text-align: center
+
+	&__items
+
+		&-list
+			display: flex
+			flex-wrap: wrap
+			padding: 0 8px 16px
+			margin-right: -16px
+
+			@media (max-width: 960px)
+				margin: 0 -16px
+
+			@media (max-width: 480px)
+				padding: 0 0 16px
+				margin: 0
+
+		&-wrap
+			width: (100%/6)
+			padding: 8px
+			min-height: 378px
+
+			@media (max-width: 1440px)
+				width: (100%/5)
+			
+			@media (max-width: 1280px)
+				width: (100%/4)
+
+			@media (max-width: 768px)
+				width: (100%/3)
+
+			@media (max-width: 480px)
+				width: (100%/2)
+				padding: 4px
+
+			&:focus
+				outline: none
+
+		&-item
+			list-style: none
+			display: flex
+			flex-direction: column
+			// width: 13.28%
+			height: 100%
+			border-radius: 8px
+			border: 1px solid $gray-200
+			box-sizing: border-box
+			position: relative
+
+			&:hover
+				box-shadow: 0 0 20px rgba(0, 0, 0, 0.1)
+		&-text
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			padding: 16px
+			font-weight: 700
+
+		&-banner
+			position: absolute
+			bottom: 0
+			left: 0
+			right: 0
+			height: 44px
+			background-color: $main-color
+			border-radius: 0 0 8px 8px
+
+			&:hover
+				background-color: $light-main-color
+
+		&-link
+			display: block
+			height: 100%
+			line-height: 44px
+			text-align: center
+			color: $white
+
+			&:hover
+				color: $white
+
+		&-imgblock
+			display: block
+			height: fit-content
+			position: relative
+
+		&-image
+			width: 100%
+
+		&-title
+			flex-grow: 1
+			padding: 24px 16px 8px
+			color: $body-color
+			font-family: Lato
+			font-size: 14px
+			font-weight: 300
+			line-height: 16px
+			letter-spacing: 0.14px
+
+			@media (max-width: 480px)
+				padding: 16px 8px 4px
+
+		&-price
+			color: $gray-600
+			padding: 8px 16px
+
+			@media (max-width: 480px)
+				padding: 4px 8px
+
+		&-addcart
+			height: 44px
+			border-top: 1px solid #e2e2e2
+			display: flex
+			flex-wrap: wrap
+			box-sizing: border-box
+			border-radius: 0 0 8px 8px
+
+		&-wrap:nth-child(2) &-addcart
+			display: none
+
+		&-btn
+			height: 100%
+			width: 50%
+			display: flex
+			align-items: center
+			padding: 0 8px 0 0
+			position: relative
+			text-align: center
+			color: $body-color
+			font-family: $lato-bold
+			font-size: 14px
+			font-weight: 500
+			letter-spacing: 0.28px
+			cursor: pointer
+
+			& > span
+				flex-grow: 1
+				text-align: right
+
+				@media (max-width: 480px)
+					font-size: .9em
+
+			&:hover
+				color: $white
+				background-color: $main-color
+				border-radius: 0 0 8px 0
+
+				& > svg
+					stroke: #ccff33
+
+
+			& > svg
+				display: inline-block
+				max-width: 24px
+				min-width: 16px
+				width: 32px
+				margin: 0 4px
+				flex-grow: 1
+				height: 44px
+				stroke: $main-color
+
+				@media (max-width: 480px)
+					width: 16px
+					margin: 0 2px
+
+			@media (max-width: 480px)
+					padding: 0 2px 0 0
+
+		&-incart
+			height: 44px
+			border-top: 1px solid #e2e2e2
+			display: flex
+			flex-wrap: wrap
+			align-items: center
+			text-align: center
+			font-size: $font-size
+			font-weight: 500
+			box-sizing: border-box
+			background-color: $main-color
+			color: $white
+			position: relative
+			border-radius: 0 0 8px 8px
+			display: none
+
+		&-wrap:nth-child(2) &-incart
+			display: flex
+
+
+		&-qty
+			flex-grow: 1
+			border-right: 1px solid $white
+			line-height: 12px
+
+		&-minus,
+		&-plus
+			max-width: 40px
+			height: 100%
+			font-size: 18px
+			line-height: 44px
+			flex-grow: 1
+			position: relative
+			padding: 0 6px
+			cursor: pointer
+
+			&:hover
+				background-color: $light-main-color
+
+		&-minus
+			border-right: 1px solid $gray-200
+
+			&:hover
+				border-radius: 0 0 0 8px
+
+		&-plus
+			border-left: 1px solid $gray-200
+
+			&:hover
+				border-radius: 0 0 8px 0
+
+		&-total
+			flex-grow: 1
+
+		&-stickers
+			display: flex
+			flex-direction: column
+			position: absolute
+			top: 0
+			left: 8px
+			height: 100%
+			padding: 4px 0 0
+			width: 40px
+			overflow: hidden
+			flex-wrap: wrap
+
+			@media (max-width: 320px)
+				width: 32px
+
+
+
+

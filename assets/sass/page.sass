@@ -1,0 +1,70 @@
+@import '../../node_modules/bootstrap/scss/_functions'
+@import '../../node_modules/bootstrap/scss/_variables'
+@import '../../node_modules/bootstrap/scss/_mixins'
+@import 'configs/_custom'
+@import 'mixins/_color'
+@import 'mixins/_icon'
+@import 'breadcrumbs'
+@import 'page__title'
+@import 'catalog'
+@import 'item'
+
+.content-wrap
+	display: block
+	position: relative
+
+.content
+	display: block
+	//padding-left: 208px
+	transition: .3s linear
+
+.sidebar + .content
+	@media (max-width: 960px)
+		margin-left: calc(100% - 208px)
+
+.page
+	padding: 30px 0
+
+	@media (max-width: 600px)
+
+		& > br
+			display: none
+
+	&__title
+		text-align: center
+		display: flex
+		font-family: $lato-bold
+		font-size: 18px
+		font-weight: 700
+		color: $body-color
+		letter-spacing: .36px
+		line-height: 14px
+
+		&:before,
+		&:after
+			content: ''
+			height: .5em
+			border-bottom: 1px solid $gray-500
+			display: block
+			flex-grow: 1
+
+		&:before
+			margin: 0 16px 0 -128px
+
+		&:after
+			margin: 0 -128px 0 16px
+
+	&__inner
+		display: flex
+
+.breadcrumb
+	background: inherit
+	text-align: center
+
+	&-link
+		font-family: Lato
+		font-size: 12px
+		font-weight: 300
+		color: $gray-600
+		letter-spacing: .24px
+		padding: 0 8px;

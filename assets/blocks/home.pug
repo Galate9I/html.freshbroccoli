@@ -1,0 +1,106 @@
+block home
+
+	.wrapper
+
+		.wrapp-inner
+			include banner
+
+		.container
+
+			//- .wrapp-inner
+			//- 	include advantages
+
+			.wrapp-inner
+				include catalog__hit
+
+			.wrapp-inner
+				h2.home-title Наши предложения
+				include action-main
+				a.btn.btn-success.btn-lg(href="") Смотреть все акции магазина
+
+		include advantages
+
+
+		.container
+
+			.wrapp-inner
+				//- h2.home-title Товары дня
+				- var ind = 1;
+				- var count = 8;
+				include slider__items
+
+			.wrapp-inner
+				h2.home-title Отзывы о нашем магазине
+				include review
+
+		.wrapp-inner
+			- var height = '248px';
+			- var bgcolor = '#73c9da';
+			- var theme = 'dark';
+			- var title = 'Покупайте в Broccoli<br>и копите баллы!';
+			- var text = 'Накопленные баллы можно потратить на оплату 15% заказа или купить подарок ';
+			- var btn_text = 'Узнать больше';
+			- var btn_color = '#42a8b2';
+			- var btn_class = 'white';
+			- var imgurl = 'images/fon-b1.png';
+
+			include banner__large
+
+		.container
+
+			//- .wrapp-inner
+			//- 	include shipp__block
+
+			h2.home-title Коллекция рецептов
+
+			.wrapp-inner
+				include recipes
+				a.btn.btn-outline-secondary.btn-lg(href="") Больше рецептов +
+
+
+		.wrapp-inner
+			- var height = '385px';
+			- var bgcolor = '#f4e5e2';
+			- var theme = 'light';
+			- var title = 'Рецепты от Юлии Высоцкой<br>в Broccoli';
+			- var text = 'Окунитесь в мир высокой кухни вместе<br>с профессионалом';
+			- var btn_text = 'Узнать больше';
+			- var btn_color = '#ffffff';
+			- var btn_class = 'success';
+			- var imgurl = 'images/fon-b2.png';
+
+			include banner__large
+
+		h2.home-title.home-title--news Лента новостей
+		include news
+
+			//- .wrapp-inner
+			//- 	.welcome__block
+			//- 		.welcome__block-content
+			//- 			hi.welcome__block-title Broccoli — это интернет-магазин свежих продуктов
+			//- 			p.welcome__block-text Мы предлагаем не просто доставку свежих продуктов  на дом по Москве, а сервис, который учитывает именно Ваши потребности. Например, мы подобрали для вас множество готовых наборов с интересными рецептами, которые сделают процесс приготовления пищи более легким и приятным.
+			//- 				br
+			//- 				br
+			//- 				| Наши продукты всегда вкусные и свежие, потому что мы отбираем их для каждого заказа вручную, а доставка осуществляется в специально оборудованных машинах с холодильными камерами. 
+			//- 			a.btn.btn-white.welcome__block-btn.btn-lg(href="") Подробнее
+
+		.wrapp-inner
+			.welcome__block
+				.welcome__block-content
+					hi.welcome__block-title Broccoli — это интернет-магазин
+						br
+						| свежих продуктов
+					p.welcome__block-text Мы предлагаем не просто доставку свежих продуктов  на дом по Москве, а сервис, который учитывает именно Ваши потребности. Например, мы подобрали для вас множество готовых наборов с интересными рецептами, которые сделают процесс приготовления пищи более легким и приятным.
+						br
+						br
+						| Наши продукты всегда вкусные и свежие, потому что мы отбираем их для каждого заказа вручную, а доставка осуществляется в специально оборудованных машинах с холодильными камерами.
+						br
+						br
+						| Обратите внимание: у нас доступные цены и бесплатная доставка по Москве и МО!
+						br
+						| Продажа свежих продуктов – наша работа, и мы делаем ее с любовью и вниманием.
+					a.btn.btn-white.welcome__block-btn.btn-lg(href="") Подробнее о нас
+
+		.container
+			.wrapp-inner
+				include messeng__block

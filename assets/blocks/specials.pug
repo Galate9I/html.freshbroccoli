@@ -1,0 +1,75 @@
+-
+	var href = 'javascript:void(0);',
+		specials = [
+			{
+				img: 'images/meat.jpg',
+				text: 'Акция на товары «Мираторг»',
+				infoText: '-30%',
+				infoColor: '#f1493c',
+				infoFont: 'big'
+			},
+			{
+				img: 'images/buns.jpg',
+				text: 'Булочки Bun Boys — купи 3 по цене 2-х!',
+				infoText: '3 за 2',
+				infoColor: '#9fba18',
+				infoFont: 'big'
+			},
+			{
+				img: 'images/jam.jpg',
+				text: 'Варенье из летних ягод',
+				infoText: 'Вкусно в&nbsp;этом сезоне',
+				infoColor: '#718391',
+				infoFont: 'small'
+			},
+			{
+				img: 'images/fish.jpg',
+				text: 'Охлажденная рыба со скидкой',
+				infoText: '-10%',
+				infoColor: '#f1493c',
+				infoFont: 'big'
+			},
+			{
+				img: 'images/grill.jpg',
+				text: 'Варенье из летних ягод',
+				infoText: 'Сезон гриль',
+				infoColor: '#a2b7b7',
+				infoFont: 'small'
+			},
+			{
+				img: '',
+				text: 'Разные категории — выгода одна!',
+				infoText: 'Товары по <br><span> 50</span><br> рублей',
+				infoColor: '#f1493c',
+				infoFont: 'super-big'
+			},
+			{
+				img: 'images/juse.jpg',
+				text: 'Средство для мытья посуды Finish по акции 5+1',
+				infoText: '5 за 1',
+				infoColor: '#9fba18', 
+				infoFont: 'big'
+			},
+			{
+				img: 'images/granate.jpg',
+				text: 'Средство для мытья посуды Finish по акции 5+1',
+				infoText: 'Суперцена',
+				infoColor: '#b18fc5', 
+				infoFont: 'small'
+			}
+		];
+
+
+block specials
+	.specials
+		h2.specials__title Специальное предложение
+		ul.specials__list
+			each it in specials
+				li.specials__item
+					a(href="#").specials__link
+						img.specials__img(src=''+ it.img + '' style = it.img === "" ? 'display:none' : '')
+						.specials__info(class='specials__info--'+ it.infoFont + '' style='background-color:'+ it.infoColor + '')
+							p.specials__info-text()!= it.infoText
+						p.specials__text=it.text
+
+

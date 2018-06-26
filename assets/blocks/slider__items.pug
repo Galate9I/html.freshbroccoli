@@ -1,0 +1,12 @@
+.slider__items.slider__items-1(data-id="1")
+	//- span.slider__items-arrow.arrow-left
+	//- span.slider__items-arrow.arrow-right
+	h2.slider__title 
+		span Популярные товары
+
+	.slider__items-block
+		-
+			var count = 14,
+				slider = {"slidesToShow": 4, "slidesToScroll": 4};
+
+		include catalog__items

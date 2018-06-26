@@ -1,0 +1,7 @@
+@mixin icon-size ($width, $height, $grid-gutter-width: 0)
+	font-size: $height + px
+	font-size: $height / $font-size-root-number + rem
+	font-size: calc(#{$height} / #{$font-size-root-number} * 1rem)
+	min-width: $width + $grid-gutter-width / 2
+	min-width: ($width + number(str-replace(#{$grid-gutter-width / 2}, unit($font-size), ''))) / $font-size-root-number + rem
+	min-width: calc((#{$width} + #{number(str-replace(#{$grid-gutter-width / 2}, unit($font-size), ''))}) / #{$font-size-root-number} * 1rem)

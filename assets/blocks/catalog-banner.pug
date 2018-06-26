@@ -1,0 +1,27 @@
+-
+	var href = 'javascript:void(0);',
+		catalog__banners = [
+			{
+				text: 'Детское питание</br> Хиты продаж со скидкой!',
+				color: '#2f4b55',
+				src: 'url(images/cat-ban.png)',
+				sale: '-25%',
+				bg:'#eeeeee'
+			}
+			,
+			{
+				text: 'Рыбные консервы</br> Шпроты, мидии со скидкой',
+				color: '#fff',
+				src: 'url(images/cat-ban-2.png)',
+				sale: '-15%',
+				bg:'#49c5d0'
+			}
+		];
+
+block catalog-banner
+	.catalog-banner
+		each it in catalog__banners
+			.catalog-banner__block(style = '' + 'background-image: ' + it.src + ';' + ' background-color: ' + it.bg + ';')
+				p.catalog-banner__text(style = '' + 'color: ' + it.color + ';')!= it.text
+				a(href='#').catalog-banner__link Купить
+				.catalog-banner__sale= it.sale

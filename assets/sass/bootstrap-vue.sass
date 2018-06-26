@@ -1,0 +1,126 @@
+.b-dropdown
+	.dropdown-item
+		&:focus,
+		&:hover
+			$shadow-color: rgba($black, .09)
+			box-shadow: inset 0 0 400px 110px $shadow-color
+			
+		&:active
+			box-shadow: initial
+
+.b-form-group
+	&.form-group
+		.is-invalid
+			// sass-lint:disable no-important
+			.invalid-feedback
+				display: block !important
+			// sass-lint:enable no-important
+
+.custom-file-control
+	&[data-v-c68bd5f8]
+		overflow: hidden
+		&::after
+			content: attr(data-selected)
+			
+		&::before
+			content: attr(data-choose)
+
+	&.dragging
+		&[data-v-c68bd5f8]
+			overflow: hidden
+			filter: blur(3px)
+
+.custom-file
+	.drop-here
+		&[data-v-c68bd5f8]
+			$bgc: rgba($black, .5)
+			position: absolute
+			left: 0
+			right: 0
+			top: 0
+			bottom: 0
+			background-color: $bgc
+			border-radius: 3px
+			z-index: 99999
+			display: flex
+			justify-content: center
+			align-items: center
+			&::before
+				color: $white
+				content: attr(data-drop)
+
+.hidden
+	// sass-lint:disable no-important
+	&[data-v-1b4cbb68]
+		opacity: 0 !important
+	// sass-lint:enable no-important
+
+.modal
+	&[data-v-1b4cbb68]
+		display: block
+
+.b-nav-dropdown
+	.dropdown-item
+		$shadow-color: rgba($black, .09)
+		&:focus,
+		&:hover
+			box-shadow: inset 0 0 400px 110px $shadow-color
+
+		&:active
+			box-shadow: initial
+
+.page-item
+	&[data-v-2792960b],
+	&[data-v-20c4e761]
+		user-select: none
+
+	&.disabled
+		&[data-v-2792960b],
+		&[data-v-20c4e761]
+			cursor: not-allowed
+			opacity: .65
+
+table
+	&.b-table
+		tfoot,
+		thead
+			tr
+				.sorting
+					padding-right: 30px
+					cursor: pointer
+					position: relative
+					&:after,
+					&:before
+						position: absolute
+						bottom: .9em
+						display: block
+						opacity: .3
+
+	&.table-sm
+		tfoot,
+		thead
+			tr
+				.sorting
+					&::after,
+					&::before
+						bottom: .45em
+
+					&::before
+						right: 1em
+						content: '\2191'
+
+					&::after
+						right: .5em
+						content: '\2193'
+				// sass-lint:disable class-name-format
+				.sorting_asc
+					&::after,
+					&::before
+						opacity: 1
+				// sass-lint:enable class-name-format
+
+	&[aria-busy=false]
+		opacity: 1
+
+	&[aria-busy=true]
+		opacity: .6

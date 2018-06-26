@@ -1,0 +1,17 @@
+@import '../../node_modules/bootstrap/scss/_functions'
+@import '../../node_modules/bootstrap/scss/_variables'
+@import '../../node_modules/bootstrap/scss/_mixins'
+@import 'configs/_custom'
+
+.icon
+	display: inline-block
+	margin: 0 20px
+	fill: transparent
+	stroke: $black
+	stroke-width: 3
+	width: 34px
+	height: 34px
+
+@each $name, $value in $cl-icon
+	.icon.icon-#{$name}
+		stroke: #{$value}
