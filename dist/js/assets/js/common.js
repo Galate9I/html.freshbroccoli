@@ -463,7 +463,12 @@ jQuery(document).ready(function () {
 			$('.boxShow').on('click', function() {
 				var $id = $(this).attr('id'),
 					$box = $('.boxShow-content[aria-boxShow="'+ $id +'"]');
-				$box.toggleClass('open');
+				if ($box.hasClass('open')) {
+					$box.removeClass('open');
+				} else {
+					$('.boxShow-content').removeClass('open');
+					$box.toggleClass('open');
+				}
 			});
 		}
 	};
@@ -713,9 +718,9 @@ jQuery(document).ready(function () {
 				console.log('>600');
 				$('.menu__item').hover(
 					function(){
-						var $h = $('#menu').innerWidth();
-						console.log(+ $h + '111');
 						$(this).addClass("active");
+						var $h = $('navigation__item-content').innerWidth();
+						console.log(+ $h + ' 111');
 					},
 					function(){
 						$(this).removeClass("active");
@@ -995,7 +1000,6 @@ jQuery(document).ready(function () {
 			{
 				breakpoint: 960,
 				settings: {
-					centerMode: true,
 					slidesToShow: 2,
 					slidesToScroll: 1,
 					swipe: true
@@ -1004,27 +1008,25 @@ jQuery(document).ready(function () {
 			{
 				breakpoint: 800,
 				settings: {
-					variableWidth: true,
-					centerMode: true,
 					slidesToShow: 1,
-					slidesToScroll: 1
+					slidesToScroll: 1,
+					swipe: true
 				}
 			},
 			{
 				breakpoint: 768,
 				settings: {
-					centerMode: true,
 					slidesToShow: 2,
-					slidesToScroll: 1
+					slidesToScroll: 1,
+					swipe: true
 				}
 			},
 			{
 				breakpoint: 600,
 				settings: {
-					variableWidth: true,
-					centerMode: true,
 					slidesToShow: 1,
-					slidesToScroll: 1
+					slidesToScroll: 1,
+					swipe: true
 				}
 			}
 		]

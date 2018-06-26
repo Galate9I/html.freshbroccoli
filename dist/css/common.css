@@ -14069,6 +14069,7 @@ table[aria-busy=true] {
 				display: -moz-box;
 				display: -ms-flexbox;
 				display: flex;
+				margin: auto;
 }
 
 @media (max-width: 1600px) {
@@ -16193,13 +16194,13 @@ body::-webkit-scrollbar-thumb,
 .navigation__item-burger {
 				display: inline-block;
 				margin-right: 10px;
-				width: 16px;
-				height: 16px;
-				background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, rgba(255, 255, 255, 0)), color-stop(0, white), color-stop(15%, white), color-stop(15%, rgba(255, 255, 255, 0))), -webkit-gradient(linear, left bottom, left top, color-stop(45%, rgba(255, 255, 255, 0)), color-stop(45%, white), color-stop(55%, white), color-stop(55%, rgba(255, 255, 255, 0))), -webkit-gradient(linear, left bottom, left top, color-stop(85%, rgba(255, 255, 255, 0)), color-stop(85%, white), color-stop(100%, white), to(rgba(255, 255, 255, 0)));
-				background-image: -webkit-linear-gradient(bottom, rgba(255, 255, 255, 0) 0, white 0, white 15%, rgba(255, 255, 255, 0) 15%), -webkit-linear-gradient(bottom, rgba(255, 255, 255, 0) 45%, white 45%, white 55%, rgba(255, 255, 255, 0) 55%), -webkit-linear-gradient(bottom, rgba(255, 255, 255, 0) 85%, white 85%, white 100%, rgba(255, 255, 255, 0) 100%);
-				background-image: -moz-linear-gradient(bottom, rgba(255, 255, 255, 0) 0, white 0, white 15%, rgba(255, 255, 255, 0) 15%), -moz-linear-gradient(bottom, rgba(255, 255, 255, 0) 45%, white 45%, white 55%, rgba(255, 255, 255, 0) 55%), -moz-linear-gradient(bottom, rgba(255, 255, 255, 0) 85%, white 85%, white 100%, rgba(255, 255, 255, 0) 100%);
-				background-image: -o-linear-gradient(bottom, rgba(255, 255, 255, 0) 0, white 0, white 15%, rgba(255, 255, 255, 0) 15%), -o-linear-gradient(bottom, rgba(255, 255, 255, 0) 45%, white 45%, white 55%, rgba(255, 255, 255, 0) 55%), -o-linear-gradient(bottom, rgba(255, 255, 255, 0) 85%, white 85%, white 100%, rgba(255, 255, 255, 0) 100%);
-				background-image: linear-gradient(0deg, rgba(255, 255, 255, 0) 0, white 0, white 15%, rgba(255, 255, 255, 0) 15%), linear-gradient(0deg, rgba(255, 255, 255, 0) 45%, white 45%, white 55%, rgba(255, 255, 255, 0) 55%), linear-gradient(0deg, rgba(255, 255, 255, 0) 85%, white 85%, white 100%, rgba(255, 255, 255, 0) 100%);
+				width: 40px;
+				height: 40px;
+				background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, rgba(255, 255, 255, 0)), color-stop(0, white), color-stop(10%, white), color-stop(10%, rgba(255, 255, 255, 0))), -webkit-gradient(linear, left bottom, left top, color-stop(47%, rgba(255, 255, 255, 0)), color-stop(45%, white), color-stop(55%, white), color-stop(15%, rgba(255, 255, 255, 0))), -webkit-gradient(linear, left bottom, left top, color-stop(90%, rgba(255, 255, 255, 0)), color-stop(75%, white), color-stop(100%, white), color-stop(90%, rgba(255, 255, 255, 0)));
+				background-image: -webkit-linear-gradient(bottom, rgba(255, 255, 255, 0) 0, white 0, white 10%, rgba(255, 255, 255, 0) 10%), -webkit-linear-gradient(bottom, rgba(255, 255, 255, 0) 47%, white 45%, white 55%, rgba(255, 255, 255, 0) 15%), -webkit-linear-gradient(bottom, rgba(255, 255, 255, 0) 90%, white 75%, white 100%, rgba(255, 255, 255, 0) 90%);
+				background-image: -moz-linear-gradient(bottom, rgba(255, 255, 255, 0) 0, white 0, white 10%, rgba(255, 255, 255, 0) 10%), -moz-linear-gradient(bottom, rgba(255, 255, 255, 0) 47%, white 45%, white 55%, rgba(255, 255, 255, 0) 15%), -moz-linear-gradient(bottom, rgba(255, 255, 255, 0) 90%, white 75%, white 100%, rgba(255, 255, 255, 0) 90%);
+				background-image: -o-linear-gradient(bottom, rgba(255, 255, 255, 0) 0, white 0, white 10%, rgba(255, 255, 255, 0) 10%), -o-linear-gradient(bottom, rgba(255, 255, 255, 0) 47%, white 45%, white 55%, rgba(255, 255, 255, 0) 15%), -o-linear-gradient(bottom, rgba(255, 255, 255, 0) 90%, white 75%, white 100%, rgba(255, 255, 255, 0) 90%);
+				background-image: linear-gradient(0deg, rgba(255, 255, 255, 0) 0, white 0, white 10%, rgba(255, 255, 255, 0) 10%), linear-gradient(0deg, rgba(255, 255, 255, 0) 47%, white 45%, white 55%, rgba(255, 255, 255, 0) 15%), linear-gradient(0deg, rgba(255, 255, 255, 0) 90%, white 75%, white 100%, rgba(255, 255, 255, 0) 90%);
 }
 
 .navigation__item-title, .navigation__item-nail {
@@ -16795,15 +16796,20 @@ body::-webkit-scrollbar-thumb,
 .navigation__moby {
 				width: 100%;
 				background-color: #8CAD26;
-				height: 64px;
+				height: 102px;
 				margin: auto;
-				padding: 8px;
+				padding: 4%;
 				display: -webkit-box;
 				display: -webkit-flex;
 				display: -moz-box;
 				display: -ms-flexbox;
 				display: flex;
 				position: relative;
+				-webkit-box-align: baseline;
+				-webkit-align-items: baseline;
+				   -moz-box-align: baseline;
+				    -ms-flex-align: baseline;
+				        align-items: baseline;
 }
 
 @media (min-width: 601px) {
@@ -16812,12 +16818,119 @@ body::-webkit-scrollbar-thumb,
 				}
 }
 
+@media (max-width: 480px) {
+				.navigation__moby {
+								height: 20vw;
+				}
+}
+
 .navigation__moby-btn {
-				width: 20%;
+				width: 40px;
+				margin: 0 4% 0 0;
+				position: relative;
+				top: -4px;
+}
+
+@media (max-width: 480px) {
+				.navigation__moby-btn {
+								width: auto;
+				}
 }
 
 .navigation__moby-btn .navigation__item-burger {
 				margin: 0;
+}
+
+@media (max-width: 480px) {
+				.navigation__moby-btn .navigation__item-burger {
+								width: 8vw;
+								height: 8vw;
+				}
+}
+
+.navigation__moby-home {
+				-webkit-box-flex: 1;
+				-webkit-flex-grow: 1;
+				   -moz-box-flex: 1;
+				    -ms-flex-positive: 1;
+				        flex-grow: 1;
+				text-align: center;
+}
+
+.navigation__moby-home > a {
+				font-size: 54px;
+}
+
+@media (max-width: 480px) {
+				.navigation__moby-home > a {
+								font-size: 11vw;
+				}
+}
+
+.navigation__moby-search > button {
+				width: 40px;
+				margin: auto;
+}
+
+.navigation__moby-search > button:before {
+				content: '';
+				background-image: url(../images/svg/lupa.png);
+				width: 40px;
+				height: 40px;
+				-moz-background-size: contain;
+				  -o-background-size: contain;
+				     background-size: contain;
+				background-repeat: no-repeat;
+				margin: auto;
+}
+
+@media (max-width: 480px) {
+				.navigation__moby-search > button:before {
+								width: 8vw;
+								height: 8vw;
+				}
+}
+
+.navigation__moby-basket {
+				position: relative;
+				top: 4px;
+				margin: 0 2%;
+}
+
+.navigation__moby-basket > .custom-font-cart {
+				font-size: 48px;
+				position: relative;
+}
+
+@media (max-width: 480px) {
+				.navigation__moby-basket > .custom-font-cart {
+								font-size: 10vw;
+				}
+}
+
+.navigation__moby-basket > .custom-font-cart > .navigation__cart-counter {
+				background-color: #fff;
+				color: #144a55;
+				padding: 10px 8px 8px;
+				width: auto;
+				-webkit-border-radius: 100%;
+				   -moz-border-radius: 100%;
+				        border-radius: 100%;
+				font-size: 22px;
+				line-height: 20px;
+				font-weight: 400;
+				position: absolute;
+				top: 8px;
+				left: 80%;
+				font-family: "Lato-Bold", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+@media (max-width: 480px) {
+				.navigation__moby-basket > .custom-font-cart > .navigation__cart-counter {
+								font-size: 5vw;
+								top: -.0vw;
+								padding: 1.5vw;
+				}
 }
 
 .navigation__moby-search, .navigation__moby-lk, .navigation__moby-cart, .navigation__moby-icon {
@@ -19864,6 +19977,7 @@ body::-webkit-scrollbar-thumb,
 
 .action-main {
 				text-align: center;
+				margin: 0 -.3%;
 }
 
 .action-main__list {
@@ -20361,13 +20475,6 @@ body::-webkit-scrollbar-thumb,
 				display: inline-block;
 				vertical-align: top;
 				margin: 0 8px;
-				max-width: 265px;
-}
-
-@media (max-width: 480px) {
-				.review__item {
-								max-width: 220px;
-				}
 }
 
 .review__item:focus {
@@ -20941,6 +21048,11 @@ body::-webkit-scrollbar-thumb,
 				    -ms-flex-wrap: wrap;
 				        flex-wrap: wrap;
 				padding: 0;
+				-webkit-box-pack: justify;
+				-webkit-justify-content: space-between;
+				   -moz-box-pack: justify;
+				    -ms-flex-pack: justify;
+				        justify-content: space-between;
 }
 
 .recipes-list > li {
@@ -21427,7 +21539,7 @@ body::-webkit-scrollbar-thumb,
 }
 
 @media (max-width: 600px) {
-				.banner-home {
+				.banner__home {
 								margin: 0;
 				}
 }
@@ -21732,6 +21844,12 @@ body::-webkit-scrollbar-thumb,
 @media (max-width: 600px) {
 				.banner__home .banner__big {
 								margin: 0;
+				}
+				.banner__home .banner__big-block {
+								padding: 0 8px;
+				}
+				.banner__home .banner__big-content {
+								text-align: center;
 				}
 }
 

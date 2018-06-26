@@ -1000,7 +1000,6 @@ jQuery(document).ready(function () {
 			{
 				breakpoint: 960,
 				settings: {
-					centerMode: true,
 					slidesToShow: 2,
 					slidesToScroll: 1,
 					swipe: true
@@ -1009,8 +1008,6 @@ jQuery(document).ready(function () {
 			{
 				breakpoint: 800,
 				settings: {
-					variableWidth: true,
-					centerMode: true,
 					slidesToShow: 1,
 					slidesToScroll: 1
 				}
@@ -1018,16 +1015,21 @@ jQuery(document).ready(function () {
 			{
 				breakpoint: 768,
 				settings: {
-					centerMode: true,
 					slidesToShow: 2,
 					slidesToScroll: 1
 				}
 			},
 			{
-				breakpoint: 600,
+				breakpoint: 540,
 				settings: {
-					variableWidth: true,
 					centerMode: true,
+					slidesToShow: 1,
+					slidesToScroll: 1
+				}
+			},
+			{
+				breakpoint: 420,
+				settings: {
 					slidesToShow: 1,
 					slidesToScroll: 1
 				}
