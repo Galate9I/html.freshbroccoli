@@ -139,7 +139,7 @@
 }
 
 .bgcolor-white {
-				background-color: #fff;
+				background-color: #ffffff;
 }
 
 .bgcolor-gray {
@@ -256,7 +256,7 @@
 .ui-autocomplete {
 				position: absolute;
 				list-style: none;
-				background-color: #fff;
+				background-color: #ffffff;
 				top: 100% !important;
 				left: -1px !important;
 				right: -1px !important;

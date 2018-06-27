@@ -139,7 +139,7 @@
 }
 
 .bgcolor-white {
-				background-color: #fff;
+				background-color: #ffffff;
 }
 
 .bgcolor-gray {
@@ -279,7 +279,7 @@
 
 @media (max-width: 768px) {
 				.menu__group {
-								background-color: #fff;
+								background-color: #ffffff;
 				}
 }
 
@@ -391,7 +391,7 @@
 }
 
 .menu__class, .menu__type, .menu__floats {
-				background-color: #fff;
+				background-color: #ffffff;
 				min-height: 740px;
 				-webkit-box-sizing: border-box;
 				   -moz-box-sizing: border-box;
@@ -432,7 +432,7 @@
 .menu__floats {
 				z-index: 2;
 				display: none;
-				background-color: #fff;
+				background-color: #ffffff;
 				left: 200%;
 				width: 340px;
 				padding: 16px;
@@ -673,7 +673,7 @@
 				-webkit-border-radius: 6px 0 6px 0;
 				   -moz-border-radius: 6px 0 6px 0;
 				        border-radius: 6px 0 6px 0;
-				color: #fff;
+				color: #ffffff;
 				text-transform: uppercase;
 }
 
@@ -783,7 +783,7 @@
 								content: '';
 								height: 0;
 								border: 5px solid transparent;
-								border-top-color: #fff;
+								border-top-color: #ffffff;
 								display: inline-block;
 								position: absolute;
 								right: 16px;
@@ -843,7 +843,7 @@
 								width: 0;
 								height: 0;
 								border: 6px solid transparent;
-								border-right-color: #fff;
+								border-right-color: #ffffff;
 								display: inline-block;
 								position: absolute;
 								left: 35px;

@@ -804,58 +804,6 @@ jQuery(document).ready(function() {
 
     });
 
-    // $('.advantages__list').slick({
-    // 	prevArrow: '<button type="button" class="slider__items-arrow arrow-left"></button>',
-    // 	nextArrow: '<button type="button" class="slider__items-arrow arrow-right"></button>',
-    // 	centralMode: true,
-    // 	slidesToShow: 8,
-    // 	slidesToScroll: 1,
-    // 	responsive: [{
-    // 		breakpoint: 1140,
-    // 		settings: {
-    // 			prevArrow: '<button type="button" class="slider__items-arrow arrow-left"></button>',
-    // 			nextArrow: '<button type="button" class="slider__items-arrow arrow-right"></button>',
-    // 			infinite: true,
-    // 			swipe: false,
-    // 			autoplay: true,
-    // 			autoplaySpeed: 5000,
-    // 			arrows: true,
-    // 			centerMode: true,
-    // 			slidesToShow: 5,
-    // 			slidesToScroll: 3
-    // 		 }
-    // 	},
-    // 	{
-    // 		breakpoint: 994,
-    // 		settings: {
-    // 			slidesToShow: 4,
-    // 			slidesToScroll: 1,
-    // 			swipe: true
-    // 		}
-    // 	},
-    // 	{
-    // 		breakpoint: 760,
-    // 		settings: {
-    // 			slidesToShow: 3,
-    // 			slidesToScroll: 1
-    // 		}
-    // 	},
-    // 	{
-    // 		breakpoint: 480,
-    // 		settings: {
-    // 			slidesToShow: 2,
-    // 			slidesToScroll: 1
-    // 		}
-    // 	},
-    // 	{
-    // 		breakpoint: 400,
-    // 		settings: {
-    // 			slidesToShow: 1,
-    // 			slidesToScroll: 1
-    // 		}
-    // 	}]
-    // });
-
     $('.slider__items .catalog__items-list').slick({
         prevArrow: '<button type="button" class="slider__items-arrow arrow-left"></button>',
         nextArrow: '<button type="button" class="slider__items-arrow arrow-right"></button>',

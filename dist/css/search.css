@@ -139,7 +139,7 @@
 }
 
 .bgcolor-white {
-				background-color: #fff;
+				background-color: #ffffff;
 }
 
 .bgcolor-gray {
@@ -256,7 +256,7 @@
 .ui-autocomplete {
 				position: absolute;
 				list-style: none;
-				background-color: #fff;
+				background-color: #ffffff;
 				top: 100% !important;
 				left: -1px !important;
 				right: -1px !important;
@@ -309,7 +309,7 @@
 }
 
 .search {
-				background-color: #fff;
+				background-color: #ffffff;
 }
 
 .search__align {
@@ -408,12 +408,12 @@
 }
 
 .search__submit:hover, .search__clear:hover {
-				color: #fff;
+				color: #ffffff;
 				background-color: #d4dde6;
 }
 
 .search__submit:active, .search__clear:active {
-				color: #fff;
+				color: #ffffff;
 				background-color: #c4d1dd;
 				-webkit-box-shadow: none;
 				   -moz-box-shadow: none;

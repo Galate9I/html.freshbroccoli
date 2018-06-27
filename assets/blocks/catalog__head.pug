@@ -1,7 +1,12 @@
 block catalog__head
 	.catalog__head
+
+		.catalog__head-filter
+			a.btn.btn-sm.btn-outline-secondary(href="#" data-toggle="collapse" data-target="#demo") Фильтры: 0
+
 		ul.catalog__head-sort
 			include tags__sort
+
 
 		include pager
 		

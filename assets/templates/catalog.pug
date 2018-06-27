@@ -4,11 +4,13 @@ include ../blocks/page
 		include ../blocks/breadcrumbs
 		include ../blocks/page__title
 		.page__inner
-			.sidebar
+			.sidebar__close(href="#" data-toggle="collapse" data-target="#demo" aria-expanded="false") &laquo;
+			.sidebar.collapse#demo
 				.sidebar__left
 					include ../blocks/sidebar
 				button.btn.btn-outline-success.btn-lg Применить
 				button.btn.btn-success.btn-lg Очистить
+
 
 			.content
 				include ../blocks/catalog-banner

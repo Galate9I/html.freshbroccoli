@@ -19,8 +19,16 @@
 	transition: .3s linear
 
 .sidebar + .content
+
+	//@media (max-width: 960px)
+		//margin-left: calc(100% - 208px)
+
+.sidebar.show + .content
+	transition: inherit
+
 	@media (max-width: 960px)
-		margin-left: calc(100% - 208px)
+		margin-left: 0
+		transition: inherit
 
 .page
 	padding: 30px 0
@@ -53,6 +61,11 @@
 
 		&:after
 			margin: 0 -128px 0 16px
+
+		.catalog &
+
+			@media (max-width: 600px)
+				display: none
 
 	&__inner
 		display: flex

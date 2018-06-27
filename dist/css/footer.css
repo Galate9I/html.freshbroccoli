@@ -139,7 +139,7 @@
 }
 
 .bgcolor-white {
-				background-color: #fff;
+				background-color: #ffffff;
 }
 
 .bgcolor-gray {
@@ -707,7 +707,7 @@
 
 .footer__shopinfo {
 				background-color: #7a9a01;
-				color: #fff;
+				color: #ffffff;
 				display: -webkit-box;
 				display: -webkit-flex;
 				display: -moz-box;
@@ -732,7 +732,7 @@
 }
 
 .footer__shopinfo-logo > a {
-				color: #fff;
+				color: #ffffff;
 				font-size: 32px;
 }
 
